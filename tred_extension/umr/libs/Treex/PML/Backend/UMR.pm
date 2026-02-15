@@ -182,15 +182,21 @@ sub write {
 }
 
 
-{   my %ALLOWED_NON_NODES = (modal => {'have-condition'         => 'st',
-                                       'have-condition-91'      => 'st',
-                                       'null-conceiver'         => 't',
-                                       purpose                  => 'st',
-                                       author                   => 'st'},
-                             temp => {'document-creation-time'  => 'st',
-                                      'past-reference'          => 't',
-                                      'present-reference'       => 't',
-                                      root                      => 't'});
+{   my %ALLOWED_NON_NODES = (modal => {'have-condition'               => 'st',
+                                       'have-condition-91'            => 'st',
+                                       'null-conceiver'               => 'st',
+                                       purpose                        => 'st',
+                                       'have-purpose-91'              => 'st',
+                                       'have-concession-91'           => 'st',
+                                       'have-concessive-condition-91' => 'st',
+                                       author                         => 'st',
+                                       author2                        => 'st',
+                                       author3                        => 'st'},
+                             temp => {'document-creation-time'        => 'st',
+                                      'past-reference'                => 'st',
+                                      'present-reference'             => 't',
+                                      'future-reference'              => 't',
+                                      root                            => 't'});
     sub allowed_non_node {
         my ($type, $value, $role) = @_;
         my $short_type = $type =~ s/:.+//r;
@@ -218,8 +224,26 @@ sub add_relation {
     } elsif ($target) {
         add_to_links($target, $source_id, $type);
 
-    } elsif ($source_id =~ /^have-condition(?:-91)?/) {
-        warn "Condition";
+    } elsif ($type =~ /^modal:/
+             && ($source_id
+                 =~ /^have-(con(?:dit|cess|cessive-condit)ion)(?:-91)?/
+                 || $target_id
+                 =~ /^have-(con(?:dit|cess|cessive-condit)ion)(?:-91)?/)
+    ) {
+        warn "modal $1";
+
+    } elsif ($type =~ /^modal:/
+             && $target_id =~ /^author/
+             && 'null-conceiver' eq $source_id
+    ) {
+        warn "modal author-null";
+
+    } elsif ($type =~ /^temp:/
+             && 'root' eq $target_id
+             && $source_id =~ /reference$/
+    ) {
+        warn 'temp root ref';
+
     } else {
         die "Neither $source_id nor $target_id found ($type)"
     }
