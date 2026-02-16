@@ -755,6 +755,8 @@ sub compare_files
     # Compare node alignments for each pair of files. Although both files may
     # come from annotators, imagine that the first file is the gold standard
     # and the second file is evaluated against it; the numbers are then P, R, F.
+    # First compute all numbers, then print them in a separate block.
+    my @summary;
     for(my $i = 0; $i <= $#files; $i++)
     {
         my $labeli = $files[$i]{label};
@@ -766,78 +768,137 @@ sub compare_files
             my $nj_total = $files[$j]{stats}{n_nodes};
             next if($nj_total == 0);
             # Summarize comparison of aligned token sets.
-            print("Aligned token set comparison:\n") unless($config{quiet});
-            my $al_correct = $files[$i]{stats}{cr}{$labelj}{correct_alignment};
-            my $al_total_me = $files[$i]{stats}{cr}{$labelj}{total_me_alignment};
-            my $al_total_other = $files[$i]{stats}{cr}{$labelj}{total_other_alignment};
-            my $r = $al_total_me > 0 ? $al_correct/$al_total_me : 0;
-            my $p = $al_total_other > 0 ? $al_correct/$al_total_other : 0;
-            my $f = $p+$r > 0 ? 2*$p*$r/($p+$r) : 0;
-            my $rounding = 2; # 2 decimal places ###!!! We may want to make this configurable from the command line. Smatch has the option --significant 2.
-            unless($config{quiet})
-            {
-                printf("Out of %d aligned token sets in %s, %d found in %s => recall    %.${rounding}f%%.\n", $al_total_me, $labeli, $al_correct, $labelj, round_to_places($r*100, $rounding));
-                printf("Out of %d aligned token sets in %s, %d found in %s => precision %.${rounding}f%%.\n", $al_total_other, $labelj, $al_correct, $labeli, round_to_places($p*100, $rounding));
-                printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
-            }
+            my %al =
+            (
+                'metric'  => 'aligned token sets',
+                'label0'  => $labeli,
+                'label1'  => $labelj,
+                'correct' => $files[$i]{stats}{cr}{$labelj}{correct_alignment},
+                'total0'  => $files[$i]{stats}{cr}{$labelj}{total_me_alignment},
+                'total1'  => $files[$i]{stats}{cr}{$labelj}{total_other_alignment}
+            );
+            compute_prf(\%al);
+            push(@summary, \%al);
             # Summarize node projections and correspondences.
-            my $ni_mapped = $files[$i]{stats}{crossfile}{$labelj};
-            my $nj_mapped = $files[$j]{stats}{crossfile}{$labeli};
+            my %proj =
+            (
+                'metric'  => 'node projections',
+                'label0'  => $labeli,
+                'label1'  => $labelj,
+                'mapped0' => $files[$i]{stats}{crossfile}{$labelj},
+                'mapped1' => $files[$j]{stats}{crossfile}{$labeli},
+                'total0'  => $ni_total,
+                'total1'  => $nj_total
+            );
             # Precision: nodes mapped from j to i / total j nodes (how much of what we found we should have found).
             # Recall: nodes mapped from i to j / total i nodes (how much of what we should have found we found).
-            $p = $nj_mapped/$nj_total;
-            $r = $ni_mapped/$ni_total;
-            $f = 2*$p*$r/($p+$r);
-            unless($config{quiet})
-            {
-                printf("Out of %d total %s nodes, %d mapped to %s => recall    = %.${rounding}f%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, round_to_places($r*100, $rounding));
-                printf("Out of %d total %s nodes, %d mapped to %s => precision = %.${rounding}f%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, round_to_places($p*100, $rounding));
-                printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
-            }
+            $proj{p} = $proj{mapped1}/$nj_total;
+            $proj{r} = $proj{mapped0}/$ni_total;
+            $proj{f} = $proj{p}+$proj{r} > 0 ? 2*$proj{p}*$proj{r}/($proj{p}+$proj{r}) : 0;
+            push(@summary, \%proj);
             # Summarize projections that were originally ambiguous (before we symmetrized them).
-            my $ni_ambiguous_src = $files[$i]{stats}{cr}{$labelj}{nodes_with_originally_ambiguous_projection};
-            my $nj_ambiguous_src = $files[$j]{stats}{cr}{$labeli}{nodes_with_originally_ambiguous_projection};
-            my $ni_ambiguous_tgt = $files[$i]{stats}{cr}{$labelj}{nodes_in_originally_ambiguous_projections};
-            my $nj_ambiguous_tgt = $files[$j]{stats}{cr}{$labeli}{nodes_in_originally_ambiguous_projections};
-            unless($config{quiet})
-            {
-                printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $ni_ambiguous_src, $labeli, $ni_ambiguous_tgt, $labelj);
-                printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $nj_ambiguous_src, $labelj, $nj_ambiguous_tgt, $labeli);
-                # Summarize comparison of concepts and relations (mapped nodes only).
-                print("Concept and relation comparison (only mapped nodes; unmapped are ignored):\n");
-            }
-            my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct_mapped};
-            my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me_mapped};
-            my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other_mapped};
-            $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
-            $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
-            $f = 2*$p*$r/($p+$r);
-            unless($config{quiet})
-            {
-                printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, round_to_places($r*100, $rounding));
-                printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, round_to_places($p*100, $rounding));
-                printf(" => F₁ = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
-                # Summarize comparison of concepts and relations.
-                print("Concept and relation comparison (for unmapped nodes all counted as incorrect):\n");
-            }
-            $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
-            $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
-            $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
-            $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
-            $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
-            $f = 2*$p*$r/($p+$r);
-            unless($config{quiet})
-            {
-                printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, round_to_places($r*100, $rounding));
-                printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, round_to_places($p*100, $rounding));
-                printf(" => juːmæʧ ($labeli, $labelj) = F₁ = %.${rounding}f%%.\n", round_to_places($f*100, $rounding)); # místo "t͡ʃ" lze případně použít "ʧ"
-            }
-            else
-            {
-                printf("juːmæʧ F₁ ($labeli, $labelj) = %f\n", $f);
-            }
+            my %ambproj =
+            (
+                'metric' => 'ambiguous node projections',
+                'label0' => $labeli,
+                'label1' => $labelj,
+                'nsrc0'  => $files[$i]{stats}{cr}{$labelj}{nodes_with_originally_ambiguous_projection},
+                'nsrc1'  => $files[$j]{stats}{cr}{$labeli}{nodes_with_originally_ambiguous_projection},
+                'ntgt0'  => $files[$i]{stats}{cr}{$labelj}{nodes_in_originally_ambiguous_projections},
+                'ntgt1'  => $files[$j]{stats}{cr}{$labeli}{nodes_in_originally_ambiguous_projections}
+            );
+            push(@summary, \%ambproj);
+            # Summarize comparison of concepts and relations (mapped nodes only).
+            my %maptriples =
+            (
+                'metric'  => 'triples in mapped nodes',
+                'label0'  => $labeli,
+                'label1'  => $labelj,
+                'correct' => $files[$i]{stats}{cr}{$labelj}{correct_mapped},
+                'total0'  => $files[$i]{stats}{cr}{$labelj}{total_me_mapped},
+                'total1'  => $files[$i]{stats}{cr}{$labelj}{total_other_mapped}
+            );
+            compute_prf(\%maptriples);
+            push(@summary, \%maptriples);
+            # Summarize comparison of concepts and relations.
+            my %umatch =
+            (
+                'metric'  => 'juːmæʧ',
+                'label0'  => $labeli,
+                'label1'  => $labelj,
+                'correct' => $files[$i]{stats}{cr}{$labelj}{correct},
+                'total0'  => $files[$i]{stats}{cr}{$labelj}{total_me},
+                'total1'  => $files[$i]{stats}{cr}{$labelj}{total_other}
+            );
+            compute_prf(\%umatch);
+            push(@summary, \%umatch);
         }
     }
+    # Now print the summary, observing output configuration.
+    my $rounding = 2; # 2 decimal places ###!!! We may want to make this configurable from the command line. Smatch has the option --significant 2.
+    foreach my $metric (@summary)
+    {
+        unless($config{quiet})
+        {
+            if($metric->{metric} eq 'aligned token sets')
+            {
+                print("Aligned token set comparison:\n");
+                printf("Out of %d aligned token sets in %s, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
+                printf("Out of %d aligned token sets in %s, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
+                printf(" => F₁($metric->{label0},$metric->{label1}) = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+            }
+            elsif($metric->{metric} eq 'node projections')
+            {
+                # Precision: nodes mapped from j to i / total j nodes (how much of what we found we should have found).
+                # Recall: nodes mapped from i to j / total i nodes (how much of what we should have found we found).
+                printf("Out of %d total %s nodes, %d mapped to %s => recall    = %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{mapped0}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
+                printf("Out of %d total %s nodes, %d mapped to %s => precision = %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{mapped1}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
+                printf(" => F₁($metric->{label0},$metric->{label1}) = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+            }
+            elsif($metric->{metric} eq 'ambiguous node projections')
+            {
+                printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $metric->{nsrc0}, $metric->{label0}, $metric->{ntgt0}, $metric->{label1});
+                printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $metric->{nsrc1}, $metric->{label1}, $metric->{ntgt1}, $metric->{label0});
+            }
+            elsif($metric->{metric} eq 'triples in mapped nodes')
+            {
+                print("Concept and relation comparison (only mapped nodes; unmapped are ignored):\n");
+                printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
+                printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
+                printf(" => F₁ = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+            }
+            elsif($metric->{metric} eq 'juːmæʧ')
+            {
+                print("Concept and relation comparison (for unmapped nodes all counted as incorrect):\n");
+                printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
+                printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
+                printf(" => juːmæʧ ($metric->{label0}, $metric->{label1}) = F₁ = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding)); # místo "t͡ʃ" lze případně použít "ʧ"
+            }
+        }
+        # Quiet mode: Only the main metric.
+        elsif($metric->{metric} eq 'juːmæʧ')
+        {
+            printf("juːmæʧ F₁ ($metric->{label0}, $metric->{label1}) = %f\n", $metric->{f});
+        }
+    }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes a hash that has fields correct, total0 and total1. Computes P, R, F
+# and saves it in the same hash. Recall R is related to total0 (i.e., file 0
+# is considered the gold standard, and we are asking how much of it was found
+# in file 1). Precision is related to total1 (what proportion of things found
+# in file 1 were actually supposed to be found, given the truth in file 0).
+#------------------------------------------------------------------------------
+sub compute_prf
+{
+    my $hash = shift; # hash reference
+    $hash->{r} = $hash->{total0} > 0 ? $hash->{correct}/$hash->{total0} : 0;
+    $hash->{p} = $hash->{total1} > 0 ? $hash->{correct}/$hash->{total1} : 0;
+    $hash->{f} = $hash->{p}+$hash->{r} > 0 ? 2*$hash->{p}*$hash->{r}/($hash->{p}+$hash->{r}) : 0;
+    return $hash;
 }
 
 

@@ -262,7 +262,7 @@ GOLD                                                                            
                                                                            :part s2n2))))))              
 
 Node-token alignments:
-File GOLD: 3 nodes unaligned: s2n3/name["LN"], s2p0/person, s2s1/say-91.
+File GOLD: 3 nodes unaligned: s2n3/name[LN], s2p0/person, s2s1/say-91.
 File CONV: 6 nodes unaligned: s2e1/entity, s2e2/entity, s2e3/entity, s2e4/entity, s2p2/person, s2p4/person.
                GOLD CONV
 1  Celý        s2c1 s2c1
@@ -315,7 +315,7 @@ Correspondence GOLD s2t1 (televizního)                = CONV s2t1 (televizního
 Correspondence GOLD s2z1 (bez změny)                  = CONV s2z1 (bez změny)
 Correspondence GOLD s2z2 (zvýšení)                    = CONV s2z2 (zvýšení)
 Correspondence GOLD s2z3 (v souvislosti se zařazením) = CONV s2z3 (v souvislosti se zařazením)
-Correspondence GOLD s2n3 (name["LN"])                 = CONV 
+Correspondence GOLD s2n3 (name[LN])                   = CONV 
 Correspondence GOLD s2s1 (say-91)                     = CONV 
 Correspondence GOLD                                   = CONV s2e1 (entity)
 Correspondence GOLD                                   = CONV s2e2 (entity)
@@ -328,13 +328,13 @@ Aligned 15 out of 20 CONV nodes, that is 75%.
 
 Comparing attributes of GOLD nodes with their CONV counterparts.
 Node GOLD s2n1 / name (Duha)                              mismatch in concept:         GOLD = name                     CONV = Duha
-Node GOLD s2n1 / name (Duha)                              mismatch in :op1:            GOLD = "Duha"                   CONV = 
+Node GOLD s2n1 / name (Duha)                              mismatch in :op1:            GOLD = Duha                     CONV = 
 Node GOLD s2n1 / name (Duha)                              mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s2n2 / news-media (LN)                          mismatch in concept:         GOLD = news-media               CONV = LN
 Node GOLD s2n2 / news-media (LN)                          mismatch in :name:           GOLD = s2n3 unmapped            CONV = 
 Node GOLD s2n2 / news-media (LN)                          mismatch in :refer-number:   GOLD =                          CONV = plural
 Node GOLD s2n3 / name                                     mismatch in concept:         GOLD = name                     CONV = UNMAPPED
-Node GOLD s2n3 / name                                     mismatch in :op1:            GOLD = "LN"                     CONV = UNMAPPED
+Node GOLD s2n3 / name                                     mismatch in :op1:            GOLD = LN                       CONV = UNMAPPED
 Node GOLD s2p1 / přečkat-001 (jsme přečkali)              mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s2p1 / přečkat-001 (jsme přečkali)              mismatch in :quote:          GOLD = s2s1 unmapped            CONV = 
 Node GOLD s2p2 / počítat-006 (nepočítáme li)              mismatch in :ARG0:           GOLD = s2p0 mapped to CONV s2p2 CONV = s2p4
@@ -392,7 +392,7 @@ Correct 30 out of 60 non-empty CONV values => precision 50%.
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s2d1 / Duha (Duha)                           mismatch in concept:         CONV = Duha                     GOLD = name
 Node CONV s2d1 / Duha (Duha)                           mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s2d1 / Duha (Duha)                           mismatch in :op1:            CONV =                          GOLD = "Duha"
+Node CONV s2d1 / Duha (Duha)                           mismatch in :op1:            CONV =                          GOLD = Duha
 Node CONV s2e1 / entity                                mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s2e2 / entity                                mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s2e3 / entity                                mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
@@ -434,7 +434,7 @@ Node CONV s2z3 / zařazení (v souvislosti se zařazením) mismatch in :aspect: 
 Node CONV s2z3 / zařazení (v souvislosti se zařazením) mismatch in :manner:         CONV =                          GOLD = s2p3
 Node CONV s2z3 / zařazení (v souvislosti se zařazením) mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node GOLD s2n3 / name                                  mismatch in concept:         GOLD = name                     CONV = UNMAPPED
-Node GOLD s2n3 / name                                  mismatch in :op1:            GOLD = "LN"                     CONV = UNMAPPED
+Node GOLD s2n3 / name                                  mismatch in :op1:            GOLD = LN                       CONV = UNMAPPED
 Node GOLD s2s1 / say-91                                mismatch in concept:         GOLD = say-91                   CONV = UNMAPPED
 Node GOLD s2s1 / say-91                                mismatch in :ARG1:           GOLD = s2p1                     CONV = UNMAPPED
 Node GOLD s2s1 / say-91                                mismatch in :aspect:         GOLD = activity                 CONV = UNMAPPED
@@ -626,7 +626,7 @@ GOLD                                                                            
                       :temporal (s4d3 / date-entity :weekday (s4s3 / sobota)))))              
 
 Node-token alignments:
-File GOLD: 7 nodes unaligned: s4d1/date-entity, s4d2/date-entity, s4n2/name["Lidové" "noviny"], s4r2/date-interval, s4s/say-91, s4s2/stát-014, s4s3/sobota.
+File GOLD: 7 nodes unaligned: s4d1/date-entity, s4d2/date-entity, s4n2/name[Lidové noviny], s4r2/date-interval, s4s/say-91, s4s2/stát-014, s4s3/sobota.
 File CONV: 1 nodes unaligned: s4s2/stát-014.
               GOLD CONV
 1  Od         s4c1 s4c1
@@ -676,7 +676,7 @@ Ambiguous projection of GOLD node s4k2 (korun korun) to 2 CONV nodes [s4k1 (koru
 Ambiguous projection of GOLD node s4l1 (letošního roku) to 2 CONV nodes [s4l1 (letošního), s4r1 (roku)]
 Ambiguous projection of GOLD node s4n1 (Lidové noviny) to 2 CONV nodes [s4l2 (Lidové), s4n1 (noviny)]
   The winner is GOLD node s4c1 (Od posledního čtvrtletí) <--> CONV node s4c1 (Od čtvrtletí): econcepts=date-entity/čtvrtletí, match=0 (), weak match=1 (concept).
-  The winner is GOLD node s4k2 (korun korun) <--> CONV node s4k1 (korun): econcepts=koruna/koruna, match=1 (concept=koruna), weak match=1 (concept).
+  The winner is GOLD node s4k2 (korun korun) <--> CONV node s4k2 (korun): econcepts=koruna/koruna, match=1 (concept=koruna), weak match=1 (concept).
   The winner is GOLD node s4l1 (letošního roku) <--> CONV node s4l1 (letošního): econcepts=letošní/letošní, match=1 (concept=letošní), weak match=1 (concept).
   The winner is GOLD node s4n1 (Lidové noviny) <--> CONV node s4n1 (noviny): econcepts=news-media/noviny, match=0 (), weak match=2 (concept,:refer-number).
 
@@ -685,7 +685,7 @@ Correspondence GOLD s4c1 (Od posledního čtvrtletí) = CONV s4c1 (Od čtvrtlet�
 Correspondence GOLD s4c2 (do čtvrtka)              = CONV s4c2 (do čtvrtka)
 Correspondence GOLD s4d3 (v sobotu)                = CONV s4s4 (v sobotu)
 Correspondence GOLD s4k1 (pět)                     = CONV s4p3 (pět)
-Correspondence GOLD s4k2 (korun korun)             = CONV s4k1 (korun)
+Correspondence GOLD s4k2 (korun korun)             = CONV s4k2 (korun)
 Correspondence GOLD s4k3 (šest)                    = CONV s4s3 (šest)
 Correspondence GOLD s4l1 (letošního roku)          = CONV s4l1 (letošního)
 Correspondence GOLD s4n1 (Lidové noviny)           = CONV s4n1 (noviny)
@@ -695,11 +695,11 @@ Correspondence GOLD s4s1 (budou stát)              = CONV s4s1 (budou stát)
 Correspondence GOLD s4s2 (stát-014)                = CONV s4s2 (stát-014)
 Correspondence GOLD s4d1 (date-entity)             = CONV 
 Correspondence GOLD s4d2 (date-entity)             = CONV 
-Correspondence GOLD s4n2 (name["Lidové" "noviny"]) = CONV 
+Correspondence GOLD s4n2 (name[Lidové noviny])     = CONV 
 Correspondence GOLD s4r2 (date-interval)           = CONV 
 Correspondence GOLD s4s  (say-91)                  = CONV 
 Correspondence GOLD s4s3 (sobota)                  = CONV 
-Correspondence GOLD                                = CONV s4k2 (korun)
+Correspondence GOLD                                = CONV s4k1 (korun)
 Correspondence GOLD                                = CONV s4l2 (Lidové)
 Correspondence GOLD                                = CONV s4p2 (posledního)
 Correspondence GOLD                                = CONV s4r1 (roku)
@@ -724,19 +724,19 @@ Node GOLD s4d3 / date-entity (v sobotu)                mismatch in :weekday:    
 Node GOLD s4d3 / date-entity (v sobotu)                mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s4k1 / monetary-quantity (pět)               mismatch in concept:         GOLD = monetary-quantity        CONV = pět
 Node GOLD s4k1 / monetary-quantity (pět)               mismatch in :quant:          GOLD = 5                        CONV = 
-Node GOLD s4k1 / monetary-quantity (pět)               mismatch in :unit:           GOLD = s4k2 mapped to CONV s4k1 CONV = 
-Node GOLD s4k2 / koruna (korun korun)                  mismatch in :mod:            GOLD =                          CONV = s4p3
+Node GOLD s4k1 / monetary-quantity (pět)               mismatch in :unit:           GOLD = s4k2 mapped to CONV s4k2 CONV = 
+Node GOLD s4k2 / koruna (korun korun)                  mismatch in :mod:            GOLD =                          CONV = s4s3
 Node GOLD s4k2 / koruna (korun korun)                  mismatch in :refer-number:   GOLD =                          CONV = plural
 Node GOLD s4k3 / monetary-quantity (šest)              mismatch in concept:         GOLD = monetary-quantity        CONV = šest
 Node GOLD s4k3 / monetary-quantity (šest)              mismatch in :quant:          GOLD = 6                        CONV = 
-Node GOLD s4k3 / monetary-quantity (šest)              mismatch in :unit:           GOLD = s4k2 mapped to CONV s4k1 CONV = 
+Node GOLD s4k3 / monetary-quantity (šest)              mismatch in :unit:           GOLD = s4k2 mapped to CONV s4k2 CONV = 
 Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in concept:         GOLD = news-media               CONV = noviny
 Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in :name:           GOLD = s4n2 unmapped            CONV = 
 Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in :refer-number:   GOLD = singular                 CONV = plural
 Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in :mod:            GOLD =                          CONV = s4l2
 Node GOLD s4n2 / name                                  mismatch in concept:         GOLD = name                     CONV = UNMAPPED
-Node GOLD s4n2 / name                                  mismatch in :op1:            GOLD = "Lidové"                 CONV = UNMAPPED
-Node GOLD s4n2 / name                                  mismatch in :op2:            GOLD = "noviny"                 CONV = UNMAPPED
+Node GOLD s4n2 / name                                  mismatch in :op1:            GOLD = Lidové                   CONV = UNMAPPED
+Node GOLD s4n2 / name                                  mismatch in :op2:            GOLD = noviny                   CONV = UNMAPPED
 Node GOLD s4p2 / pondělí (od pondělka)                 mismatch in concept:         GOLD = pondělí                  CONV = pondělek
 Node GOLD s4p2 / pondělí (od pondělka)                 mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s4r2 / date-interval                         mismatch in concept:         GOLD = date-interval            CONV = UNMAPPED
@@ -758,9 +758,9 @@ Node GOLD s4s2 / stát-014                              mismatch in :aspect:    
 Node GOLD s4s2 / stát-014                              mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s4s2 / stát-014                              mismatch in :quote:          GOLD = s4s unmapped             CONV = 
 Node GOLD s4s3 / sobota                                mismatch in concept:         GOLD = sobota                   CONV = UNMAPPED
-Node CONV s4k2 / koruna (korun)                        mismatch in concept:         CONV = koruna                   GOLD = UNMAPPED
-Node CONV s4k2 / koruna (korun)                        mismatch in :mod:            CONV = s4s3                     GOLD = UNMAPPED
-Node CONV s4k2 / koruna (korun)                        mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
+Node CONV s4k1 / koruna (korun)                        mismatch in concept:         CONV = koruna                   GOLD = UNMAPPED
+Node CONV s4k1 / koruna (korun)                        mismatch in :mod:            CONV = s4p3                     GOLD = UNMAPPED
+Node CONV s4k1 / koruna (korun)                        mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
 Node CONV s4l2 / Lidový (Lidové)                       mismatch in concept:         CONV = Lidový                   GOLD = UNMAPPED
 Node CONV s4p2 / poslední (posledního)                 mismatch in concept:         CONV = poslední                 GOLD = UNMAPPED
 Node CONV s4r1 / rok (roku)                            mismatch in concept:         CONV = rok                      GOLD = UNMAPPED
@@ -782,11 +782,11 @@ Node CONV s4c1 / čtvrtletí (Od čtvrtletí) mismatch in :refer-number:   CONV 
 Node CONV s4c1 / čtvrtletí (Od čtvrtletí) mismatch in :quarter:        CONV =                          GOLD = 4
 Node CONV s4c1 / čtvrtletí (Od čtvrtletí) mismatch in :year:           CONV =                          GOLD = s4l1
 Node CONV s4c2 / čtvrtek (do čtvrtka)     mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s4k1 / koruna (korun)           mismatch in :mod:            CONV = s4p3 mapped to GOLD s4k1 GOLD = 
-Node CONV s4k1 / koruna (korun)           mismatch in :refer-number:   CONV = plural                   GOLD = 
-Node CONV s4k2 / koruna (korun)           mismatch in concept:         CONV = koruna                   GOLD = UNMAPPED
-Node CONV s4k2 / koruna (korun)           mismatch in :mod:            CONV = s4s3                     GOLD = UNMAPPED
-Node CONV s4k2 / koruna (korun)           mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
+Node CONV s4k1 / koruna (korun)           mismatch in concept:         CONV = koruna                   GOLD = UNMAPPED
+Node CONV s4k1 / koruna (korun)           mismatch in :mod:            CONV = s4p3                     GOLD = UNMAPPED
+Node CONV s4k1 / koruna (korun)           mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
+Node CONV s4k2 / koruna (korun)           mismatch in :mod:            CONV = s4s3 mapped to GOLD s4k3 GOLD = 
+Node CONV s4k2 / koruna (korun)           mismatch in :refer-number:   CONV = plural                   GOLD = 
 Node CONV s4l2 / Lidový (Lidové)          mismatch in concept:         CONV = Lidový                   GOLD = UNMAPPED
 Node CONV s4n1 / noviny (noviny)          mismatch in concept:         CONV = noviny                   GOLD = news-media
 Node CONV s4n1 / noviny (noviny)          mismatch in :mod:            CONV = s4l2 unmapped            GOLD = 
@@ -801,14 +801,14 @@ Node CONV s4p4 / pondělek (od pondělka)   mismatch in :refer-number:   CONV = 
 Node CONV s4r1 / rok (roku)               mismatch in concept:         CONV = rok                      GOLD = UNMAPPED
 Node CONV s4r1 / rok (roku)               mismatch in :mod:            CONV = s4l1                     GOLD = UNMAPPED
 Node CONV s4r1 / rok (roku)               mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
-Node CONV s4s1 / stát-014 (budou stát)    mismatch in :ARG2:           CONV = s4k1 mapped to GOLD s4k2 GOLD = s4k1
+Node CONV s4s1 / stát-014 (budou stát)    mismatch in :ARG2:           CONV = s4k1 unmapped            GOLD = s4k1
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :aspect:         CONV = activity                 GOLD = state
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :temporal:       CONV = s4p4 mapped to GOLD s4p2 GOLD = 
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :temporal:       CONV = s4c2 mapped to GOLD s4c2 GOLD = 
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :quote:          CONV =                          GOLD = s4s
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :temporal:       CONV =                          GOLD = s4r2
-Node CONV s4s2 / stát-014                 mismatch in :ARG2:           CONV = s4k2 unmapped            GOLD = s4k3
+Node CONV s4s2 / stát-014                 mismatch in :ARG2:           CONV = s4k2 mapped to GOLD s4k2 GOLD = s4k3
 Node CONV s4s2 / stát-014                 mismatch in :aspect:         CONV = activity                 GOLD = state
 Node CONV s4s2 / stát-014                 mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s4s2 / stát-014                 mismatch in :quote:          CONV =                          GOLD = s4s
@@ -823,8 +823,8 @@ Node GOLD s4d1 / date-entity              mismatch in :weekday:        GOLD = s4
 Node GOLD s4d2 / date-entity              mismatch in concept:         GOLD = date-entity              CONV = UNMAPPED
 Node GOLD s4d2 / date-entity              mismatch in :weekday:        GOLD = s4c2                     CONV = UNMAPPED
 Node GOLD s4n2 / name                     mismatch in concept:         GOLD = name                     CONV = UNMAPPED
-Node GOLD s4n2 / name                     mismatch in :op1:            GOLD = "Lidové"                 CONV = UNMAPPED
-Node GOLD s4n2 / name                     mismatch in :op2:            GOLD = "noviny"                 CONV = UNMAPPED
+Node GOLD s4n2 / name                     mismatch in :op1:            GOLD = Lidové                   CONV = UNMAPPED
+Node GOLD s4n2 / name                     mismatch in :op2:            GOLD = noviny                   CONV = UNMAPPED
 Node GOLD s4r2 / date-interval            mismatch in concept:         GOLD = date-interval            CONV = UNMAPPED
 Node GOLD s4r2 / date-interval            mismatch in :op1:            GOLD = s4d1                     CONV = UNMAPPED
 Node GOLD s4r2 / date-interval            mismatch in :op2:            GOLD = s4d2                     CONV = UNMAPPED
@@ -932,7 +932,7 @@ Node GOLD s5z1 / zůstávat-004 (zůstává)   mismatch in :aspect:         GOLD
 Node GOLD s5z1 / zůstávat-004 (zůstává)   mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s5z1 / zůstávat-004 (zůstává)   mismatch in :quote:          GOLD = s5s1 unmapped            CONV = 
 Document-level relation from node GOLD s3c1 / cena (do ceny) (CONV s3c1)             :same-entity to node GOLD s5c1 / cena (Cena) (CONV s5c1) not found in CONV
-Document-level relation from node GOLD s4k2 / koruna (korun korun) (CONV s4k1)       :same-entity to node GOLD s5k2 / koruna (CONV UNMAPPED)  not found in CONV
+Document-level relation from node GOLD s4k2 / koruna (korun korun) (CONV s4k2)       :same-entity to node GOLD s5k2 / koruna (CONV UNMAPPED)  not found in CONV
 Document-level relation from node GOLD s4n1 / news-media (Lidové noviny) (CONV s4n1) :same-entity to node GOLD s5n1 / noviny (CONV UNMAPPED)  not found in CONV
 Document-level relation from node GOLD s4s / say-91 (CONV UNMAPPED)                  :same-event  to node GOLD s5s1 / say-91 (CONV UNMAPPED)  not found in CONV
 
@@ -968,7 +968,7 @@ Node GOLD s5s1 / say-91                 mismatch in :ARG1:           GOLD = s5z1
 Node GOLD s5s1 / say-91                 mismatch in :aspect:         GOLD = activity                 CONV = UNMAPPED
 Node GOLD s5s1 / say-91                 mismatch in :modal-strength: GOLD = full-affirmative         CONV = UNMAPPED
 Document-level relation from node GOLD s3c1 / cena (do ceny) (CONV s3c1)             :same-entity to node GOLD s5c1 / cena (Cena) (CONV s5c1) not found in CONV
-Document-level relation from node GOLD s4k2 / koruna (korun korun) (CONV s4k1)       :same-entity to node GOLD s5k2 / koruna (CONV UNMAPPED)  not found in CONV
+Document-level relation from node GOLD s4k2 / koruna (korun korun) (CONV s4k2)       :same-entity to node GOLD s5k2 / koruna (CONV UNMAPPED)  not found in CONV
 Document-level relation from node GOLD s4n1 / news-media (Lidové noviny) (CONV s4n1) :same-entity to node GOLD s5n1 / noviny (CONV UNMAPPED)  not found in CONV
 Document-level relation from node GOLD s4s / say-91 (CONV UNMAPPED)                  :same-event  to node GOLD s5s1 / say-91 (CONV UNMAPPED)  not found in CONV
 
@@ -1021,7 +1021,7 @@ GOLD                                                                            
                                     :unit s6s3))))                                          
 
 Node-token alignments:
-File GOLD: 10 nodes unaligned: s6d1/date-entity, s6d2/date-entity, s6d3/date-entity, s6d4/date-entity, s6n2/name["Lidové" "noviny"], s6n3/name["Slovensko"], s6r2/date-interval, s6s/say-91, s6s4/stát-014, s6s6/stát-014.
+File GOLD: 10 nodes unaligned: s6d1/date-entity, s6d2/date-entity, s6d3/date-entity, s6d4/date-entity, s6n2/name[Lidové noviny], s6n3/name[Slovensko], s6r2/date-interval, s6s/say-91, s6s4/stát-014, s6s6/stát-014.
 File CONV: 2 nodes unaligned: s6s4/stát-014, s6s6/stát-014.
              GOLD CONV
 1  (              
@@ -1069,30 +1069,30 @@ Ambiguous projection of GOLD node s6s6 (stát-014) to 2 CONV nodes [s6s4 (stát-
 Ambiguous projection of CONV node s6s4 (stát-014) to 2 GOLD nodes [s6s4 (stát-014), s6s6 (stát-014)]
 Ambiguous projection of CONV node s6s6 (stát-014) to 2 GOLD nodes [s6s4 (stát-014), s6s6 (stát-014)]
 
-Correspondence GOLD s6a1 (a)                       = CONV s6a1 (a)
-Correspondence GOLD s6c2 (do čtvrtka)              = CONV s6c1 (do čtvrtka)
-Correspondence GOLD s6l1 (LN)                      = CONV s6l1 (LN)
-Correspondence GOLD s6p1 (od pondělí)              = CONV s6p1 (od pondělí)
-Correspondence GOLD s6p3 (v pátek)                 = CONV s6p2 (v pátek)
-Correspondence GOLD s6s1 (budou stát)              = CONV s6s1 (budou stát)
-Correspondence GOLD s6s2 (Na Slovensku)            = CONV s6s2 (Na Slovensku)
-Correspondence GOLD s6s3 (Sk Sk Sk)                = CONV s6s3 (Sk)
-Correspondence GOLD s6s4 (stát-014)                = CONV s6s4 (stát-014)
-Correspondence GOLD s6s6 (stát-014)                = CONV s6s6 (stát-014)
-Correspondence GOLD s6s7 (v sobotu)                = CONV s6s7 (v sobotu)
-Correspondence GOLD s6x1 (5.50)                    = CONV s6x1 (5.50)
-Correspondence GOLD s6x2 (7.50)                    = CONV s6x4 (7.50)
-Correspondence GOLD s6x3 (6.50)                    = CONV s6x7 (6.50)
-Correspondence GOLD s6d1 (date-entity)             = CONV 
-Correspondence GOLD s6d2 (date-entity)             = CONV 
-Correspondence GOLD s6d3 (date-entity)             = CONV 
-Correspondence GOLD s6d4 (date-entity)             = CONV 
-Correspondence GOLD s6n2 (name["Lidové" "noviny"]) = CONV 
-Correspondence GOLD s6n3 (name["Slovensko"])       = CONV 
-Correspondence GOLD s6r2 (date-interval)           = CONV 
-Correspondence GOLD s6s  (say-91)                  = CONV 
-Correspondence GOLD                                = CONV s6s5 (Sk)
-Correspondence GOLD                                = CONV s6s8 (Sk)
+Correspondence GOLD s6a1 (a)                   = CONV s6a1 (a)
+Correspondence GOLD s6c2 (do čtvrtka)          = CONV s6c1 (do čtvrtka)
+Correspondence GOLD s6l1 (LN)                  = CONV s6l1 (LN)
+Correspondence GOLD s6p1 (od pondělí)          = CONV s6p1 (od pondělí)
+Correspondence GOLD s6p3 (v pátek)             = CONV s6p2 (v pátek)
+Correspondence GOLD s6s1 (budou stát)          = CONV s6s1 (budou stát)
+Correspondence GOLD s6s2 (Na Slovensku)        = CONV s6s2 (Na Slovensku)
+Correspondence GOLD s6s3 (Sk Sk Sk)            = CONV s6s3 (Sk)
+Correspondence GOLD s6s4 (stát-014)            = CONV s6s4 (stát-014)
+Correspondence GOLD s6s6 (stát-014)            = CONV s6s6 (stát-014)
+Correspondence GOLD s6s7 (v sobotu)            = CONV s6s7 (v sobotu)
+Correspondence GOLD s6x1 (5.50)                = CONV s6x1 (5.50)
+Correspondence GOLD s6x2 (7.50)                = CONV s6x4 (7.50)
+Correspondence GOLD s6x3 (6.50)                = CONV s6x7 (6.50)
+Correspondence GOLD s6d1 (date-entity)         = CONV 
+Correspondence GOLD s6d2 (date-entity)         = CONV 
+Correspondence GOLD s6d3 (date-entity)         = CONV 
+Correspondence GOLD s6d4 (date-entity)         = CONV 
+Correspondence GOLD s6n2 (name[Lidové noviny]) = CONV 
+Correspondence GOLD s6n3 (name[Slovensko])     = CONV 
+Correspondence GOLD s6r2 (date-interval)       = CONV 
+Correspondence GOLD s6s  (say-91)              = CONV 
+Correspondence GOLD                            = CONV s6s5 (Sk)
+Correspondence GOLD                            = CONV s6s8 (Sk)
 
 Aligned 14 out of 22 GOLD nodes, that is 64%.
 Aligned 14 out of 16 CONV nodes, that is 88%.
@@ -1111,10 +1111,10 @@ Node GOLD s6l1 / news-media (LN)          mismatch in concept:         GOLD = ne
 Node GOLD s6l1 / news-media (LN)          mismatch in :name:           GOLD = s6n2 unmapped            CONV = 
 Node GOLD s6l1 / news-media (LN)          mismatch in :refer-number:   GOLD =                          CONV = plural
 Node GOLD s6n2 / name                     mismatch in concept:         GOLD = name                     CONV = UNMAPPED
-Node GOLD s6n2 / name                     mismatch in :op1:            GOLD = "Lidové"                 CONV = UNMAPPED
-Node GOLD s6n2 / name                     mismatch in :op2:            GOLD = "noviny"                 CONV = UNMAPPED
+Node GOLD s6n2 / name                     mismatch in :op1:            GOLD = Lidové                   CONV = UNMAPPED
+Node GOLD s6n2 / name                     mismatch in :op2:            GOLD = noviny                   CONV = UNMAPPED
 Node GOLD s6n3 / name                     mismatch in concept:         GOLD = name                     CONV = UNMAPPED
-Node GOLD s6n3 / name                     mismatch in :op1:            GOLD = "Slovensko"              CONV = UNMAPPED
+Node GOLD s6n3 / name                     mismatch in :op1:            GOLD = Slovensko                CONV = UNMAPPED
 Node GOLD s6p1 / pondělí (od pondělí)     mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s6p3 / pátek (v pátek)          mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s6r2 / date-interval            mismatch in concept:         GOLD = date-interval            CONV = UNMAPPED
@@ -1220,10 +1220,10 @@ Node GOLD s6d3 / date-entity              mismatch in :weekday:        GOLD = s6
 Node GOLD s6d4 / date-entity              mismatch in concept:         GOLD = date-entity              CONV = UNMAPPED
 Node GOLD s6d4 / date-entity              mismatch in :weekday:        GOLD = s6s7                     CONV = UNMAPPED
 Node GOLD s6n2 / name                     mismatch in concept:         GOLD = name                     CONV = UNMAPPED
-Node GOLD s6n2 / name                     mismatch in :op1:            GOLD = "Lidové"                 CONV = UNMAPPED
-Node GOLD s6n2 / name                     mismatch in :op2:            GOLD = "noviny"                 CONV = UNMAPPED
+Node GOLD s6n2 / name                     mismatch in :op1:            GOLD = Lidové                   CONV = UNMAPPED
+Node GOLD s6n2 / name                     mismatch in :op2:            GOLD = noviny                   CONV = UNMAPPED
 Node GOLD s6n3 / name                     mismatch in concept:         GOLD = name                     CONV = UNMAPPED
-Node GOLD s6n3 / name                     mismatch in :op1:            GOLD = "Slovensko"              CONV = UNMAPPED
+Node GOLD s6n3 / name                     mismatch in :op1:            GOLD = Slovensko                CONV = UNMAPPED
 Node GOLD s6r2 / date-interval            mismatch in concept:         GOLD = date-interval            CONV = UNMAPPED
 Node GOLD s6r2 / date-interval            mismatch in :op1:            GOLD = s6d1                     CONV = UNMAPPED
 Node GOLD s6r2 / date-interval            mismatch in :op2:            GOLD = s6d2                     CONV = UNMAPPED
@@ -2207,7 +2207,7 @@ GOLD                                                                            
                                                          :place s11n1)))))                                      
 
 Node-token alignments:
-File GOLD: 4 nodes unaligned: s11c1/číst-002, s11e1/person, s11n2/name["Lidové" "noviny"], s11s1/say-91.
+File GOLD: 4 nodes unaligned: s11c1/číst-002, s11e1/person, s11n2/name[Lidové noviny], s11s1/say-91.
 File CONV: 1 nodes unaligned: s11p1/person.
              GOLD  CONV
 1  Vážení    s11v2 s11v2
@@ -2244,21 +2244,21 @@ Matched 9 out of 11 CONV token sets => precision 82%.
 Ambiguous projection of GOLD node s11n1 (v Lidových novinách) to 2 CONV nodes [s11l1 (Lidových), s11n1 (v novinách)]
   The winner is GOLD node s11n1 (v Lidových novinách) <--> CONV node s11n1 (v novinách): econcepts=news-media/noviny, match=0 (), weak match=1 (concept).
 
-Correspondence GOLD s11d1 (z dopisů)                = CONV s11d1 (z dopisů)
-Correspondence GOLD s11e1 (person)                  = CONV s11p1 (person)
-Correspondence GOLD s11h1 (že hodnotíte)            = CONV s11h1 (že hodnotíte)
-Correspondence GOLD s11k1 (kladně)                  = CONV s11k1 (kladně)
-Correspondence GOLD s11n1 (v Lidových novinách)     = CONV s11n1 (v novinách)
-Correspondence GOLD s11p1 (čtenáři vašich)          = CONV s11c1 (čtenáři vašich)
-Correspondence GOLD s11p2 (probíhají)               = CONV s11p2 (probíhají)
-Correspondence GOLD s11v1 (víme)                    = CONV s11v1 (víme)
-Correspondence GOLD s11v2 (Vážení)                  = CONV s11v2 (Vážení)
-Correspondence GOLD s11v3 (většinou)                = CONV s11v3 (většinou)
-Correspondence GOLD s11z1 (změny které)             = CONV s11z1 (změny které)
-Correspondence GOLD s11c1 (číst-002)                = CONV 
-Correspondence GOLD s11n2 (name["Lidové" "noviny"]) = CONV 
-Correspondence GOLD s11s1 (say-91)                  = CONV 
-Correspondence GOLD                                 = CONV s11l1 (Lidových)
+Correspondence GOLD s11d1 (z dopisů)            = CONV s11d1 (z dopisů)
+Correspondence GOLD s11e1 (person)              = CONV s11p1 (person)
+Correspondence GOLD s11h1 (že hodnotíte)        = CONV s11h1 (že hodnotíte)
+Correspondence GOLD s11k1 (kladně)              = CONV s11k1 (kladně)
+Correspondence GOLD s11n1 (v Lidových novinách) = CONV s11n1 (v novinách)
+Correspondence GOLD s11p1 (čtenáři vašich)      = CONV s11c1 (čtenáři vašich)
+Correspondence GOLD s11p2 (probíhají)           = CONV s11p2 (probíhají)
+Correspondence GOLD s11v1 (víme)                = CONV s11v1 (víme)
+Correspondence GOLD s11v2 (Vážení)              = CONV s11v2 (Vážení)
+Correspondence GOLD s11v3 (většinou)            = CONV s11v3 (většinou)
+Correspondence GOLD s11z1 (změny které)         = CONV s11z1 (změny které)
+Correspondence GOLD s11c1 (číst-002)            = CONV 
+Correspondence GOLD s11n2 (name[Lidové noviny]) = CONV 
+Correspondence GOLD s11s1 (say-91)              = CONV 
+Correspondence GOLD                             = CONV s11l1 (Lidových)
 
 Aligned 11 out of 14 GOLD nodes, that is 79%.
 Aligned 11 out of 12 CONV nodes, that is 92%.
@@ -2273,12 +2273,12 @@ Node GOLD s11d1 / dopis (z dopisů)                 mismatch in :ARG0:          
 Node GOLD s11h1 / hodnotit-003 (že hodnotíte)      mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
 Node GOLD s11n1 / news-media (v Lidových novinách) mismatch in concept:         GOLD = news-media                 CONV = noviny
 Node GOLD s11n1 / news-media (v Lidových novinách) mismatch in :name:           GOLD = s11n2 unmapped             CONV = 
-Node GOLD s11n1 / news-media (v Lidových novinách) mismatch in :wiki:           GOLD = "Q1197747"                 CONV = 
+Node GOLD s11n1 / news-media (v Lidových novinách) mismatch in :wiki:           GOLD = Q1197747                   CONV = 
 Node GOLD s11n1 / news-media (v Lidových novinách) mismatch in :mod:            GOLD =                            CONV = s11l1
 Node GOLD s11n1 / news-media (v Lidových novinách) mismatch in :refer-number:   GOLD =                            CONV = plural
 Node GOLD s11n2 / name                             mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s11n2 / name                             mismatch in :op1:            GOLD = "Lidové"                   CONV = UNMAPPED
-Node GOLD s11n2 / name                             mismatch in :op2:            GOLD = "noviny"                   CONV = UNMAPPED
+Node GOLD s11n2 / name                             mismatch in :op1:            GOLD = Lidové                     CONV = UNMAPPED
+Node GOLD s11n2 / name                             mismatch in :op2:            GOLD = noviny                     CONV = UNMAPPED
 Node GOLD s11p1 / person (čtenáři vašich)          mismatch in concept:         GOLD = person                     CONV = čtenář
 Node GOLD s11p1 / person (čtenáři vašich)          mismatch in :ARG0-of:        GOLD = s11c1 unmapped             CONV = 
 Node GOLD s11p1 / person (čtenáři vašich)          mismatch in :refer-person:   GOLD = 2nd                        CONV = 
@@ -2315,7 +2315,7 @@ Node CONV s11n1 / noviny (v novinách)         mismatch in concept:         CONV
 Node CONV s11n1 / noviny (v novinách)         mismatch in :mod:            CONV = s11l1 unmapped             GOLD = 
 Node CONV s11n1 / noviny (v novinách)         mismatch in :refer-number:   CONV = plural                     GOLD = 
 Node CONV s11n1 / noviny (v novinách)         mismatch in :name:           CONV =                            GOLD = s11n2
-Node CONV s11n1 / noviny (v novinách)         mismatch in :wiki:           CONV =                            GOLD = "Q1197747"
+Node CONV s11n1 / noviny (v novinách)         mismatch in :wiki:           CONV =                            GOLD = Q1197747
 Node CONV s11p2 / probíhat-002 (probíhají)    mismatch in :modal-strength: CONV =                            GOLD = full-affirmative
 Node CONV s11v1 / vědět-001 (víme)            mismatch in :start:          CONV = s11d1 mapped to GOLD s11d1 GOLD = 
 Node CONV s11v1 / vědět-001 (víme)            mismatch in :ARG2:           CONV =                            GOLD = s11d1
@@ -2326,8 +2326,8 @@ Node GOLD s11c1 / číst-002                    mismatch in :ARG1:           GOL
 Node GOLD s11c1 / číst-002                    mismatch in :aspect:         GOLD = habitual                   CONV = UNMAPPED
 Node GOLD s11c1 / číst-002                    mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node GOLD s11n2 / name                        mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s11n2 / name                        mismatch in :op1:            GOLD = "Lidové"                   CONV = UNMAPPED
-Node GOLD s11n2 / name                        mismatch in :op2:            GOLD = "noviny"                   CONV = UNMAPPED
+Node GOLD s11n2 / name                        mismatch in :op1:            GOLD = Lidové                     CONV = UNMAPPED
+Node GOLD s11n2 / name                        mismatch in :op2:            GOLD = noviny                     CONV = UNMAPPED
 Node GOLD s11s1 / say-91                      mismatch in concept:         GOLD = say-91                     CONV = UNMAPPED
 Node GOLD s11s1 / say-91                      mismatch in :ARG1:           GOLD = s11v1                      CONV = UNMAPPED
 Node GOLD s11s1 / say-91                      mismatch in :aspect:         GOLD = activity                   CONV = UNMAPPED
@@ -2394,7 +2394,7 @@ GOLD                                                                            
                                                                           :name (s12n4 / name :op1 "LD")))))))  
 
 Node-token alignments:
-File GOLD: 5 nodes unaligned: s12c1/číst-002, s12n2/name["Lidová" "demokracie"], s12n3/name["Lidové" "noviny"], s12n4/name["LD"], s12s/say-91.
+File GOLD: 5 nodes unaligned: s12c1/číst-002, s12n2/name[Lidová demokracie], s12n3/name[Lidové noviny], s12n4/name[LD], s12s/say-91.
 File CONV: 0 nodes unaligned: .
               GOLD  CONV
 1  Také       s12t1 s12t1
@@ -2438,26 +2438,26 @@ Ambiguous projection of GOLD node s12n1 (Lidových novin) to 2 CONV nodes [s12l4
   The winner is GOLD node s12d1 (Lidové demokracie) <--> CONV node s12d1 (demokracie): econcepts=news-media/demokracie, match=0 (), weak match=1 (concept).
   The winner is GOLD node s12n1 (Lidových novin) <--> CONV node s12l4 (Lidových): econcepts=news-media/Lidový, match=0 (), weak match=1 (concept).
 
-Correspondence GOLD s12b1 (bývalí)                      = CONV s12b1 (bývalí)
-Correspondence GOLD s12d1 (Lidové demokracie)           = CONV s12d1 (demokracie)
-Correspondence GOLD s12d2 (dalším)                      = CONV s12d2 (dalším)
-Correspondence GOLD s12e1 (nám)                         = CONV s12p2 (nám)
-Correspondence GOLD s12l2 (i když litují)               = CONV s12l2 (i když litují)
-Correspondence GOLD s12l3 (LD)                          = CONV s12l3 (LD)
-Correspondence GOLD s12n1 (Lidových novin)              = CONV s12l4 (Lidových)
-Correspondence GOLD s12o1 (s odběrem)                   = CONV s12o1 (s odběrem)
-Correspondence GOLD s12p1 (píší)                        = CONV s12p1 (píší)
-Correspondence GOLD s12p2 (čtenáři)                     = CONV s12c1 (čtenáři)
-Correspondence GOLD s12s1 (že souhlasí)                 = CONV s12s1 (že souhlasí)
-Correspondence GOLD s12t1 (Také)                        = CONV s12t1 (Také)
-Correspondence GOLD s12z1 (zániku)                      = CONV s12z1 (zániku)
-Correspondence GOLD s12c1 (číst-002)                    = CONV 
-Correspondence GOLD s12n2 (name["Lidová" "demokracie"]) = CONV 
-Correspondence GOLD s12n3 (name["Lidové" "noviny"])     = CONV 
-Correspondence GOLD s12n4 (name["LD"])                  = CONV 
-Correspondence GOLD s12s  (say-91)                      = CONV 
-Correspondence GOLD                                     = CONV s12l1 (Lidové)
-Correspondence GOLD                                     = CONV s12n1 (novin)
+Correspondence GOLD s12b1 (bývalí)                  = CONV s12b1 (bývalí)
+Correspondence GOLD s12d1 (Lidové demokracie)       = CONV s12d1 (demokracie)
+Correspondence GOLD s12d2 (dalším)                  = CONV s12d2 (dalším)
+Correspondence GOLD s12e1 (nám)                     = CONV s12p2 (nám)
+Correspondence GOLD s12l2 (i když litují)           = CONV s12l2 (i když litují)
+Correspondence GOLD s12l3 (LD)                      = CONV s12l3 (LD)
+Correspondence GOLD s12n1 (Lidových novin)          = CONV s12l4 (Lidových)
+Correspondence GOLD s12o1 (s odběrem)               = CONV s12o1 (s odběrem)
+Correspondence GOLD s12p1 (píší)                    = CONV s12p1 (píší)
+Correspondence GOLD s12p2 (čtenáři)                 = CONV s12c1 (čtenáři)
+Correspondence GOLD s12s1 (že souhlasí)             = CONV s12s1 (že souhlasí)
+Correspondence GOLD s12t1 (Také)                    = CONV s12t1 (Také)
+Correspondence GOLD s12z1 (zániku)                  = CONV s12z1 (zániku)
+Correspondence GOLD s12c1 (číst-002)                = CONV 
+Correspondence GOLD s12n2 (name[Lidová demokracie]) = CONV 
+Correspondence GOLD s12n3 (name[Lidové noviny])     = CONV 
+Correspondence GOLD s12n4 (name[LD])                = CONV 
+Correspondence GOLD s12s  (say-91)                  = CONV 
+Correspondence GOLD                                 = CONV s12l1 (Lidové)
+Correspondence GOLD                                 = CONV s12n1 (novin)
 
 Aligned 13 out of 18 GOLD nodes, that is 72%.
 Aligned 13 out of 15 CONV nodes, that is 87%.
@@ -2469,7 +2469,7 @@ Node GOLD s12c1 / číst-002                       mismatch in :aspect:         
 Node GOLD s12c1 / číst-002                       mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node GOLD s12d1 / news-media (Lidové demokracie) mismatch in concept:         GOLD = news-media                 CONV = demokracie
 Node GOLD s12d1 / news-media (Lidové demokracie) mismatch in :name:           GOLD = s12n2 unmapped             CONV = 
-Node GOLD s12d1 / news-media (Lidové demokracie) mismatch in :wiki:           GOLD = "Q12033489"                CONV = 
+Node GOLD s12d1 / news-media (Lidové demokracie) mismatch in :wiki:           GOLD = Q12033489                  CONV = 
 Node GOLD s12d1 / news-media (Lidové demokracie) mismatch in :mod:            GOLD =                            CONV = s12l1
 Node GOLD s12d1 / news-media (Lidové demokracie) mismatch in :refer-number:   GOLD =                            CONV = singular
 Node GOLD s12l2 / litovat-001 (i když litují)    mismatch in :ARG0:           GOLD = s12c1 unmapped             CONV = s12c1
@@ -2477,19 +2477,19 @@ Node GOLD s12l2 / litovat-001 (i když litují)    mismatch in :aspect:         
 Node GOLD s12l2 / litovat-001 (i když litují)    mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
 Node GOLD s12l3 / news-media (LD)                mismatch in concept:         GOLD = news-media                 CONV = LD
 Node GOLD s12l3 / news-media (LD)                mismatch in :name:           GOLD = s12n4 unmapped             CONV = 
-Node GOLD s12l3 / news-media (LD)                mismatch in :wiki:           GOLD = "Q12033489"                CONV = 
+Node GOLD s12l3 / news-media (LD)                mismatch in :wiki:           GOLD = Q12033489                  CONV = 
 Node GOLD s12l3 / news-media (LD)                mismatch in :refer-number:   GOLD =                            CONV = singular
 Node GOLD s12n1 / news-media (Lidových novin)    mismatch in concept:         GOLD = news-media                 CONV = Lidový
 Node GOLD s12n1 / news-media (Lidových novin)    mismatch in :name:           GOLD = s12n3 unmapped             CONV = 
-Node GOLD s12n1 / news-media (Lidových novin)    mismatch in :wiki:           GOLD = "Q1197747"                 CONV = 
+Node GOLD s12n1 / news-media (Lidových novin)    mismatch in :wiki:           GOLD = Q1197747                   CONV = 
 Node GOLD s12n2 / name                           mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s12n2 / name                           mismatch in :op1:            GOLD = "Lidová"                   CONV = UNMAPPED
-Node GOLD s12n2 / name                           mismatch in :op2:            GOLD = "demokracie"               CONV = UNMAPPED
+Node GOLD s12n2 / name                           mismatch in :op1:            GOLD = Lidová                     CONV = UNMAPPED
+Node GOLD s12n2 / name                           mismatch in :op2:            GOLD = demokracie                 CONV = UNMAPPED
 Node GOLD s12n3 / name                           mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s12n3 / name                           mismatch in :op1:            GOLD = "Lidové"                   CONV = UNMAPPED
-Node GOLD s12n3 / name                           mismatch in :op2:            GOLD = "noviny"                   CONV = UNMAPPED
+Node GOLD s12n3 / name                           mismatch in :op1:            GOLD = Lidové                     CONV = UNMAPPED
+Node GOLD s12n3 / name                           mismatch in :op2:            GOLD = noviny                     CONV = UNMAPPED
 Node GOLD s12n4 / name                           mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s12n4 / name                           mismatch in :op1:            GOLD = "LD"                       CONV = UNMAPPED
+Node GOLD s12n4 / name                           mismatch in :op1:            GOLD = LD                         CONV = UNMAPPED
 Node GOLD s12o1 / odebírat-003 (s odběrem)       mismatch in concept:         GOLD = odebírat-003               CONV = odběr
 Node GOLD s12o1 / odebírat-003 (s odběrem)       mismatch in :ARG0:           GOLD = s12c1 unmapped             CONV = 
 Node GOLD s12o1 / odebírat-003 (s odběrem)       mismatch in :ARG1:           GOLD = s12n1 mapped to CONV s12l4 CONV = s12n1
@@ -2539,7 +2539,7 @@ Node CONV s12d1 / demokracie (demokracie)     mismatch in concept:         CONV 
 Node CONV s12d1 / demokracie (demokracie)     mismatch in :mod:            CONV = s12l1 unmapped             GOLD = 
 Node CONV s12d1 / demokracie (demokracie)     mismatch in :refer-number:   CONV = singular                   GOLD = 
 Node CONV s12d1 / demokracie (demokracie)     mismatch in :name:           CONV =                            GOLD = s12n2
-Node CONV s12d1 / demokracie (demokracie)     mismatch in :wiki:           CONV =                            GOLD = "Q12033489"
+Node CONV s12d1 / demokracie (demokracie)     mismatch in :wiki:           CONV =                            GOLD = Q12033489
 Node CONV s12l1 / Lidový (Lidové)             mismatch in concept:         CONV = Lidový                     GOLD = UNMAPPED
 Node CONV s12l2 / litovat-001 (i když litují) mismatch in :ARG0:           CONV = s12c1 mapped to GOLD s12p2 GOLD = s12c1
 Node CONV s12l2 / litovat-001 (i když litují) mismatch in :aspect:         CONV = activity                   GOLD = state
@@ -2547,10 +2547,10 @@ Node CONV s12l2 / litovat-001 (i když litují) mismatch in :modal-strength: CON
 Node CONV s12l3 / LD (LD)                     mismatch in concept:         CONV = LD                         GOLD = news-media
 Node CONV s12l3 / LD (LD)                     mismatch in :refer-number:   CONV = singular                   GOLD = 
 Node CONV s12l3 / LD (LD)                     mismatch in :name:           CONV =                            GOLD = s12n4
-Node CONV s12l3 / LD (LD)                     mismatch in :wiki:           CONV =                            GOLD = "Q12033489"
+Node CONV s12l3 / LD (LD)                     mismatch in :wiki:           CONV =                            GOLD = Q12033489
 Node CONV s12l4 / Lidový (Lidových)           mismatch in concept:         CONV = Lidový                     GOLD = news-media
 Node CONV s12l4 / Lidový (Lidových)           mismatch in :name:           CONV =                            GOLD = s12n3
-Node CONV s12l4 / Lidový (Lidových)           mismatch in :wiki:           CONV =                            GOLD = "Q1197747"
+Node CONV s12l4 / Lidový (Lidových)           mismatch in :wiki:           CONV =                            GOLD = Q1197747
 Node CONV s12n1 / noviny (novin)              mismatch in concept:         CONV = noviny                     GOLD = UNMAPPED
 Node CONV s12n1 / noviny (novin)              mismatch in :mod:            CONV = s12l4                      GOLD = UNMAPPED
 Node CONV s12n1 / noviny (novin)              mismatch in :refer-number:   CONV = plural                     GOLD = UNMAPPED
@@ -2578,13 +2578,13 @@ Node GOLD s12c1 / číst-002                    mismatch in :ARG1:           GOL
 Node GOLD s12c1 / číst-002                    mismatch in :aspect:         GOLD = habitual                   CONV = UNMAPPED
 Node GOLD s12c1 / číst-002                    mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node GOLD s12n2 / name                        mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s12n2 / name                        mismatch in :op1:            GOLD = "Lidová"                   CONV = UNMAPPED
-Node GOLD s12n2 / name                        mismatch in :op2:            GOLD = "demokracie"               CONV = UNMAPPED
+Node GOLD s12n2 / name                        mismatch in :op1:            GOLD = Lidová                     CONV = UNMAPPED
+Node GOLD s12n2 / name                        mismatch in :op2:            GOLD = demokracie                 CONV = UNMAPPED
 Node GOLD s12n3 / name                        mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s12n3 / name                        mismatch in :op1:            GOLD = "Lidové"                   CONV = UNMAPPED
-Node GOLD s12n3 / name                        mismatch in :op2:            GOLD = "noviny"                   CONV = UNMAPPED
+Node GOLD s12n3 / name                        mismatch in :op1:            GOLD = Lidové                     CONV = UNMAPPED
+Node GOLD s12n3 / name                        mismatch in :op2:            GOLD = noviny                     CONV = UNMAPPED
 Node GOLD s12n4 / name                        mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s12n4 / name                        mismatch in :op1:            GOLD = "LD"                       CONV = UNMAPPED
+Node GOLD s12n4 / name                        mismatch in :op1:            GOLD = LD                         CONV = UNMAPPED
 Node GOLD s12s / say-91                       mismatch in concept:         GOLD = say-91                     CONV = UNMAPPED
 Node GOLD s12s / say-91                       mismatch in :ARG1:           GOLD = s12p1                      CONV = UNMAPPED
 Node GOLD s12s / say-91                       mismatch in :aspect:         GOLD = activity                   CONV = UNMAPPED
@@ -2798,7 +2798,7 @@ GOLD                                                                            
                                           :ARG3 (s14r1 / ředitel))))                     
 
 Node-token alignments:
-File GOLD: 4 nodes unaligned: s14h1/have-org-role-91, s14n1/name["Michal" "Klíma"], s14n2/name["LN"], s14p1/publication-91.
+File GOLD: 4 nodes unaligned: s14h1/have-org-role-91, s14n1/name[Michal Klíma], s14n2/name[LN], s14p1/publication-91.
 File CONV: 0 nodes unaligned: .
           GOLD  CONV
 1 Michal  s14k1 s14m1
@@ -2821,15 +2821,15 @@ Matched 2 out of 5 CONV token sets => precision 40%.
 Ambiguous projection of GOLD node s14k1 (Michal Klíma) to 2 CONV nodes [s14k1 (Klíma), s14m1 (Michal)]
   The winner is GOLD node s14k1 (Michal Klíma) <--> CONV node s14m1 (Michal): econcepts=person/Michal, match=0 (), weak match=1 (concept).
 
-Correspondence GOLD s14k1 (Michal Klíma)           = CONV s14m1 (Michal)
-Correspondence GOLD s14n5 (LN)                     = CONV s14l1 (LN)
-Correspondence GOLD s14r1 (ředitel)                = CONV s14r1 (ředitel)
-Correspondence GOLD s14h1 (have-org-role-91)       = CONV 
-Correspondence GOLD s14n1 (name["Michal" "Klíma"]) = CONV 
-Correspondence GOLD s14n2 (name["LN"])             = CONV 
-Correspondence GOLD s14p1 (publication-91)         = CONV 
-Correspondence GOLD                                = CONV s14i1 (,)
-Correspondence GOLD                                = CONV s14k1 (Klíma)
+Correspondence GOLD s14k1 (Michal Klíma)       = CONV s14m1 (Michal)
+Correspondence GOLD s14n5 (LN)                 = CONV s14l1 (LN)
+Correspondence GOLD s14r1 (ředitel)            = CONV s14r1 (ředitel)
+Correspondence GOLD s14h1 (have-org-role-91)   = CONV 
+Correspondence GOLD s14n1 (name[Michal Klíma]) = CONV 
+Correspondence GOLD s14n2 (name[LN])           = CONV 
+Correspondence GOLD s14p1 (publication-91)     = CONV 
+Correspondence GOLD                            = CONV s14i1 (,)
+Correspondence GOLD                            = CONV s14k1 (Klíma)
 
 Aligned 3 out of 7 GOLD nodes, that is 43%.
 Aligned 3 out of 5 CONV nodes, that is 60%.
@@ -2844,13 +2844,13 @@ Node GOLD s14k1 / person (Michal Klíma) mismatch in concept:         GOLD = per
 Node GOLD s14k1 / person (Michal Klíma) mismatch in :ARG1-of:        GOLD = s14h1 unmapped   CONV = 
 Node GOLD s14k1 / person (Michal Klíma) mismatch in :name:           GOLD = s14n1 unmapped   CONV = 
 Node GOLD s14n1 / name                  mismatch in concept:         GOLD = name             CONV = UNMAPPED
-Node GOLD s14n1 / name                  mismatch in :op1:            GOLD = "Michal"         CONV = UNMAPPED
-Node GOLD s14n1 / name                  mismatch in :op2:            GOLD = "Klíma"          CONV = UNMAPPED
+Node GOLD s14n1 / name                  mismatch in :op1:            GOLD = Michal           CONV = UNMAPPED
+Node GOLD s14n1 / name                  mismatch in :op2:            GOLD = Klíma            CONV = UNMAPPED
 Node GOLD s14n2 / name                  mismatch in concept:         GOLD = name             CONV = UNMAPPED
-Node GOLD s14n2 / name                  mismatch in :op1:            GOLD = "LN"             CONV = UNMAPPED
+Node GOLD s14n2 / name                  mismatch in :op1:            GOLD = LN               CONV = UNMAPPED
 Node GOLD s14n5 / news-media (LN)       mismatch in concept:         GOLD = news-media       CONV = LN
 Node GOLD s14n5 / news-media (LN)       mismatch in :name:           GOLD = s14n2 unmapped   CONV = 
-Node GOLD s14n5 / news-media (LN)       mismatch in :wiki:           GOLD = "Q1197747"       CONV = 
+Node GOLD s14n5 / news-media (LN)       mismatch in :wiki:           GOLD = Q1197747         CONV = 
 Node GOLD s14n5 / news-media (LN)       mismatch in :refer-number:   GOLD =                  CONV = plural
 Node GOLD s14p1 / publication-91        mismatch in concept:         GOLD = publication-91   CONV = UNMAPPED
 Node GOLD s14p1 / publication-91        mismatch in :ARG0:           GOLD = s14k1            CONV = UNMAPPED
@@ -2880,7 +2880,7 @@ Node CONV s14k1 / Klíma (Klíma)     mismatch in :refer-number:   CONV = singul
 Node CONV s14l1 / LN (LN)           mismatch in concept:         CONV = LN                         GOLD = news-media
 Node CONV s14l1 / LN (LN)           mismatch in :refer-number:   CONV = plural                     GOLD = 
 Node CONV s14l1 / LN (LN)           mismatch in :name:           CONV =                            GOLD = s14n2
-Node CONV s14l1 / LN (LN)           mismatch in :wiki:           CONV =                            GOLD = "Q1197747"
+Node CONV s14l1 / LN (LN)           mismatch in :wiki:           CONV =                            GOLD = Q1197747
 Node CONV s14m1 / Michal (Michal)   mismatch in concept:         CONV = Michal                     GOLD = person
 Node CONV s14m1 / Michal (Michal)   mismatch in :ARG1-of:        CONV =                            GOLD = s14h1
 Node CONV s14m1 / Michal (Michal)   mismatch in :name:           CONV =                            GOLD = s14n1
@@ -2892,10 +2892,10 @@ Node GOLD s14h1 / have-org-role-91  mismatch in :ARG3:           GOLD = s14r1   
 Node GOLD s14h1 / have-org-role-91  mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s14h1 / have-org-role-91  mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node GOLD s14n1 / name              mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s14n1 / name              mismatch in :op1:            GOLD = "Michal"                   CONV = UNMAPPED
-Node GOLD s14n1 / name              mismatch in :op2:            GOLD = "Klíma"                    CONV = UNMAPPED
+Node GOLD s14n1 / name              mismatch in :op1:            GOLD = Michal                     CONV = UNMAPPED
+Node GOLD s14n1 / name              mismatch in :op2:            GOLD = Klíma                      CONV = UNMAPPED
 Node GOLD s14n2 / name              mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s14n2 / name              mismatch in :op1:            GOLD = "LN"                       CONV = UNMAPPED
+Node GOLD s14n2 / name              mismatch in :op1:            GOLD = LN                         CONV = UNMAPPED
 Node GOLD s14p1 / publication-91    mismatch in concept:         GOLD = publication-91             CONV = UNMAPPED
 Node GOLD s14p1 / publication-91    mismatch in :ARG0:           GOLD = s14k1                      CONV = UNMAPPED
 Document-level relation from node CONV s14l1 / LN (LN) (GOLD s14n5)                     :same-entity to node CONV s12n1 / noviny (novin) (GOLD UNMAPPED)     not found in GOLD

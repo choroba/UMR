@@ -2262,7 +2262,7 @@ GOLD                                                                  CONV
     :aspect performance)                                                      :aspect performance)
 
 Node-token alignments:
-File GOLD: 11 nodes unaligned: s13a3/and, s13a6/and, s13a7/and, s13c2/city, s13c3/city, s13h2/have-place-91, s13n2/name["Sparta"], s13n3/name["Athens"], s13n4/name["Cyrus"], s13n5/name["Asia"], s13n6/name["Graecia"].
+File GOLD: 11 nodes unaligned: s13a3/and, s13a6/and, s13a7/and, s13c2/city, s13c3/city, s13h2/have-place-91, s13n2/name[Sparta], s13n3/name[Athens], s13n4/name[Cyrus], s13n5/name[Asia], s13n6/name[Graecia].
 File CONV: 6 nodes unaligned: s13e1/entity, s13e2/entity, s13e3/entity, s13e4/event, s13e5/entity, s13e6/entity.
                 GOLD  CONV
 1  postea       s13a2 s13c2
@@ -2325,58 +2325,58 @@ Matched 30 out of 34 CONV token sets => precision 88%.
 Ambiguous projection of CONV node s13c2 (postea quam coepere ,) to 2 GOLD nodes [s13a2 (postea quam), s13c4 (coepere)]
   The winner is CONV node s13c2 (postea quam coepere ,) <--> GOLD node s13c4 (coepere): econcepts=coepio-01/coepio-01, match=2 (concept=coepio-01,:aspect=performance), weak match=4 (concept,:ARG0,:ARG1,:aspect).
 
-Correspondence GOLD s13a  (atque)           = CONV s13a7 (atque)
-Correspondence GOLD s13a4 (et)              = CONV s13a3 (et)
-Correspondence GOLD s13a5 (atque)           = CONV s13a6 (atque)
-Correspondence GOLD s13b  (in bello)        = CONV s13b2 (in bello)
-Correspondence GOLD s13b2 (belli)           = CONV s13b1 (belli)
-Correspondence GOLD s13c  (compertum est)   = CONV s13c1 (compertum est)
-Correspondence GOLD s13c4 (coepere)         = CONV s13c2 (postea quam coepere ,)
-Correspondence GOLD s13c5 (causam)          = CONV s13c4 (causam)
-Correspondence GOLD s13c6 (lubidinem)       = CONV s13l2 (lubidinem)
-Correspondence GOLD s13d  (demum)           = CONV s13d2 (demum)
-Correspondence GOLD s13d2 (dominandi)       = CONV s13d1 (dominandi)
-Correspondence GOLD s13g  (gloriam)         = CONV s13g2 (gloriam)
-Correspondence GOLD s13h  (habere)          = CONV s13h1 (habere)
-Correspondence GOLD s13i  (ingenium)        = CONV s13i2 (ingenium)
-Correspondence GOLD s13i2 (in imperio)      = CONV s13i1 (in imperio)
-Correspondence GOLD s13m  (plurumum)        = CONV s13m3 (plurumum)
-Correspondence GOLD s13m2 (maxumam)         = CONV s13m1 (maxumam)
-Correspondence GOLD s13m3 (maxumo)          = CONV s13m2 (maxumo)
-Correspondence GOLD s13n  (negotiis)        = CONV s13n2 (negotiis)
-Correspondence GOLD s13n7 (nationes)        = CONV s13n1 (nationes)
-Correspondence GOLD s13p  (periculo)        = CONV s13p2 (periculo)
-Correspondence GOLD s13p2 (posse)           = CONV s13p3 (posse)
-Correspondence GOLD s13p3 (Lacedaemonii)    = CONV s13l1 (Lacedaemonii)
-Correspondence GOLD s13p4 (Athenienses)     = CONV s13a4 (Athenienses)
-Correspondence GOLD s13p5 (putare)          = CONV s13p1 (putare)
-Correspondence GOLD s13p6 (Cyrus)           = CONV s13c3 (Cyrus)
-Correspondence GOLD s13r2 (in Asia)         = CONV s13a2 (in Asia)
-Correspondence GOLD s13r3 (in Graecia)      = CONV s13g1 (in Graecia)
-Correspondence GOLD s13s  (subigere)        = CONV s13s1 (subigere)
-Correspondence GOLD s13t  (tum)             = CONV s13t1 (tum)
-Correspondence GOLD s13u  (urbis)           = CONV s13u1 (urbis)
-Correspondence GOLD s13a2 (postea quam)     = CONV 
-Correspondence GOLD s13a3 (and)             = CONV 
-Correspondence GOLD s13a6 (and)             = CONV 
-Correspondence GOLD s13a7 (and)             = CONV 
-Correspondence GOLD s13c2 (city)            = CONV 
-Correspondence GOLD s13c3 (city)            = CONV 
-Correspondence GOLD s13h2 (have-place-91)   = CONV 
-Correspondence GOLD s13n2 (name["Sparta"])  = CONV 
-Correspondence GOLD s13n3 (name["Athens"])  = CONV 
-Correspondence GOLD s13n4 (name["Cyrus"])   = CONV 
-Correspondence GOLD s13n5 (name["Asia"])    = CONV 
-Correspondence GOLD s13n6 (name["Graecia"]) = CONV 
-Correspondence GOLD                         = CONV s13a1 (,)
-Correspondence GOLD                         = CONV s13a5 (, ,)
-Correspondence GOLD                         = CONV s13e1 (entity)
-Correspondence GOLD                         = CONV s13e2 (entity)
-Correspondence GOLD                         = CONV s13e3 (entity)
-Correspondence GOLD                         = CONV s13e4 (event)
-Correspondence GOLD                         = CONV s13e5 (entity)
-Correspondence GOLD                         = CONV s13e6 (entity)
-Correspondence GOLD                         = CONV s13v1 (vero)
+Correspondence GOLD s13a  (atque)         = CONV s13a7 (atque)
+Correspondence GOLD s13a4 (et)            = CONV s13a3 (et)
+Correspondence GOLD s13a5 (atque)         = CONV s13a6 (atque)
+Correspondence GOLD s13b  (in bello)      = CONV s13b2 (in bello)
+Correspondence GOLD s13b2 (belli)         = CONV s13b1 (belli)
+Correspondence GOLD s13c  (compertum est) = CONV s13c1 (compertum est)
+Correspondence GOLD s13c4 (coepere)       = CONV s13c2 (postea quam coepere ,)
+Correspondence GOLD s13c5 (causam)        = CONV s13c4 (causam)
+Correspondence GOLD s13c6 (lubidinem)     = CONV s13l2 (lubidinem)
+Correspondence GOLD s13d  (demum)         = CONV s13d2 (demum)
+Correspondence GOLD s13d2 (dominandi)     = CONV s13d1 (dominandi)
+Correspondence GOLD s13g  (gloriam)       = CONV s13g2 (gloriam)
+Correspondence GOLD s13h  (habere)        = CONV s13h1 (habere)
+Correspondence GOLD s13i  (ingenium)      = CONV s13i2 (ingenium)
+Correspondence GOLD s13i2 (in imperio)    = CONV s13i1 (in imperio)
+Correspondence GOLD s13m  (plurumum)      = CONV s13m3 (plurumum)
+Correspondence GOLD s13m2 (maxumam)       = CONV s13m1 (maxumam)
+Correspondence GOLD s13m3 (maxumo)        = CONV s13m2 (maxumo)
+Correspondence GOLD s13n  (negotiis)      = CONV s13n2 (negotiis)
+Correspondence GOLD s13n7 (nationes)      = CONV s13n1 (nationes)
+Correspondence GOLD s13p  (periculo)      = CONV s13p2 (periculo)
+Correspondence GOLD s13p2 (posse)         = CONV s13p3 (posse)
+Correspondence GOLD s13p3 (Lacedaemonii)  = CONV s13l1 (Lacedaemonii)
+Correspondence GOLD s13p4 (Athenienses)   = CONV s13a4 (Athenienses)
+Correspondence GOLD s13p5 (putare)        = CONV s13p1 (putare)
+Correspondence GOLD s13p6 (Cyrus)         = CONV s13c3 (Cyrus)
+Correspondence GOLD s13r2 (in Asia)       = CONV s13a2 (in Asia)
+Correspondence GOLD s13r3 (in Graecia)    = CONV s13g1 (in Graecia)
+Correspondence GOLD s13s  (subigere)      = CONV s13s1 (subigere)
+Correspondence GOLD s13t  (tum)           = CONV s13t1 (tum)
+Correspondence GOLD s13u  (urbis)         = CONV s13u1 (urbis)
+Correspondence GOLD s13a2 (postea quam)   = CONV 
+Correspondence GOLD s13a3 (and)           = CONV 
+Correspondence GOLD s13a6 (and)           = CONV 
+Correspondence GOLD s13a7 (and)           = CONV 
+Correspondence GOLD s13c2 (city)          = CONV 
+Correspondence GOLD s13c3 (city)          = CONV 
+Correspondence GOLD s13h2 (have-place-91) = CONV 
+Correspondence GOLD s13n2 (name[Sparta])  = CONV 
+Correspondence GOLD s13n3 (name[Athens])  = CONV 
+Correspondence GOLD s13n4 (name[Cyrus])   = CONV 
+Correspondence GOLD s13n5 (name[Asia])    = CONV 
+Correspondence GOLD s13n6 (name[Graecia]) = CONV 
+Correspondence GOLD                       = CONV s13a1 (,)
+Correspondence GOLD                       = CONV s13a5 (, ,)
+Correspondence GOLD                       = CONV s13e1 (entity)
+Correspondence GOLD                       = CONV s13e2 (entity)
+Correspondence GOLD                       = CONV s13e3 (entity)
+Correspondence GOLD                       = CONV s13e4 (event)
+Correspondence GOLD                       = CONV s13e5 (entity)
+Correspondence GOLD                       = CONV s13e6 (entity)
+Correspondence GOLD                       = CONV s13v1 (vero)
 
 Aligned 31 out of 43 GOLD nodes, that is 72%.
 Aligned 31 out of 40 CONV nodes, that is 78%.
@@ -2433,15 +2433,15 @@ Node GOLD s13m / multus (plurumum)           mismatch in :degree:          GOLD 
 Node GOLD s13m2 / magnus (maxumam)           mismatch in :degree:          GOLD = intensifier                CONV = 
 Node GOLD s13m3 / magnus (maxumo)            mismatch in :degree:          GOLD = intensifier                CONV = 
 Node GOLD s13n2 / name                       mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n2 / name                       mismatch in :op1:             GOLD = "Sparta"                   CONV = UNMAPPED
+Node GOLD s13n2 / name                       mismatch in :op1:             GOLD = Sparta                     CONV = UNMAPPED
 Node GOLD s13n3 / name                       mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n3 / name                       mismatch in :op1:             GOLD = "Athens"                   CONV = UNMAPPED
+Node GOLD s13n3 / name                       mismatch in :op1:             GOLD = Athens                     CONV = UNMAPPED
 Node GOLD s13n4 / name                       mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n4 / name                       mismatch in :op1:             GOLD = "Cyrus"                    CONV = UNMAPPED
+Node GOLD s13n4 / name                       mismatch in :op1:             GOLD = Cyrus                      CONV = UNMAPPED
 Node GOLD s13n5 / name                       mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n5 / name                       mismatch in :op1:             GOLD = "Asia"                     CONV = UNMAPPED
+Node GOLD s13n5 / name                       mismatch in :op1:             GOLD = Asia                       CONV = UNMAPPED
 Node GOLD s13n6 / name                       mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n6 / name                       mismatch in :op1:             GOLD = "Graecia"                  CONV = UNMAPPED
+Node GOLD s13n6 / name                       mismatch in :op1:             GOLD = Graecia                    CONV = UNMAPPED
 Node GOLD s13p2 / possum-NEW-01 (posse)      mismatch in :temporal:        GOLD = s13b mapped to CONV s13b2  CONV = 
 Node GOLD s13p2 / possum-NEW-01 (posse)      mismatch in :ARG1:            GOLD =                            CONV = s13e6
 Node GOLD s13p2 / possum-NEW-01 (posse)      mismatch in :place:           GOLD =                            CONV = s13b2
@@ -2599,15 +2599,15 @@ Node GOLD s13h2 / have-place-91                     mismatch in :ARG2:          
 Node GOLD s13h2 / have-place-91                     mismatch in :aspect:          GOLD = state                      CONV = UNMAPPED
 Node GOLD s13h2 / have-place-91                     mismatch in :modal-predicate: GOLD = s13p5                      CONV = UNMAPPED
 Node GOLD s13n2 / name                              mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n2 / name                              mismatch in :op1:             GOLD = "Sparta"                   CONV = UNMAPPED
+Node GOLD s13n2 / name                              mismatch in :op1:             GOLD = Sparta                     CONV = UNMAPPED
 Node GOLD s13n3 / name                              mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n3 / name                              mismatch in :op1:             GOLD = "Athens"                   CONV = UNMAPPED
+Node GOLD s13n3 / name                              mismatch in :op1:             GOLD = Athens                     CONV = UNMAPPED
 Node GOLD s13n4 / name                              mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n4 / name                              mismatch in :op1:             GOLD = "Cyrus"                    CONV = UNMAPPED
+Node GOLD s13n4 / name                              mismatch in :op1:             GOLD = Cyrus                      CONV = UNMAPPED
 Node GOLD s13n5 / name                              mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n5 / name                              mismatch in :op1:             GOLD = "Asia"                     CONV = UNMAPPED
+Node GOLD s13n5 / name                              mismatch in :op1:             GOLD = Asia                       CONV = UNMAPPED
 Node GOLD s13n6 / name                              mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s13n6 / name                              mismatch in :op1:             GOLD = "Graecia"                  CONV = UNMAPPED
+Node GOLD s13n6 / name                              mismatch in :op1:             GOLD = Graecia                    CONV = UNMAPPED
 Document-level relation from node GOLD author (CONV author)                            :full-affirmative to node GOLD s13b2 / bello-02 (belli) (CONV s13b1)           not found in CONV
 Document-level relation from node GOLD author (CONV author)                            :full-affirmative to node GOLD s13c / comperio-05 (compertum est) (CONV s13c1) not found in CONV
 Document-level relation from node GOLD author (CONV author)                            :full-affirmative to node GOLD s13c4 / coepio-01 (coepere) (CONV s13c2)        not found in CONV
@@ -5333,7 +5333,7 @@ Matched 19 out of 30 CONV token sets => precision 63%.
 
 Ambiguous projection of GOLD node s29p4 (person) to 2 CONV nodes [s29p3 (person), s29p4 (person)]
 Ambiguous projection of GOLD node s29v (de virtute) to 2 CONV nodes [s29g1 (de gloria), s29v1 (de virtute)]
-  The winner is GOLD node s29p4 (person) <--> CONV node s29p3 (person): econcepts=person/person, match=3 (concept=person,:refer-number=singular,:refer-person=2nd), weak match=3 (concept,:refer-number,:refer-person).
+  The winner is GOLD node s29p4 (person) <--> CONV node s29p4 (person): econcepts=person/person, match=3 (concept=person,:refer-number=singular,:refer-person=2nd), weak match=3 (concept,:refer-number,:refer-person).
   The winner is GOLD node s29v (de virtute) <--> CONV node s29v1 (de virtute): econcepts=virtus/virtus, match=3 (concept=virtus,:mod=s29m3 mapped to CONV s29m3,:refer-number=singular), weak match=3 (concept,:refer-number,:mod).
 
 Ambiguous projection of CONV node s29f3 (veluti ficta) to 2 GOLD nodes [s29r2 (veluti), s29t3 (ficta)]
@@ -5362,7 +5362,7 @@ Correspondence GOLD s29m2 (memores)       = CONV s29m2 (ubi memores ,)
 Correspondence GOLD s29m3 (magna)         = CONV s29m3 (magna)
 Correspondence GOLD s29p  (putant)        = CONV s29p1 (quia putant)
 Correspondence GOLD s29p2 (que)           = CONV s29p2 (que pleri)
-Correspondence GOLD s29p4 (person)        = CONV s29p3 (person)
+Correspondence GOLD s29p4 (person)        = CONV s29p4 (person)
 Correspondence GOLD s29p5 (quisque)       = CONV s29q2 (sibi quisque)
 Correspondence GOLD s29p6 (putat)         = CONV s29p5 (putat ,)
 Correspondence GOLD s29p7 (bonorum)       = CONV s29b1 (bonorum)
@@ -5392,7 +5392,7 @@ Correspondence GOLD                       = CONV s29e5 (entity)
 Correspondence GOLD                       = CONV s29e6 (entity)
 Correspondence GOLD                       = CONV s29e7 (entity)
 Correspondence GOLD                       = CONV s29e8 (entity)
-Correspondence GOLD                       = CONV s29p4 (person)
+Correspondence GOLD                       = CONV s29p3 (person)
 Correspondence GOLD                       = CONV s29q1 (quae)
 
 Aligned 27 out of 38 GOLD nodes, that is 71%.
@@ -5411,7 +5411,7 @@ Node GOLD s29c / contrast-91                   mismatch in concept:          GOL
 Node GOLD s29c / contrast-91                   mismatch in :ARG1:            GOLD = s29a2                      CONV = UNMAPPED
 Node GOLD s29c / contrast-91                   mismatch in :ARG2:            GOLD = s29d3                      CONV = UNMAPPED
 Node GOLD s29d / dico2-18 (dicta)              mismatch in concept:          GOLD = dico2-18                   CONV = dico
-Node GOLD s29d / dico2-18 (dicta)              mismatch in :ARG0:            GOLD = s29p4 mapped to CONV s29p3 CONV = s29e1
+Node GOLD s29d / dico2-18 (dicta)              mismatch in :ARG0:            GOLD = s29p4 mapped to CONV s29p4 CONV = s29e1
 Node GOLD s29d / dico2-18 (dicta)              mismatch in :reason:          GOLD = s29a mapped to CONV s29a2  CONV = 
 Node GOLD s29d / dico2-18 (dicta)              mismatch in :manner:          GOLD =                            CONV = s29a2
 Node GOLD s29d2 / delictum (delicta)           mismatch in :ARG1-of:         GOLD = s29r mapped to CONV s29r1  CONV = 
@@ -5440,7 +5440,6 @@ Node GOLD s29h / have-reason-91 (quia)         mismatch in concept:          GOL
 Node GOLD s29h / have-reason-91 (quia)         mismatch in :ARG1:            GOLD = s29e                       CONV = UNMAPPED
 Node GOLD s29h / have-reason-91 (quia)         mismatch in :ARG2:            GOLD = s29p                       CONV = UNMAPPED
 Node GOLD s29h / have-reason-91 (quia)         mismatch in :aspect:          GOLD = state                      CONV = UNMAPPED
-Node GOLD s29m2 / memoro-03 (memores)          mismatch in :ARG0:            GOLD = s29p4 mapped to CONV s29p3 CONV = s29p4
 Node GOLD s29m2 / memoro-03 (memores)          mismatch in :ARG1:            GOLD = s29a5 mapped to CONV s29a5 CONV = s29e2
 Node GOLD s29m2 / memoro-03 (memores)          mismatch in :regard:          GOLD =                            CONV = s29a5
 Node GOLD s29p / puto-09 (putant)              mismatch in :ARG1:            GOLD = s29d mapped to CONV s29d3  CONV = s29d2
@@ -5461,6 +5460,7 @@ Node GOLD s29p7 / person (bonorum)             mismatch in concept:          GOL
 Node GOLD s29p7 / person (bonorum)             mismatch in :mod:             GOLD = s29b2 unmapped             CONV = 
 Node GOLD s29q / quis (pleri)                  mismatch in concept:          GOLD = quis                       CONV = UNMAPPED
 Node GOLD s29q2 / quisque                      mismatch in concept:          GOLD = quisque                    CONV = UNMAPPED
+Node GOLD s29r / reprehendo-05 (reprehenderis) mismatch in :ARG0:            GOLD = s29p4 mapped to CONV s29p4 CONV = s29p3
 Node GOLD s29r / reprehendo-05 (reprehenderis) mismatch in :aspect:          GOLD = activity                   CONV = performance
 Node GOLD s29r / reprehendo-05 (reprehenderis) mismatch in :modal-predicate: GOLD = s29p mapped to CONV s29p1  CONV = 
 Node GOLD s29r / reprehendo-05 (reprehenderis) mismatch in :ARG1:            GOLD =                            CONV = s29d2
@@ -5499,9 +5499,9 @@ Node CONV s29e6 / entity                       mismatch in concept:          CON
 Node CONV s29e6 / entity                       mismatch in :place:           CONV = s29i2                      GOLD = UNMAPPED
 Node CONV s29e7 / entity                       mismatch in concept:          CONV = entity                     GOLD = UNMAPPED
 Node CONV s29e8 / entity                       mismatch in concept:          CONV = entity                     GOLD = UNMAPPED
-Node CONV s29p4 / person                       mismatch in concept:          CONV = person                     GOLD = UNMAPPED
-Node CONV s29p4 / person                       mismatch in :refer-number:    CONV = singular                   GOLD = UNMAPPED
-Node CONV s29p4 / person                       mismatch in :refer-person:    CONV = 2nd                        GOLD = UNMAPPED
+Node CONV s29p3 / person                       mismatch in concept:          CONV = person                     GOLD = UNMAPPED
+Node CONV s29p3 / person                       mismatch in :refer-number:    CONV = singular                   GOLD = UNMAPPED
+Node CONV s29p3 / person                       mismatch in :refer-person:    CONV = 2nd                        GOLD = UNMAPPED
 Node CONV s29q1 / quis (quae)                  mismatch in concept:          CONV = quis                       GOLD = UNMAPPED
 Document-level relation from node GOLD author (CONV author)                     :full-affirmative to node GOLD s29a2 / accipio-08+10 (accipit) (CONV s29a4)      not found in CONV
 Document-level relation from node GOLD author (CONV author)                     :full-affirmative to node GOLD s29d / dico2-18 (dicta) (CONV s29d3)              not found in CONV
@@ -5593,7 +5593,6 @@ Node CONV s29i2 / is (supra ea)                 mismatch in concept:          CO
 Node CONV s29i2 / is (supra ea)                 mismatch in :refer-number:    CONV = plural                     GOLD = 
 Node CONV s29i2 / is (supra ea)                 mismatch in :refer-person:    CONV = 3rd                        GOLD = 
 Node CONV s29i2 / is (supra ea)                 mismatch in :op1:             CONV =                            GOLD = s29t
-Node CONV s29m2 / memoro-03 (ubi memores ,)     mismatch in :ARG0:            CONV = s29p4 unmapped             GOLD = s29p4
 Node CONV s29m2 / memoro-03 (ubi memores ,)     mismatch in :ARG1:            CONV = s29e2 unmapped             GOLD = s29a5
 Node CONV s29m2 / memoro-03 (ubi memores ,)     mismatch in :regard:          CONV = s29a5 mapped to GOLD s29a5 GOLD = 
 Node CONV s29p1 / puto-09 (quia putant)         mismatch in :ARG1:            CONV = s29d2 mapped to GOLD s29d2 GOLD = s29d
@@ -5603,9 +5602,9 @@ Node CONV s29p1 / puto-09 (quia putant)         mismatch in :PRED:            CO
 Node CONV s29p1 / puto-09 (quia putant)         mismatch in :ARG1-of:         CONV =                            GOLD = s29b
 Node CONV s29p2 / plerus (que pleri)            mismatch in concept:          CONV = plerus                     GOLD = person
 Node CONV s29p2 / plerus (que pleri)            mismatch in :quant:           CONV =                            GOLD = s29p3
-Node CONV s29p4 / person                        mismatch in concept:          CONV = person                     GOLD = UNMAPPED
-Node CONV s29p4 / person                        mismatch in :refer-number:    CONV = singular                   GOLD = UNMAPPED
-Node CONV s29p4 / person                        mismatch in :refer-person:    CONV = 2nd                        GOLD = UNMAPPED
+Node CONV s29p3 / person                        mismatch in concept:          CONV = person                     GOLD = UNMAPPED
+Node CONV s29p3 / person                        mismatch in :refer-number:    CONV = singular                   GOLD = UNMAPPED
+Node CONV s29p3 / person                        mismatch in :refer-person:    CONV = 2nd                        GOLD = UNMAPPED
 Node CONV s29p5 / puto-09 (putat ,)             mismatch in :affectee:        CONV = s29q2 mapped to GOLD s29p5 GOLD = 
 Node CONV s29p5 / puto-09 (putat ,)             mismatch in :ARG1:            CONV = s29e3 mapped to GOLD s29t  GOLD = 
 Node CONV s29p5 / puto-09 (putat ,)             mismatch in :effect:          CONV = s29f1 mapped to GOLD s29f4 GOLD = 
@@ -5613,6 +5612,7 @@ Node CONV s29p5 / puto-09 (putat ,)             mismatch in :ARG2:            CO
 Node CONV s29q1 / quis (quae)                   mismatch in concept:          CONV = quis                       GOLD = UNMAPPED
 Node CONV s29q2 / quis (sibi quisque)           mismatch in concept:          CONV = quis                       GOLD = person
 Node CONV s29q2 / quis (sibi quisque)           mismatch in :quant:           CONV =                            GOLD = s29q2
+Node CONV s29r1 / reprehendo-05 (reprehenderis) mismatch in :ARG0:            CONV = s29p3 unmapped             GOLD = s29p4
 Node CONV s29r1 / reprehendo-05 (reprehenderis) mismatch in :ARG1:            CONV = s29d2 mapped to GOLD s29d2 GOLD = 
 Node CONV s29r1 / reprehendo-05 (reprehenderis) mismatch in :aspect:          CONV = performance                GOLD = activity
 Node CONV s29r1 / reprehendo-05 (reprehenderis) mismatch in :modal-predicate: CONV =                            GOLD = s29p
@@ -6982,7 +6982,7 @@ GOLD                                                                CONV
                                                                                 :aspect performance))
 
 Node-token alignments:
-File GOLD: 3 nodes unaligned: s35a4/and, s35h/have-mod-91, s35n/name["Roma"].
+File GOLD: 3 nodes unaligned: s35a4/and, s35h/have-mod-91, s35n/name[Roma].
 File CONV: 9 nodes unaligned: s35a4/and, s35e1/entity, s35e2/entity, s35e5/entity, s35e6/entity, s35p1/person, s35p3/person, s35p5/person, s35p7/person.
                GOLD  CONV
 1  sed               s35b1
@@ -7067,7 +7067,6 @@ Ambiguous projection of GOLD node s35s3 (a spe) to 3 CONV nodes [s35m4 (a metu),
 Ambiguous projection of CONV node s35i1 (a quo incepto) to 2 GOLD nodes [s35a (a quo que eodem), s35i (incepto)]
 Ambiguous projection of CONV node s35m4 (a metu) to 2 GOLD nodes [s35m3 (metu), s35s3 (a spe)]
 Ambiguous projection of CONV node s35p9 (a partibus) to 2 GOLD nodes [s35p4 (partibus), s35s3 (a spe)]
-  The winner is CONV node s35m4 (a metu) <--> GOLD node s35m3 (metu): econcepts=metus/metus, match=2 (concept=metus,:refer-number=singular), weak match=2 (concept,:refer-number).
 
 Correspondence GOLD s35a  (a quo que eodem) = CONV s35a1  (que)
 Correspondence GOLD s35a2 (ambitio)         = CONV s35a2  (ambitio)
@@ -7098,7 +7097,7 @@ Correspondence GOLD s35s4 (Romani)          = CONV s35r3  (Romani)
 Correspondence GOLD s35t  (quaeque)         = CONV s35e4  (quaeque)
 Correspondence GOLD s35v  (videbantur)      = CONV s35u1  (, ut videbantur ,)
 Correspondence GOLD s35h  (have-mod-91)     = CONV 
-Correspondence GOLD s35n  (name["Roma"])    = CONV 
+Correspondence GOLD s35n  (name[Roma])      = CONV 
 Correspondence GOLD                         = CONV s35b1  (sed)
 Correspondence GOLD                         = CONV s35e1  (entity)
 Correspondence GOLD                         = CONV s35e2  (entity)
@@ -7152,7 +7151,7 @@ Node GOLD s35m2 / memini-04 (memoria)        mismatch in :modal-predicate: GOLD 
 Node GOLD s35m2 / memini-04 (memoria)        mismatch in :ARG0:            GOLD =                            CONV = s35e5
 Node GOLD s35m2 / memini-04 (memoria)        mismatch in :refer-number:    GOLD =                            CONV = singular
 Node GOLD s35n / name                        mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s35n / name                        mismatch in :op1:             GOLD = "Roma"                     CONV = UNMAPPED
+Node GOLD s35n / name                        mismatch in :op1:             GOLD = Roma                       CONV = UNMAPPED
 Node GOLD s35p2 / perscribo-01 (perscribere) mismatch in :ARG0:            GOLD = s35p mapped to CONV s35p8  CONV = s35p5
 Node GOLD s35p2 / perscribo-01 (perscribere) mismatch in :manner:          GOLD = s35v mapped to CONV s35u1  CONV = 
 Node GOLD s35p2 / perscribo-01 (perscribere) mismatch in :modal-predicate: GOLD = s35s mapped to CONV s35s1  CONV = 
@@ -7320,7 +7319,7 @@ Node GOLD s35h / have-mod-91                   mismatch in :ARG1:            GOL
 Node GOLD s35h / have-mod-91                   mismatch in :ARG2:            GOLD = s35d2                      CONV = UNMAPPED
 Node GOLD s35h / have-mod-91                   mismatch in :aspect:          GOLD = state                      CONV = UNMAPPED
 Node GOLD s35n / name                          mismatch in concept:          GOLD = name                       CONV = UNMAPPED
-Node GOLD s35n / name                          mismatch in :op1:             GOLD = "Roma"                     CONV = UNMAPPED
+Node GOLD s35n / name                          mismatch in :op1:             GOLD = Roma                       CONV = UNMAPPED
 Document-level relation from node CONV s35e4 / entity (quaeque) (GOLD s35t)               :same-entity         to node CONV s35r2 / res (res) (GOLD s35r)                   not found in GOLD
 Document-level relation from node GOLD author (CONV author)                               :full-affirmative    to node GOLD s35d / detineo-04 (detinuerat) (CONV s35d1)     not found in CONV
 Document-level relation from node GOLD author (CONV author)                               :full-affirmative    to node GOLD s35g / gero-15 (gestas) (CONV s35g1)            not found in CONV
@@ -7376,7 +7375,7 @@ GOLD                                                 CONV
                                                              :aspect activity)
 
 Node-token alignments:
-File GOLD: 5 nodes unaligned: s36h/have-degree-91, s36m/most, s36n/name["Catilina"], s36p/person, s36v2/verus.
+File GOLD: 5 nodes unaligned: s36h/have-degree-91, s36m/most, s36n/name[Catilina], s36p/person, s36v2/verus.
 File CONV: 5 nodes unaligned: s36e1/entity, s36e2/entity, s36p1/person, s36p3/person, s36x1/AsMuch.
                GOLD  CONV
 1 Igitur             s36i1
@@ -7401,22 +7400,22 @@ Matched 5 out of 7 CONV token sets => precision 71%.
 Ambiguous projection of GOLD node s36p (person) to 2 CONV nodes [s36p1 (person), s36p3 (person)]
   The winner is GOLD node s36p (person) <--> CONV node s36p1 (person): econcepts=person/person, match=3 (concept=person,:refer-number=singular,:refer-person=1st), weak match=3 (concept,:refer-number,:refer-person).
 
-Correspondence GOLD s36a  (absolvam)         = CONV s36a1 (absolvam)
-Correspondence GOLD s36c  (de coniuratione)  = CONV s36c1 (de coniuratione)
-Correspondence GOLD s36p  (person)           = CONV s36p1 (person)
-Correspondence GOLD s36p2 (Catilinae)        = CONV s36c2 (Catilinae)
-Correspondence GOLD s36p3 (paucis)           = CONV s36p4 (paucis)
-Correspondence GOLD s36v  (quam verissume)   = CONV s36v1 (quam verissume)
-Correspondence GOLD s36h  (have-degree-91)   = CONV 
-Correspondence GOLD s36m  (most)             = CONV 
-Correspondence GOLD s36n  (name["Catilina"]) = CONV 
-Correspondence GOLD s36v2 (verus)            = CONV 
-Correspondence GOLD                          = CONV s36e1 (entity)
-Correspondence GOLD                          = CONV s36e2 (entity)
-Correspondence GOLD                          = CONV s36i1 (Igitur)
-Correspondence GOLD                          = CONV s36p2 (potero)
-Correspondence GOLD                          = CONV s36p3 (person)
-Correspondence GOLD                          = CONV s36x1 (AsMuch)
+Correspondence GOLD s36a  (absolvam)        = CONV s36a1 (absolvam)
+Correspondence GOLD s36c  (de coniuratione) = CONV s36c1 (de coniuratione)
+Correspondence GOLD s36p  (person)          = CONV s36p1 (person)
+Correspondence GOLD s36p2 (Catilinae)       = CONV s36c2 (Catilinae)
+Correspondence GOLD s36p3 (paucis)          = CONV s36p4 (paucis)
+Correspondence GOLD s36v  (quam verissume)  = CONV s36v1 (quam verissume)
+Correspondence GOLD s36h  (have-degree-91)  = CONV 
+Correspondence GOLD s36m  (most)            = CONV 
+Correspondence GOLD s36n  (name[Catilina])  = CONV 
+Correspondence GOLD s36v2 (verus)           = CONV 
+Correspondence GOLD                         = CONV s36e1 (entity)
+Correspondence GOLD                         = CONV s36e2 (entity)
+Correspondence GOLD                         = CONV s36i1 (Igitur)
+Correspondence GOLD                         = CONV s36p2 (potero)
+Correspondence GOLD                         = CONV s36p3 (person)
+Correspondence GOLD                         = CONV s36x1 (AsMuch)
 
 Aligned 6 out of 10 GOLD nodes, that is 60%.
 Aligned 6 out of 12 CONV nodes, that is 50%.
@@ -7440,7 +7439,7 @@ Node GOLD s36h / have-degree-91               mismatch in :ARG5:           GOLD 
 Node GOLD s36h / have-degree-91               mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s36m / most                         mismatch in concept:         GOLD = most                       CONV = UNMAPPED
 Node GOLD s36n / name                         mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s36n / name                         mismatch in :op1:            GOLD = "Catilina"                 CONV = UNMAPPED
+Node GOLD s36n / name                         mismatch in :op1:            GOLD = Catilina                   CONV = UNMAPPED
 Node GOLD s36p2 / person (Catilinae)          mismatch in concept:         GOLD = person                     CONV = catilina
 Node GOLD s36p2 / person (Catilinae)          mismatch in :name:           GOLD = s36n unmapped              CONV = 
 Node GOLD s36p2 / person (Catilinae)          mismatch in :refer-number:   GOLD =                            CONV = singular
@@ -7509,7 +7508,7 @@ Node GOLD s36h / have-degree-91                   mismatch in :ARG5:           G
 Node GOLD s36h / have-degree-91                   mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s36m / most                             mismatch in concept:         GOLD = most                       CONV = UNMAPPED
 Node GOLD s36n / name                             mismatch in concept:         GOLD = name                       CONV = UNMAPPED
-Node GOLD s36n / name                             mismatch in :op1:            GOLD = "Catilina"                 CONV = UNMAPPED
+Node GOLD s36n / name                             mismatch in :op1:            GOLD = Catilina                   CONV = UNMAPPED
 Node GOLD s36v2 / verus                           mismatch in concept:         GOLD = verus                      CONV = UNMAPPED
 Document-level relation from node GOLD author (CONV author)                          :full-affirmative    to node GOLD s36a / absolvo-NEW-08 (absolvam) (CONV s36a1)    not found in CONV
 Document-level relation from node GOLD author (CONV author)                          :full-affirmative    to node GOLD s36c / coniuro-02 (de coniuratione) (CONV s36c1) not found in CONV
@@ -7857,7 +7856,7 @@ GOLD                                                          CONV
         :aspect state))                                               :aspect performance)
 
 Node-token alignments:
-File GOLD: 2 nodes unaligned: s39h2/have-mod-91, s39n/name["Lucius" "Catilina"].
+File GOLD: 2 nodes unaligned: s39h2/have-mod-91, s39n/name[Lucius Catilina].
 File CONV: 0 nodes unaligned: .
             GOLD  CONV
 1  L        s39p  s39l1
@@ -7907,24 +7906,24 @@ Ambiguous projection of GOLD node s39p (L . Catilina) to 2 CONV nodes [s39c1 (Ca
 Ambiguous projection of CONV node s39a2 (et animi) to 2 GOLD nodes [s39a (et et), s39a2 (animi)]
 Ambiguous projection of CONV node s39c2 (et corporis) to 2 GOLD nodes [s39a (et et), s39c (corporis)]
 
-Correspondence GOLD s39a  (et et)                     = CONV s39a1 (et)
-Correspondence GOLD s39a2 (animi)                     = CONV s39a2 (et animi)
-Correspondence GOLD s39a3 (que)                       = CONV s39a3 (que)
-Correspondence GOLD s39b  (sed)                       = CONV s39b1 (sed)
-Correspondence GOLD s39c  (corporis)                  = CONV s39c2 (et corporis)
-Correspondence GOLD s39g  (genere)                    = CONV s39g1 (genere)
-Correspondence GOLD s39h  (fuit)                      = CONV s39s1 (fuit)
-Correspondence GOLD s39i  (ingenio)                   = CONV s39i1 (ingenio)
-Correspondence GOLD s39m  (magna)                     = CONV s39m1 (magna)
-Correspondence GOLD s39m2 (malo)                      = CONV s39m2 (malo)
-Correspondence GOLD s39n2 (natus)                     = CONV s39n1 (, natus ,)
-Correspondence GOLD s39n3 (nobili)                    = CONV s39n2 (nobili)
-Correspondence GOLD s39p  (L . Catilina)              = CONV s39c1 (Catilina)
-Correspondence GOLD s39p2 (pravo)                     = CONV s39p1 (pravo)
-Correspondence GOLD s39v  (vi)                        = CONV s39v1 (vi)
-Correspondence GOLD s39h2 (have-mod-91)               = CONV 
-Correspondence GOLD s39n  (name["Lucius" "Catilina"]) = CONV 
-Correspondence GOLD                                   = CONV s39l1 (L .)
+Correspondence GOLD s39a  (et et)                 = CONV s39a1 (et)
+Correspondence GOLD s39a2 (animi)                 = CONV s39a2 (et animi)
+Correspondence GOLD s39a3 (que)                   = CONV s39a3 (que)
+Correspondence GOLD s39b  (sed)                   = CONV s39b1 (sed)
+Correspondence GOLD s39c  (corporis)              = CONV s39c2 (et corporis)
+Correspondence GOLD s39g  (genere)                = CONV s39g1 (genere)
+Correspondence GOLD s39h  (fuit)                  = CONV s39s1 (fuit)
+Correspondence GOLD s39i  (ingenio)               = CONV s39i1 (ingenio)
+Correspondence GOLD s39m  (magna)                 = CONV s39m1 (magna)
+Correspondence GOLD s39m2 (malo)                  = CONV s39m2 (malo)
+Correspondence GOLD s39n2 (natus)                 = CONV s39n1 (, natus ,)
+Correspondence GOLD s39n3 (nobili)                = CONV s39n2 (nobili)
+Correspondence GOLD s39p  (L . Catilina)          = CONV s39c1 (Catilina)
+Correspondence GOLD s39p2 (pravo)                 = CONV s39p1 (pravo)
+Correspondence GOLD s39v  (vi)                    = CONV s39v1 (vi)
+Correspondence GOLD s39h2 (have-mod-91)           = CONV 
+Correspondence GOLD s39n  (name[Lucius Catilina]) = CONV 
+Correspondence GOLD                               = CONV s39l1 (L .)
 
 Aligned 15 out of 17 GOLD nodes, that is 88%.
 Aligned 15 out of 16 CONV nodes, that is 94%.
@@ -7944,8 +7943,8 @@ Node GOLD s39h2 / have-mod-91          mismatch in :ARG2:         GOLD = s39i   
 Node GOLD s39h2 / have-mod-91          mismatch in :aspect:       GOLD = state                      CONV = UNMAPPED
 Node GOLD s39i / ingenius (ingenio)    mismatch in concept:       GOLD = ingenius                   CONV = ingenium
 Node GOLD s39n / name                  mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s39n / name                  mismatch in :op1:          GOLD = "Lucius"                   CONV = UNMAPPED
-Node GOLD s39n / name                  mismatch in :op2:          GOLD = "Catilina"                 CONV = UNMAPPED
+Node GOLD s39n / name                  mismatch in :op1:          GOLD = Lucius                     CONV = UNMAPPED
+Node GOLD s39n / name                  mismatch in :op2:          GOLD = Catilina                   CONV = UNMAPPED
 Node GOLD s39n2 / nascor-05+06 (natus) mismatch in concept:       GOLD = nascor-05+06               CONV = nascor-05
 Node GOLD s39n2 / nascor-05+06 (natus) mismatch in :mod:          GOLD = s39g mapped to CONV s39g1  CONV = 
 Node GOLD s39n2 / nascor-05+06 (natus) mismatch in :ARG0:         GOLD =                            CONV = s39c1
@@ -7999,8 +7998,8 @@ Node GOLD s39h2 / have-mod-91           mismatch in :ARG1:         GOLD = s39p  
 Node GOLD s39h2 / have-mod-91           mismatch in :ARG2:         GOLD = s39i                       CONV = UNMAPPED
 Node GOLD s39h2 / have-mod-91           mismatch in :aspect:       GOLD = state                      CONV = UNMAPPED
 Node GOLD s39n / name                   mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s39n / name                   mismatch in :op1:          GOLD = "Lucius"                   CONV = UNMAPPED
-Node GOLD s39n / name                   mismatch in :op2:          GOLD = "Catilina"                 CONV = UNMAPPED
+Node GOLD s39n / name                   mismatch in :op1:          GOLD = Lucius                     CONV = UNMAPPED
+Node GOLD s39n / name                   mismatch in :op2:          GOLD = Catilina                   CONV = UNMAPPED
 Document-level relation from node GOLD author (CONV author)                                 :full-affirmative to node GOLD s39h / have-mod-91 (fuit) (CONV s39s1)    not found in CONV
 Document-level relation from node GOLD author (CONV author)                                 :full-affirmative to node GOLD s39h2 / have-mod-91 (CONV UNMAPPED)       not found in CONV
 Document-level relation from node GOLD author (CONV author)                                 :full-affirmative to node GOLD s39n2 / nascor-05+06 (natus) (CONV s39n1) not found in CONV
@@ -8982,7 +8981,7 @@ GOLD                                                        CONV
     :aspect performance)                                            :aspect performance)
 
 Node-token alignments:
-File GOLD: 1 nodes unaligned: s45n/name["L." "Sulla"].
+File GOLD: 1 nodes unaligned: s45n/name[L. Sulla].
 File CONV: 3 nodes unaligned: s45e2/entity, s45e3/entity, s45e4/entity.
               GOLD  CONV
 1  hunc       s45p  s45e1
@@ -9018,21 +9017,21 @@ Ambiguous projection of GOLD node s45p2 (L . Sullae) to 2 CONV nodes [s45l1 (L .
 Ambiguous projection of CONV node s45d1 (post do minationem) to 2 GOLD nodes [s45a (post), s45d (do minationem)]
   The winner is CONV node s45d1 (post do minationem) <--> GOLD node s45d (do minationem): econcepts=dominor-03/dominor-03, match=2 (concept=dominor-03,:ARG0=s45s1 mapped to GOLD s45p2), weak match=2 (concept,:ARG0).
 
-Correspondence GOLD s45c  (lubido)             = CONV s45l2 (lubido)
-Correspondence GOLD s45c2 (capiundae)          = CONV s45c1 (capiundae)
-Correspondence GOLD s45d  (do minationem)      = CONV s45d1 (post do minationem)
-Correspondence GOLD s45i  (invaserat)          = CONV s45i1 (invaserat)
-Correspondence GOLD s45m  (maxuma)             = CONV s45m1 (maxuma)
-Correspondence GOLD s45p  (hunc)               = CONV s45e1 (hunc)
-Correspondence GOLD s45p2 (L . Sullae)         = CONV s45s1 (Sullae)
-Correspondence GOLD s45p3 (publicae)           = CONV s45p1 (publicae)
-Correspondence GOLD s45r  (rei)                = CONV s45r1 (rei)
-Correspondence GOLD s45a  (post)               = CONV 
-Correspondence GOLD s45n  (name["L." "Sulla"]) = CONV 
-Correspondence GOLD                            = CONV s45e2 (entity)
-Correspondence GOLD                            = CONV s45e3 (entity)
-Correspondence GOLD                            = CONV s45e4 (entity)
-Correspondence GOLD                            = CONV s45l1 (L .)
+Correspondence GOLD s45c  (lubido)         = CONV s45l2 (lubido)
+Correspondence GOLD s45c2 (capiundae)      = CONV s45c1 (capiundae)
+Correspondence GOLD s45d  (do minationem)  = CONV s45d1 (post do minationem)
+Correspondence GOLD s45i  (invaserat)      = CONV s45i1 (invaserat)
+Correspondence GOLD s45m  (maxuma)         = CONV s45m1 (maxuma)
+Correspondence GOLD s45p  (hunc)           = CONV s45e1 (hunc)
+Correspondence GOLD s45p2 (L . Sullae)     = CONV s45s1 (Sullae)
+Correspondence GOLD s45p3 (publicae)       = CONV s45p1 (publicae)
+Correspondence GOLD s45r  (rei)            = CONV s45r1 (rei)
+Correspondence GOLD s45a  (post)           = CONV 
+Correspondence GOLD s45n  (name[L. Sulla]) = CONV 
+Correspondence GOLD                        = CONV s45e2 (entity)
+Correspondence GOLD                        = CONV s45e3 (entity)
+Correspondence GOLD                        = CONV s45e4 (entity)
+Correspondence GOLD                        = CONV s45l1 (L .)
 
 Aligned 9 out of 11 GOLD nodes, that is 82%.
 Aligned 9 out of 13 CONV nodes, that is 69%.
@@ -9056,8 +9055,8 @@ Node GOLD s45i / invado2-05 (invaserat)     mismatch in concept:          GOLD =
 Node GOLD s45i / invado2-05 (invaserat)     mismatch in :temporal:        GOLD = s45a unmapped             CONV = s45d1
 Node GOLD s45m / magnus (maxuma)            mismatch in :degree:          GOLD = intensifier               CONV = 
 Node GOLD s45n / name                       mismatch in concept:          GOLD = name                      CONV = UNMAPPED
-Node GOLD s45n / name                       mismatch in :op1:             GOLD = "L."                      CONV = UNMAPPED
-Node GOLD s45n / name                       mismatch in :op2:             GOLD = "Sulla"                   CONV = UNMAPPED
+Node GOLD s45n / name                       mismatch in :op1:             GOLD = L.                        CONV = UNMAPPED
+Node GOLD s45n / name                       mismatch in :op2:             GOLD = Sulla                     CONV = UNMAPPED
 Node GOLD s45p / person (hunc)              mismatch in concept:          GOLD = person                    CONV = entity
 Node GOLD s45p2 / person (L . Sullae)       mismatch in concept:          GOLD = person                    CONV = sulla
 Node GOLD s45p2 / person (L . Sullae)       mismatch in :name:            GOLD = s45n unmapped             CONV = s45l1
@@ -9110,8 +9109,8 @@ Node CONV s45s1 / sulla (Sullae)                  mismatch in :refer-number:    
 Node GOLD s45a / after (post)                     mismatch in concept:          GOLD = after                     CONV = UNMAPPED
 Node GOLD s45a / after (post)                     mismatch in :op1:             GOLD = s45d                      CONV = UNMAPPED
 Node GOLD s45n / name                             mismatch in concept:          GOLD = name                      CONV = UNMAPPED
-Node GOLD s45n / name                             mismatch in :op1:             GOLD = "L."                      CONV = UNMAPPED
-Node GOLD s45n / name                             mismatch in :op2:             GOLD = "Sulla"                   CONV = UNMAPPED
+Node GOLD s45n / name                             mismatch in :op1:             GOLD = L.                        CONV = UNMAPPED
+Node GOLD s45n / name                             mismatch in :op2:             GOLD = Sulla                     CONV = UNMAPPED
 Document-level relation from node CONV s45e1 / entity (hunc) (GOLD s45p)              :same-entity      to node CONV s39c1 / catilina (Catilina) (GOLD s39p)        not found in GOLD
 Document-level relation from node GOLD author (CONV author)                           :full-affirmative to node GOLD s45c / cupio-03+05 (lubido) (CONV s45l2)       not found in CONV
 Document-level relation from node GOLD author (CONV author)                           :full-affirmative to node GOLD s45d / dominor-03 (do minationem) (CONV s45d1) not found in CONV
@@ -10201,7 +10200,7 @@ GOLD                                                             CONV
                                                                              :aspect state))
 
 Node-token alignments:
-File GOLD: 10 nodes unaligned: s50a4/and, s50a5/and, s50c2/city, s50d/dux, s50i4/identity-91, s50n/name["Troia"], s50n2/name["Aeneas"], s50n3/name["Roma"], s50n4/name["Aborigines"], s50p3/profugus.
+File GOLD: 10 nodes unaligned: s50a4/and, s50a5/and, s50c2/city, s50d/dux, s50i4/identity-91, s50n/name[Troia], s50n2/name[Aeneas], s50n3/name[Roma], s50n4/name[Aborigines], s50p3/profugus.
 File CONV: 2 nodes unaligned: s50e2/entity, s50e3/entity.
               GOLD  CONV
 1  Urbem      s50c3 s50u1
@@ -10264,45 +10263,45 @@ Matched 19 out of 27 CONV token sets => precision 70%.
 Ambiguous projection of GOLD node s50c3 (Urbem Romam) to 2 CONV nodes [s50r1 (Romam), s50u1 (Urbem)]
   The winner is GOLD node s50c3 (Urbem Romam) <--> CONV node s50u1 (Urbem): econcepts=city/urbs, match=0 (), weak match=2 (concept,:name).
 
-Correspondence GOLD s50a  (atque)              = CONV s50a1 (atque)
-Correspondence GOLD s50a2 (cumque iis)         = CONV s50e1 (cumque iis)
-Correspondence GOLD s50a3 (agreste)            = CONV s50a5 (agreste)
-Correspondence GOLD s50a6 (atque)              = CONV s50a7 (, atque)
-Correspondence GOLD s50c  (condidere)          = CONV s50c1 (condidere)
-Correspondence GOLD s50c3 (Urbem Romam)        = CONV s50u1 (Urbem)
-Correspondence GOLD s50e  (Aborigines)         = CONV s50a4 (Aborigines)
-Correspondence GOLD s50g  (genus)              = CONV s50g1 (genus)
-Correspondence GOLD s50h  (habuere)            = CONV s50h1 (habuere)
-Correspondence GOLD s50h2 (duce)               = CONV s50d1 (duce)
-Correspondence GOLD s50h3 (profugi)            = CONV s50p2 (profugi)
-Correspondence GOLD s50h4 (hominum)            = CONV s50h2 (hominum)
-Correspondence GOLD s50i  (incertis)           = CONV s50i2 (incertis)
-Correspondence GOLD s50i2 (initio)             = CONV s50i1 (initio)
-Correspondence GOLD s50i3 (sine imperio)       = CONV s50i4 (sine imperio)
-Correspondence GOLD s50l  (sine legibus)       = CONV s50l1 (sine legibus)
-Correspondence GOLD s50l2 (liberum)            = CONV s50l2 (liberum)
-Correspondence GOLD s50p  (Troiani qui)        = CONV s50t1 (Troiani qui)
-Correspondence GOLD s50p2 (Aenea)              = CONV s50a3 (Aenea)
-Correspondence GOLD s50s  (sedibus)            = CONV s50s1 (sedibus)
-Correspondence GOLD s50s3 (solutum)            = CONV s50s2 (solutum)
-Correspondence GOLD s50v  (vagabantur)         = CONV s50u2 (, vagabantur)
-Correspondence GOLD s50a4 (and)                = CONV 
-Correspondence GOLD s50a5 (and)                = CONV 
-Correspondence GOLD s50c2 (city)               = CONV 
-Correspondence GOLD s50d  (dux)                = CONV 
-Correspondence GOLD s50i4 (identity-91)        = CONV 
-Correspondence GOLD s50n  (name["Troia"])      = CONV 
-Correspondence GOLD s50n2 (name["Aeneas"])     = CONV 
-Correspondence GOLD s50n3 (name["Roma"])       = CONV 
-Correspondence GOLD s50n4 (name["Aborigines"]) = CONV 
-Correspondence GOLD s50p3 (profugus)           = CONV 
-Correspondence GOLD                            = CONV s50a2 (, sicuti accepi ,)
-Correspondence GOLD                            = CONV s50a6 (, ,)
-Correspondence GOLD                            = CONV s50e2 (entity)
-Correspondence GOLD                            = CONV s50e3 (entity)
-Correspondence GOLD                            = CONV s50i3 (, ,)
-Correspondence GOLD                            = CONV s50p1 (ego)
-Correspondence GOLD                            = CONV s50r1 (Romam)
+Correspondence GOLD s50a  (atque)            = CONV s50a1 (atque)
+Correspondence GOLD s50a2 (cumque iis)       = CONV s50e1 (cumque iis)
+Correspondence GOLD s50a3 (agreste)          = CONV s50a5 (agreste)
+Correspondence GOLD s50a6 (atque)            = CONV s50a7 (, atque)
+Correspondence GOLD s50c  (condidere)        = CONV s50c1 (condidere)
+Correspondence GOLD s50c3 (Urbem Romam)      = CONV s50u1 (Urbem)
+Correspondence GOLD s50e  (Aborigines)       = CONV s50a4 (Aborigines)
+Correspondence GOLD s50g  (genus)            = CONV s50g1 (genus)
+Correspondence GOLD s50h  (habuere)          = CONV s50h1 (habuere)
+Correspondence GOLD s50h2 (duce)             = CONV s50d1 (duce)
+Correspondence GOLD s50h3 (profugi)          = CONV s50p2 (profugi)
+Correspondence GOLD s50h4 (hominum)          = CONV s50h2 (hominum)
+Correspondence GOLD s50i  (incertis)         = CONV s50i2 (incertis)
+Correspondence GOLD s50i2 (initio)           = CONV s50i1 (initio)
+Correspondence GOLD s50i3 (sine imperio)     = CONV s50i4 (sine imperio)
+Correspondence GOLD s50l  (sine legibus)     = CONV s50l1 (sine legibus)
+Correspondence GOLD s50l2 (liberum)          = CONV s50l2 (liberum)
+Correspondence GOLD s50p  (Troiani qui)      = CONV s50t1 (Troiani qui)
+Correspondence GOLD s50p2 (Aenea)            = CONV s50a3 (Aenea)
+Correspondence GOLD s50s  (sedibus)          = CONV s50s1 (sedibus)
+Correspondence GOLD s50s3 (solutum)          = CONV s50s2 (solutum)
+Correspondence GOLD s50v  (vagabantur)       = CONV s50u2 (, vagabantur)
+Correspondence GOLD s50a4 (and)              = CONV 
+Correspondence GOLD s50a5 (and)              = CONV 
+Correspondence GOLD s50c2 (city)             = CONV 
+Correspondence GOLD s50d  (dux)              = CONV 
+Correspondence GOLD s50i4 (identity-91)      = CONV 
+Correspondence GOLD s50n  (name[Troia])      = CONV 
+Correspondence GOLD s50n2 (name[Aeneas])     = CONV 
+Correspondence GOLD s50n3 (name[Roma])       = CONV 
+Correspondence GOLD s50n4 (name[Aborigines]) = CONV 
+Correspondence GOLD s50p3 (profugus)         = CONV 
+Correspondence GOLD                          = CONV s50a2 (, sicuti accepi ,)
+Correspondence GOLD                          = CONV s50a6 (, ,)
+Correspondence GOLD                          = CONV s50e2 (entity)
+Correspondence GOLD                          = CONV s50e3 (entity)
+Correspondence GOLD                          = CONV s50i3 (, ,)
+Correspondence GOLD                          = CONV s50p1 (ego)
+Correspondence GOLD                          = CONV s50r1 (Romam)
 
 Aligned 22 out of 32 GOLD nodes, that is 69%.
 Aligned 22 out of 29 CONV nodes, that is 76%.
@@ -10363,13 +10362,13 @@ Node GOLD s50l / lex (sine legibus)              mismatch in :polarity:     GOLD
 Node GOLD s50l2 / liber (liberum)                mismatch in concept:       GOLD = liber                      CONV = liber^solutus
 Node GOLD s50l2 / liber (liberum)                mismatch in :ARG1:         GOLD =                            CONV = s50e2
 Node GOLD s50n / name                            mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s50n / name                            mismatch in :op1:          GOLD = "Troia"                    CONV = UNMAPPED
+Node GOLD s50n / name                            mismatch in :op1:          GOLD = Troia                      CONV = UNMAPPED
 Node GOLD s50n2 / name                           mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s50n2 / name                           mismatch in :op1:          GOLD = "Aeneas"                   CONV = UNMAPPED
+Node GOLD s50n2 / name                           mismatch in :op1:          GOLD = Aeneas                     CONV = UNMAPPED
 Node GOLD s50n3 / name                           mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s50n3 / name                           mismatch in :op1:          GOLD = "Roma"                     CONV = UNMAPPED
+Node GOLD s50n3 / name                           mismatch in :op1:          GOLD = Roma                       CONV = UNMAPPED
 Node GOLD s50n4 / name                           mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s50n4 / name                           mismatch in :op1:          GOLD = "Aborigines"               CONV = UNMAPPED
+Node GOLD s50n4 / name                           mismatch in :op1:          GOLD = Aborigines                 CONV = UNMAPPED
 Node GOLD s50p / person (Troiani qui)            mismatch in concept:       GOLD = person                     CONV = trojanus
 Node GOLD s50p / person (Troiani qui)            mismatch in :mod:          GOLD = s50c2 unmapped             CONV = 
 Node GOLD s50p2 / person (Aenea)                 mismatch in concept:       GOLD = person                     CONV = aeneas
@@ -10510,13 +10509,13 @@ Node GOLD s50i4 / identity-91                    mismatch in concept:       GOLD
 Node GOLD s50i4 / identity-91                    mismatch in :ARG2:         GOLD = s50g                       CONV = UNMAPPED
 Node GOLD s50i4 / identity-91                    mismatch in :aspect:       GOLD = state                      CONV = UNMAPPED
 Node GOLD s50n / name                            mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s50n / name                            mismatch in :op1:          GOLD = "Troia"                    CONV = UNMAPPED
+Node GOLD s50n / name                            mismatch in :op1:          GOLD = Troia                      CONV = UNMAPPED
 Node GOLD s50n2 / name                           mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s50n2 / name                           mismatch in :op1:          GOLD = "Aeneas"                   CONV = UNMAPPED
+Node GOLD s50n2 / name                           mismatch in :op1:          GOLD = Aeneas                     CONV = UNMAPPED
 Node GOLD s50n3 / name                           mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s50n3 / name                           mismatch in :op1:          GOLD = "Roma"                     CONV = UNMAPPED
+Node GOLD s50n3 / name                           mismatch in :op1:          GOLD = Roma                       CONV = UNMAPPED
 Node GOLD s50n4 / name                           mismatch in concept:       GOLD = name                       CONV = UNMAPPED
-Node GOLD s50n4 / name                           mismatch in :op1:          GOLD = "Aborigines"               CONV = UNMAPPED
+Node GOLD s50n4 / name                           mismatch in :op1:          GOLD = Aborigines                 CONV = UNMAPPED
 Node GOLD s50p3 / profugus                       mismatch in concept:       GOLD = profugus                   CONV = UNMAPPED
 Document-level relation from node CONV s50e1 / entity (cumque iis) (GOLD s50a2)  :same-entity         to node CONV s50t1 / trojanus (Troiani qui) (GOLD s50p) not found in GOLD
 Document-level relation from node GOLD author (CONV author)                      :full-affirmative    to node GOLD s50h2 / have-role-91 (duce) (CONV s50d1)   not found in CONV

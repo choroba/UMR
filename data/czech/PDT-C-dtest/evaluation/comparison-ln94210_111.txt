@@ -173,8 +173,8 @@ ML                                                                              
                                                                                                                                      	:mod-of s2m1))))))
 
 Node-token alignments:
-File ML: 3 nodes unaligned: s2n3/name["LN"], s2p0/person, s2s1/say-91.
-File HH: 4 nodes unaligned: s2n1/name["Duha"], s2n3/name["LN"], s2p4/person, s2s1/say-91.
+File ML: 3 nodes unaligned: s2n3/name[LN], s2p0/person, s2s1/say-91.
+File HH: 4 nodes unaligned: s2n1/name[Duha], s2n3/name[LN], s2p4/person, s2s1/say-91.
                ML   HH
 1  Celý        s2c1 s2c1
 2  rok         s2r1 s2r1
@@ -221,7 +221,7 @@ Correspondence ML s2c1 (Celý)                       = HH s2c1 (Celý)
 Correspondence ML s2c2 (ceny)                       = HH s2c2 (ceny)
 Correspondence ML s2m1 (magazínu)                   = HH s2m1 (magazínu Duha)
 Correspondence ML s2n2 (LN)                         = HH s2n2 (LN)
-Correspondence ML s2n3 (name["LN"])                 = HH s2n3 (name["LN"])
+Correspondence ML s2n3 (name[LN])                   = HH s2n3 (name[LN])
 Correspondence ML s2p0 (person)                     = HH s2p4 (person)
 Correspondence ML s2p1 (jsme přečkali)              = HH s2p1 (jsme přečkali)
 Correspondence ML s2p2 (nepočítáme li)              = HH s2p2 (nepočítáme - li)
@@ -233,7 +233,7 @@ Correspondence ML s2z1 (bez změny)                  = HH s2z1 (bez změny)
 Correspondence ML s2z2 (zvýšení)                    = HH s2z2 (zvýšení)
 Correspondence ML s2z3 (v souvislosti se zařazením) = HH s2z3 (v souvislosti se zařazením)
 Correspondence ML s2n1 (Duha)                       = HH 
-Correspondence ML                                   = HH s2n1 (name["Duha"])
+Correspondence ML                                   = HH s2n1 (name[Duha])
 
 Aligned 16 out of 17 ML nodes, that is 94%.
 Aligned 16 out of 17 HH nodes, that is 94%.
@@ -241,7 +241,7 @@ Aligned 16 out of 17 HH nodes, that is 94%.
 Comparing attributes of ML nodes with their HH counterparts.
 Node ML s2m1 / magazín (magazínu)          mismatch in :name:         ML = s2n1 unmapped          HH = s2n1
 Node ML s2n1 / name (Duha)                 mismatch in concept:       ML = name                   HH = UNMAPPED
-Node ML s2n1 / name (Duha)                 mismatch in :op1:          ML = "Duha"                 HH = UNMAPPED
+Node ML s2n1 / name (Duha)                 mismatch in :op1:          ML = Duha                   HH = UNMAPPED
 Node ML s2n2 / news-media (LN)             mismatch in :refer-number: ML =                        HH = plural
 Node ML s2p1 / přečkat-001 (jsme přečkali) mismatch in :quote:        ML = s2s1 mapped to HH s2s1 HH = 
 Node ML s2p3 / příloha (jako přílohy)      mismatch in :refer-number: ML =                        HH = singular
@@ -250,7 +250,7 @@ Node ML s2r1 / rok (rok)                   mismatch in :extent:       ML =      
 Node ML s2z2 / zvýšit-001 (zvýšení)        mismatch in :stimulus:     ML = s2z3 mapped to HH s2z3 HH = 
 Node ML s2z2 / zvýšit-001 (zvýšení)        mismatch in :cause:        ML =                        HH = s2z3
 Node HH s2n1 / name                        mismatch in concept:       HH = name                   ML = UNMAPPED
-Node HH s2n1 / name                        mismatch in :op1:          HH = "Duha"                 ML = UNMAPPED
+Node HH s2n1 / name                        mismatch in :op1:          HH = Duha                   ML = UNMAPPED
 
 Correct 61 out of 67 non-empty ML values => recall    91%.
 Correct 61 out of 68 non-empty HH values => precision 90%.
@@ -258,7 +258,7 @@ Correct 61 out of 68 non-empty HH values => precision 90%.
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s2m1 / magazín (magazínu Duha)     mismatch in :name:         HH = s2n1 unmapped          ML = s2n1
 Node HH s2n1 / name                        mismatch in concept:       HH = name                   ML = UNMAPPED
-Node HH s2n1 / name                        mismatch in :op1:          HH = "Duha"                 ML = UNMAPPED
+Node HH s2n1 / name                        mismatch in :op1:          HH = Duha                   ML = UNMAPPED
 Node HH s2n2 / news-media (LN)             mismatch in :refer-number: HH = plural                 ML = 
 Node HH s2p1 / přečkat-001 (jsme přečkali) mismatch in :quote:        HH =                        ML = s2s1
 Node HH s2p3 / příloha (jako přílohy)      mismatch in :refer-number: HH = singular               ML = 
@@ -267,7 +267,7 @@ Node HH s2r1 / rok (rok)                   mismatch in :mod:          HH =      
 Node HH s2z2 / zvýšit-001 (zvýšení)        mismatch in :cause:        HH = s2z3 mapped to ML s2z3 ML = 
 Node HH s2z2 / zvýšit-001 (zvýšení)        mismatch in :stimulus:     HH =                        ML = s2z3
 Node ML s2n1 / name (Duha)                 mismatch in concept:       ML = name                   HH = UNMAPPED
-Node ML s2n1 / name (Duha)                 mismatch in :op1:          ML = "Duha"                 HH = UNMAPPED
+Node ML s2n1 / name (Duha)                 mismatch in :op1:          ML = Duha                   HH = UNMAPPED
 
 Correct 61 out of 68 non-empty HH values => recall    90%.
 Correct 61 out of 67 non-empty ML values => precision 91%.
@@ -403,8 +403,8 @@ ML                                                                              
                                                                                                         	:temporal s4d1)))
 
 Node-token alignments:
-File ML: 7 nodes unaligned: s4d1/date-entity, s4d2/date-entity, s4n2/name["Lidové" "noviny"], s4r2/date-interval, s4s/say-91, s4s2/stát-014, s4s3/sobota.
-File HH: 7 nodes unaligned: s4d2/date-interval, s4d3/date-entity, s4d4/date-entity, s4d5/date-entity, s4n2/name["Lidové" "noviny"], s4s2/stát-014, s4s3/say-91.
+File ML: 7 nodes unaligned: s4d1/date-entity, s4d2/date-entity, s4n2/name[Lidové noviny], s4r2/date-interval, s4s/say-91, s4s2/stát-014, s4s3/sobota.
+File HH: 7 nodes unaligned: s4d2/date-interval, s4d3/date-entity, s4d4/date-entity, s4d5/date-entity, s4n2/name[Lidové noviny], s4s2/stát-014, s4s3/say-91.
               ML   HH
 1  Od         s4c1 s4d1
 2  posledního s4c1 s4d1
@@ -461,7 +461,7 @@ Correspondence ML s4k2 (korun korun)             = HH s4k1 (korun korun)
 Correspondence ML s4k3 (šest)                    = HH s4m2 (šest)
 Correspondence ML s4l1 (letošního roku)          = HH s4l1 (letošního roku)
 Correspondence ML s4n1 (Lidové noviny)           = HH s4n1 (Lidové noviny)
-Correspondence ML s4n2 (name["Lidové" "noviny"]) = HH s4n2 (name["Lidové" "noviny"])
+Correspondence ML s4n2 (name[Lidové noviny])     = HH s4n2 (name[Lidové noviny])
 Correspondence ML s4p1 (proto)                   = HH s4p3 (proto)
 Correspondence ML s4p2 (od pondělka)             = HH s4p4 (od pondělka)
 Correspondence ML s4r2 (date-interval)           = HH s4d2 (date-interval)

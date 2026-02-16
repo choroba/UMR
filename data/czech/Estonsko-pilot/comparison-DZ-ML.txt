@@ -24,8 +24,8 @@ DZ                                                   ML
         :modal-strength full-affirmative))                    :modal-strength full-affirmative))
 
 Node-token alignments:
-File DZ: 3 nodes unaligned: s1c/country, s1n2/name["Estonsko"], s1p3/publication-91.
-File ML: 3 nodes unaligned: s1c/country, s1n/name["Estonsko"], s1p/publication-91.
+File DZ: 3 nodes unaligned: s1c/country, s1n2/name[Estonsko], s1p3/publication-91.
+File ML: 3 nodes unaligned: s1c/country, s1n/name[Estonsko], s1p/publication-91.
             DZ   ML
 1 Estonci   s1p  s1p2
 2 volili    s1v  s1v
@@ -38,12 +38,12 @@ Comparing aligned tokens in DZ and ML.
 Matched 3 out of 3 DZ token sets => recall    100%.
 Matched 3 out of 3 ML token sets => precision 100%.
 
-Correspondence DZ s1c  (country)          = ML s1c  (country)
-Correspondence DZ s1n2 (name["Estonsko"]) = ML s1n  (name["Estonsko"])
-Correspondence DZ s1p  (Estonci)          = ML s1p2 (Estonci)
-Correspondence DZ s1p2 (parlament)        = ML s1p3 (parlament)
-Correspondence DZ s1p3 (publication-91)   = ML s1p  (publication-91)
-Correspondence DZ s1v  (volili)           = ML s1v  (volili)
+Correspondence DZ s1c  (country)        = ML s1c  (country)
+Correspondence DZ s1n2 (name[Estonsko]) = ML s1n  (name[Estonsko])
+Correspondence DZ s1p  (Estonci)        = ML s1p2 (Estonci)
+Correspondence DZ s1p2 (parlament)      = ML s1p3 (parlament)
+Correspondence DZ s1p3 (publication-91) = ML s1p  (publication-91)
+Correspondence DZ s1v  (volili)         = ML s1v  (volili)
 
 Aligned 6 out of 6 DZ nodes, that is 100%.
 Aligned 6 out of 6 ML nodes, that is 100%.
@@ -72,8 +72,8 @@ DZ                                         ML
         :refer-number singular))                   :refer-number singular))
 
 Node-token alignments:
-File DZ: 3 nodes unaligned: s2n/name["Estonsko"], s2p/publication-91, s2t/thing.
-File ML: 3 nodes unaligned: s2n/name["Estonsko"], s2p/publication-91, s2t/thing.
+File DZ: 3 nodes unaligned: s2n/name[Estonsko], s2p/publication-91, s2t/thing.
+File ML: 3 nodes unaligned: s2n/name[Estonsko], s2p/publication-91, s2t/thing.
            DZ  ML
 1 ESTONSKO s2c s2c
 2 :            
@@ -85,10 +85,10 @@ Comparing aligned tokens in DZ and ML.
 Matched 1 out of 1 DZ token sets => recall    100%.
 Matched 1 out of 1 ML token sets => precision 100%.
 
-Correspondence DZ s2c (ESTONSKO)         = ML s2c (ESTONSKO)
-Correspondence DZ s2n (name["Estonsko"]) = ML s2n (name["Estonsko"])
-Correspondence DZ s2p (publication-91)   = ML s2p (publication-91)
-Correspondence DZ s2t (thing)            = ML s2t (thing)
+Correspondence DZ s2c (ESTONSKO)       = ML s2c (ESTONSKO)
+Correspondence DZ s2n (name[Estonsko]) = ML s2n (name[Estonsko])
+Correspondence DZ s2p (publication-91) = ML s2p (publication-91)
+Correspondence DZ s2t (thing)          = ML s2t (thing)
 
 Aligned 4 out of 4 DZ nodes, that is 100%.
 Aligned 4 out of 4 ML nodes, that is 100%.
@@ -124,8 +124,8 @@ DZ                                                   ML
         :modal-strength full-affirmative))                    :modal-strength full-affirmative))
 
 Node-token alignments:
-File DZ: 3 nodes unaligned: s3c/country, s3n2/name["Estonsko"], s3p3/publication-91.
-File ML: 3 nodes unaligned: s3c/country, s3n/name["Estonsko"], s3p/publication-91.
+File DZ: 3 nodes unaligned: s3c/country, s3n2/name[Estonsko], s3p3/publication-91.
+File ML: 3 nodes unaligned: s3c/country, s3n/name[Estonsko], s3p/publication-91.
             DZ   ML
 1 Estonci   s3p  s3p2
 2 volili    s3v  s3v
@@ -138,12 +138,12 @@ Comparing aligned tokens in DZ and ML.
 Matched 3 out of 3 DZ token sets => recall    100%.
 Matched 3 out of 3 ML token sets => precision 100%.
 
-Correspondence DZ s3c  (country)          = ML s3c  (country)
-Correspondence DZ s3n2 (name["Estonsko"]) = ML s3n  (name["Estonsko"])
-Correspondence DZ s3p  (Estonci)          = ML s3p2 (Estonci)
-Correspondence DZ s3p2 (parlament)        = ML s3p3 (parlament)
-Correspondence DZ s3p3 (publication-91)   = ML s3p  (publication-91)
-Correspondence DZ s3v  (volili)           = ML s3v  (volili)
+Correspondence DZ s3c  (country)        = ML s3c  (country)
+Correspondence DZ s3n2 (name[Estonsko]) = ML s3n  (name[Estonsko])
+Correspondence DZ s3p  (Estonci)        = ML s3p2 (Estonci)
+Correspondence DZ s3p2 (parlament)      = ML s3p3 (parlament)
+Correspondence DZ s3p3 (publication-91) = ML s3p  (publication-91)
+Correspondence DZ s3v  (volili)         = ML s3v  (volili)
 
 Aligned 6 out of 6 DZ nodes, that is 100%.
 Aligned 6 out of 6 ML nodes, that is 100%.
@@ -172,8 +172,8 @@ DZ                                       ML
         :refer-number singular))                 :refer-number singular))
 
 Node-token alignments:
-File DZ: 3 nodes unaligned: s4n/name["Tallin"], s4p/publication-91, s4t/thing.
-File ML: 3 nodes unaligned: s4n/name["Tallin"], s4p/publication-91, s4t/thing.
+File DZ: 3 nodes unaligned: s4n/name[Tallin], s4p/publication-91, s4t/thing.
+File ML: 3 nodes unaligned: s4n/name[Tallin], s4p/publication-91, s4t/thing.
          DZ  ML
 1 Tallin s4c s4c
 2 -          
@@ -186,7 +186,7 @@ Matched 1 out of 1 DZ token sets => recall    100%.
 Matched 1 out of 1 ML token sets => precision 100%.
 
 Correspondence DZ s4c (Tallin)         = ML s4c (Tallin)
-Correspondence DZ s4n (name["Tallin"]) = ML s4n (name["Tallin"])
+Correspondence DZ s4n (name[Tallin])   = ML s4n (name[Tallin])
 Correspondence DZ s4p (publication-91) = ML s4p (publication-91)
 Correspondence DZ s4t (thing)          = ML s4t (thing)
 
@@ -253,8 +253,8 @@ DZ                                                         ML
     :modal-strength full-affirmative)                          :modal-strength full-affirmative)
 
 Node-token alignments:
-File DZ: 4 nodes unaligned: s5n/name["Vlast"], s5n3/name["Estonsko"], s5n4/neděle, s5n5/name["Lennart" "Meri"].
-File ML: 5 nodes unaligned: s5n/name["Vlast"], s5n2/neděle, s5n3/name["Estonsko"], s5n4/name["Lennart" "Meri"], s5p5/person.
+File DZ: 4 nodes unaligned: s5n/name[Vlast], s5n3/name[Estonsko], s5n4/neděle, s5n5/name[Lennart Meri].
+File ML: 5 nodes unaligned: s5n/name[Vlast], s5n2/neděle, s5n3/name[Estonsko], s5n4/name[Lennart Meri], s5p5/person.
                  DZ   ML
 1  V             s5v  s5v
 2  nedělních     s5d  s5d
@@ -289,25 +289,25 @@ ML alignment 14,15,16,17 not found in DZ
 Matched 13 out of 14 DZ token sets => recall    93%.
 Matched 13 out of 14 ML token sets => precision 93%.
 
-Correspondence DZ s5b  (blok Vlast jehož)       = ML s5b  (blok Vlast , jehož)
-Correspondence DZ s5c  (v Estonsku)             = ML s5c  (v Estonsku)
-Correspondence DZ s5d  (nedělních)              = ML s5d  (nedělních)
-Correspondence DZ s5h  (hlasů)                  = ML s5h  (hlasů)
-Correspondence DZ s5k  (kandidátem byl)         = ML s5k  (kandidátem byl)
-Correspondence DZ s5n  (name["Vlast"])          = ML s5n  (name["Vlast"])
-Correspondence DZ s5n2 (nejvíce)                = ML s5n1 (nejvíce)
-Correspondence DZ s5n3 (name["Estonsko"])       = ML s5n3 (name["Estonsko"])
-Correspondence DZ s5n4 (neděle)                 = ML s5n2 (neděle)
-Correspondence DZ s5n5 (name["Lennart" "Meri"]) = ML s5n4 (name["Lennart" "Meri"])
-Correspondence DZ s5p  (parlamentních)          = ML s5p  (parlamentních)
-Correspondence DZ s5p3 (předběžných)            = ML s5p2 (předběžných)
-Correspondence DZ s5p4 (Lennart Meri)           = ML s5p3 (Lennart Meri)
-Correspondence DZ s5p5 (prezidentským)          = ML s5p4 (prezidentským)
-Correspondence DZ s5v  (V volbách)              = ML s5v  (V volbách)
-Correspondence DZ s5v2 (podle výsledků)         = ML s5v2 (podle výsledků)
-Correspondence DZ s5v3 (včerejších)             = ML s5v3 (včerejších)
-Correspondence DZ s5z  (získal)                 = ML s5z  (získal)
-Correspondence DZ                               = ML s5p5 (person)
+Correspondence DZ s5b  (blok Vlast jehož)   = ML s5b  (blok Vlast , jehož)
+Correspondence DZ s5c  (v Estonsku)         = ML s5c  (v Estonsku)
+Correspondence DZ s5d  (nedělních)          = ML s5d  (nedělních)
+Correspondence DZ s5h  (hlasů)              = ML s5h  (hlasů)
+Correspondence DZ s5k  (kandidátem byl)     = ML s5k  (kandidátem byl)
+Correspondence DZ s5n  (name[Vlast])        = ML s5n  (name[Vlast])
+Correspondence DZ s5n2 (nejvíce)            = ML s5n1 (nejvíce)
+Correspondence DZ s5n3 (name[Estonsko])     = ML s5n3 (name[Estonsko])
+Correspondence DZ s5n4 (neděle)             = ML s5n2 (neděle)
+Correspondence DZ s5n5 (name[Lennart Meri]) = ML s5n4 (name[Lennart Meri])
+Correspondence DZ s5p  (parlamentních)      = ML s5p  (parlamentních)
+Correspondence DZ s5p3 (předběžných)        = ML s5p2 (předběžných)
+Correspondence DZ s5p4 (Lennart Meri)       = ML s5p3 (Lennart Meri)
+Correspondence DZ s5p5 (prezidentským)      = ML s5p4 (prezidentským)
+Correspondence DZ s5v  (V volbách)          = ML s5v  (V volbách)
+Correspondence DZ s5v2 (podle výsledků)     = ML s5v2 (podle výsledků)
+Correspondence DZ s5v3 (včerejších)         = ML s5v3 (včerejších)
+Correspondence DZ s5z  (získal)             = ML s5z  (získal)
+Correspondence DZ                           = ML s5p5 (person)
 
 Aligned 18 out of 18 DZ nodes, that is 100%.
 Aligned 18 out of 19 ML nodes, that is 95%.
@@ -416,8 +416,8 @@ DZ                                                        ML
                                                                 :modal-strength full-affirmative)
 
 Node-token alignments:
-File DZ: 5 nodes unaligned: s6a/asi, s6i/include-91, s6n/name["Vlast"], s6p7/person, s6v/volit-001.
-File ML: 4 nodes unaligned: s6i/include-91, s6n/name["Vlast"], s6p/person, s6p8/person.
+File DZ: 5 nodes unaligned: s6a/asi, s6i/include-91, s6n/name[Vlast], s6p7/person, s6v/volit-001.
+File ML: 4 nodes unaligned: s6i/include-91, s6n/name[Vlast], s6p/person, s6p8/person.
                 DZ   ML
 1  Z            s6p  s6p7
 2  celkového    s6p  s6p7
@@ -469,7 +469,7 @@ Correspondence DZ s6b  (pro blok Vlast)                          = ML s6b  (pro 
 Correspondence DZ s6h  (hlasovalo)                               = ML s6h  (hlasovalo)
 Correspondence DZ s6i  (include-91)                              = ML s6i  (include-91)
 Correspondence DZ s6m  (28 mandátů)                              = ML s6m  (28 mandátů)
-Correspondence DZ s6n  (name["Vlast"])                           = ML s6n  (name["Vlast"])
+Correspondence DZ s6n  (name[Vlast])                             = ML s6n  (name[Vlast])
 Correspondence DZ s6n2 (novém)                                   = ML s6n2 (novém)
 Correspondence DZ s6p  (Z celkového počtu 457319 voličů , kteří) = ML s6p7 (Z celkového počtu 457319 voličů kteří)
 Correspondence DZ s6p2 (asi 20.5 procenta , což)                 = ML s6p2 (20.5 procenta což)
@@ -491,7 +491,7 @@ Comparing attributes of DZ nodes with their ML counterparts.
 Node DZ s6a / asi                                              mismatch in concept:         DZ = asi                    ML = UNMAPPED
 Node DZ s6a / asi                                              mismatch in :op1:            DZ = 20.5                   ML = UNMAPPED
 Node DZ s6h / hlasovat-003 (hlasovalo)                         mismatch in :ARG0:           DZ = s6p7 mapped to ML s6p  ML = 
-Node DZ s6h / hlasovat-003 (hlasovalo)                         mismatch in :wiki:           DZ =                        ML = "Q189760"
+Node DZ s6h / hlasovat-003 (hlasovalo)                         mismatch in :wiki:           DZ =                        ML = Q189760
 Node DZ s6i / include-91                                       mismatch in :ARG3:           DZ = s6p2 mapped to ML s6p2 ML = s6a
 Node DZ s6i / include-91                                       mismatch in :ARG1:           DZ =                        ML = s6p
 Node DZ s6p / person (Z celkového počtu 457319 voličů , kteří) mismatch in :ARG0-of:        DZ = s6v unmapped           ML = 
@@ -530,7 +530,7 @@ Comparing attributes of ML nodes with their DZ counterparts.
 Node ML s6a / asi (asi)                              mismatch in concept:         ML = asi                   DZ = UNMAPPED
 Node ML s6a / asi (asi)                              mismatch in :ARG0-of:        ML = s6p4                  DZ = UNMAPPED
 Node ML s6a / asi (asi)                              mismatch in :op1:            ML = s6p2                  DZ = UNMAPPED
-Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :wiki:           ML = "Q189760"             DZ = 
+Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :wiki:           ML = Q189760               DZ = 
 Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :ARG0:           ML =                       DZ = s6p7
 Node ML s6i / include-91                             mismatch in :ARG1:           ML = s6p mapped to DZ s6p7 DZ = 
 Node ML s6i / include-91                             mismatch in :ARG3:           ML = s6a unmapped          DZ = s6p2
@@ -607,8 +607,8 @@ DZ                                                                 ML
                                                                         :modal-strength full-affirmative)
 
 Node-token alignments:
-File DZ: 3 nodes unaligned: s7i/include-91, s7n/name["Spolehlivý" "dům"], s7n2/name["Arnold" "Rüütel"].
-File ML: 4 nodes unaligned: s7i/identity-91, s7i2/include-91, s7n/name["Spolehlivý" "dům"], s7n2/name["Arnold" "Rüütel"].
+File DZ: 3 nodes unaligned: s7i/include-91, s7n/name[Spolehlivý dům], s7n2/name[Arnold Rüütel].
+File ML: 4 nodes unaligned: s7i/identity-91, s7i2/include-91, s7n/name[Spolehlivý dům], s7n2/name[Arnold Rüütel].
                  DZ   ML
 1  Na            s7o  s7d2
 2  druhém        s7o  s7d2
@@ -641,22 +641,22 @@ Comparing aligned tokens in DZ and ML.
 Matched 12 out of 12 DZ token sets => recall    100%.
 Matched 12 out of 12 ML token sets => precision 100%.
 
-Correspondence DZ s7b  (blok Spolehlivý dům)      = ML s7b  (blok Spolehlivý dům)
-Correspondence DZ s7d  (dosavadního)              = ML s7d  (dosavadního)
-Correspondence DZ s7h  (je)                       = ML s7h  (je)
-Correspondence DZ s7h2 (s hlasů)                  = ML s7h3 (s hlasů)
-Correspondence DZ s7i  (include-91)               = ML s7i2 (include-91)
-Correspondence DZ s7m  (18 mandátů)               = ML s7m3 (18 mandátů)
-Correspondence DZ s7n  (name["Spolehlivý" "dům"]) = ML s7n  (name["Spolehlivý" "dům"])
-Correspondence DZ s7n2 (name["Arnold" "Rüütel"])  = ML s7n2 (name["Arnold" "Rüütel"])
-Correspondence DZ s7n3 (nejvyššího)               = ML s7n3 (nejvyššího)
-Correspondence DZ s7o  (Na druhém místě)          = ML s7d2 (Na druhém místě)
-Correspondence DZ s7p  (13.9 procenty)            = ML s7p3 (13.9 procenty)
-Correspondence DZ s7p2 (Arnolda Rüütela)          = ML s7p  (Arnolda Rüütela)
-Correspondence DZ s7p3 (představitele)            = ML s7p2 (představitele)
-Correspondence DZ s7r  (republiky)                = ML s7r  (republiky)
-Correspondence DZ s7z  (zatím)                    = ML s7z  (zatím)
-Correspondence DZ                                 = ML s7i  (identity-91)
+Correspondence DZ s7b  (blok Spolehlivý dům)  = ML s7b  (blok Spolehlivý dům)
+Correspondence DZ s7d  (dosavadního)          = ML s7d  (dosavadního)
+Correspondence DZ s7h  (je)                   = ML s7h  (je)
+Correspondence DZ s7h2 (s hlasů)              = ML s7h3 (s hlasů)
+Correspondence DZ s7i  (include-91)           = ML s7i2 (include-91)
+Correspondence DZ s7m  (18 mandátů)           = ML s7m3 (18 mandátů)
+Correspondence DZ s7n  (name[Spolehlivý dům]) = ML s7n  (name[Spolehlivý dům])
+Correspondence DZ s7n2 (name[Arnold Rüütel])  = ML s7n2 (name[Arnold Rüütel])
+Correspondence DZ s7n3 (nejvyššího)           = ML s7n3 (nejvyššího)
+Correspondence DZ s7o  (Na druhém místě)      = ML s7d2 (Na druhém místě)
+Correspondence DZ s7p  (13.9 procenty)        = ML s7p3 (13.9 procenty)
+Correspondence DZ s7p2 (Arnolda Rüütela)      = ML s7p  (Arnolda Rüütela)
+Correspondence DZ s7p3 (představitele)        = ML s7p2 (představitele)
+Correspondence DZ s7r  (republiky)            = ML s7r  (republiky)
+Correspondence DZ s7z  (zatím)                = ML s7z  (zatím)
+Correspondence DZ                             = ML s7i  (identity-91)
 
 Aligned 15 out of 15 DZ nodes, that is 100%.
 Aligned 15 out of 16 ML nodes, that is 94%.
@@ -667,7 +667,7 @@ Node DZ s7h / have-ord-91 (je)                  mismatch in :manner:         DZ 
 Node DZ s7h2 / hlas (s hlasů)                   mismatch in :ARG2-of:        DZ =                        ML = s7i2
 Node DZ s7i / include-91                        mismatch in :ARG1:           DZ = s7h2 mapped to ML s7h3 ML = 
 Node DZ s7i / include-91                        mismatch in :ARG3:           DZ =                        ML = s7p3
-Node DZ s7m / mandát (18 mandátů)               mismatch in :wiki:           DZ =                        ML = "Q486839"
+Node DZ s7m / mandát (18 mandátů)               mismatch in :wiki:           DZ =                        ML = Q486839
 Node DZ s7n3 / nejvýše (nejvyššího)             mismatch in concept:         DZ = nejvýše                ML = nejvyšší
 Node DZ s7o / ordinal-entity (Na druhém místě)  mismatch in concept:         DZ = ordinal-entity         ML = dva
 Node DZ s7o / ordinal-entity (Na druhém místě)  mismatch in :value:          DZ = 2                      ML = 
@@ -714,7 +714,7 @@ Node ML s7i / identity-91                        mismatch in :aspect:         ML
 Node ML s7i / identity-91                        mismatch in :modal-strength: ML = full-affirmative      DZ = UNMAPPED
 Node ML s7i2 / include-91                        mismatch in :ARG3:           ML = s7p3 mapped to DZ s7p DZ = 
 Node ML s7i2 / include-91                        mismatch in :ARG1:           ML =                       DZ = s7h2
-Node ML s7m3 / mandát (18 mandátů)               mismatch in :wiki:           ML = "Q486839"             DZ = 
+Node ML s7m3 / mandát (18 mandátů)               mismatch in :wiki:           ML = Q486839               DZ = 
 Node ML s7n3 / nejvyšší (nejvyššího)             mismatch in concept:         ML = nejvyšší              DZ = nejvýše
 Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :ARG3-of:        ML =                       DZ = s7i
 Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :mod:            ML =                       DZ = s7m
