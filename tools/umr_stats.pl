@@ -43,6 +43,7 @@ if(scalar(@ARGV)==0)
 my $total_sentences = 0;
 my $total_tokens = 0;
 my %srelations;
+my %drelations;
 foreach my $file (@ARGV)
 {
     print("File = $file\n");
@@ -70,6 +71,13 @@ foreach my $file (@ARGV)
                 $srelations{$relation->{name}}++;
             }
         }
+        umrlib::parse_sentence_docrels($sentence);
+        my @triples = keys(%{$sentence->{docrels}});
+        foreach my $triple (@triples)
+        {
+            my ($node0, $relation, $node1) = split(/ /, $triple);
+            $drelations{$relation}++;
+        }
     }
     print("\t$n sentences\n");
     print("\t$n_tokens tokens\n");
@@ -80,6 +88,11 @@ my @srelations = sort(keys(%srelations));
 foreach my $sr (@srelations)
 {
     print("sentence level relation\t$sr\t$srelations{$sr}\n");
+}
+my @drelations = sort(keys(%drelations));
+foreach my $dr (@drelations)
+{
+    print("document level relation\t$dr\t$drelations{$dr}\n");
 }
 if(scalar(@ARGV)>1)
 {
