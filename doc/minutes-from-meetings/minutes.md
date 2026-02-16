@@ -61,9 +61,7 @@
   - selecting new files
 
 - **Possibility to annotate/re-arrange UMRs in TrEd?** ... postponed  
-  (This would significantly speed up the annotation!)
-
-#### 
+  (This would significantly speed up the annotation!) 
 
 #### **III. Papers**
 
@@ -77,21 +75,27 @@
 
 # UMR meeting minutes
 
-## Monday, ... template
+## Monday, February 16, 2026
 
-(attendees)
+(Dan, Markéta)
 
-#### Updates:
+#### Updates, DMR workshop:
 
-- xxx
-
-#### TODO:
-
-- xxx
+- **UMR Parsing Shared Task:** [web](https://ufal.mff.cuni.cz/umr-parsing)
+  - training data available (Feb 1) ... English, Czech, Latin, Chinese, Arapaho, Navajo
+  - evaluation script (Feb 8)
+  - blind test data available (should be done today)
+- **Workshop paper(s):** 
+  - ??? Dan and Federica, Umatch
+  - ??? Hanka et al, What to do with deverbal nouns and adjectives in Czech and Latin UMRs  
 
 #### NEXT meetings:
 
-- Monday, xxx
+- Monday, March 2, S510
+- Monday, March 9, S510
+- Monday, March 16, S510
+- Monday, March 23, S510
+- Monday, March 30, S510
 
 ---
 
@@ -111,20 +115,19 @@
     - _he ran **7 miles** yeasterday_ ... How much?
   - :degree (intensifiier/downtoner) ... modifies a property concept, as in 
     - _**very** big_ or _**somewhat** dirty_ 
-- What about baseline for Czech data?
 - updates on the *metAMoRphosed* editor [UMR editor](https://github.com/Orange-OpenSource/metamorphosed/tree/UMR) ? Instructions below (Dec. 1, 2025)
 
 **DMR workshop:**
 
 - Shared Task:
   
-  - Which languages: Federica: Chinese, English, Czech, ?Latin, ?anything else
+  - Which languages: Federica: Chinese, English, Czech, Latin, ?anything else
+  
+  - "dirty" data (train+dtest, automatically converted) vs. "clean" data (etest+dtest, manually annotated)
   
   - What about baseline for Czech?
 
 - Paper on derivations?
-  
-  
 
 #### NEXT meetings:
 
@@ -896,3 +899,27 @@ See above.
 - for Markéta: collect information from JH
   - next release date
   - available funds for manual UMR annotation (if yes, when and how many?)
+
+
+
+---
+
+---
+
+# UMR meeting minutes - template
+
+## Monday, ...
+
+(attendees)
+
+#### Updates:
+
+- xxx
+
+#### TODO:
+
+- xxx
+
+#### NEXT meetings:
+
+- Monday, xxx
