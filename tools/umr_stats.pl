@@ -42,6 +42,7 @@ if(scalar(@ARGV)==0)
 }
 my $total_sentences = 0;
 my $total_tokens = 0;
+my %srelations;
 foreach my $file (@ARGV)
 {
     print("File = $file\n");
@@ -58,11 +59,27 @@ foreach my $file (@ARGV)
         umrlib::parse_sentence_tokens($sentence);
         my $n_tokens_sentence = scalar(@{$sentence->{tokens}});
         $n_tokens += $n_tokens_sentence;
+        umrlib::parse_sentence_graph($sentence);
+        my @variables = keys(%{$sentence->{nodes}});
+        foreach my $variable (@variables)
+        {
+            my $node = $sentence->{nodes}{$variable};
+            my @relations = @{$node->{relations}};
+            foreach my $relation (@relations)
+            {
+                $srelations{$relation->{name}}++;
+            }
+        }
     }
     print("\t$n sentences\n");
     print("\t$n_tokens tokens\n");
     $total_sentences += $n;
     $total_tokens += $n_tokens;
+}
+my @srelations = sort(keys(%srelations));
+foreach my $sr (@srelations)
+{
+    print("sentence level relation\t$sr\t$srelations{$sr}\n");
 }
 if(scalar(@ARGV)>1)
 {
