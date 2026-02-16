@@ -216,11 +216,25 @@ sub parse_sentence_graph
                 #print STDERR ("attribute $1\n");
                 $current_relation = $1;
             }
+            elsif($cline =~ s/^"(.*?)"//)
+            {
+                # New string value of attribute (in quotes).
+                my $value = $1;
+                if(scalar(@stack) == 0)
+                {
+                    confess("Nodes closed prematurely; extra attribute value $value at line $iline of file $file->{label}");
+                }
+                if(!defined($current_relation))
+                {
+                    confess("Missing relation for value $value at line $iline of file $file->{label}");
+                }
+                push(@{$stack[-1]{relations}}, {'name' => $current_relation, 'value' => $value});
+                $current_relation = undef;
+            }
             elsif($cline =~ s/^([^\s\)]+)//)
             {
-                # New value of attribute or node reference for reentrant relation.
+                # New value of attribute or node reference for reentrant relation (no quotes).
                 my $value = $1;
-                #print STDERR ("value $value\n");
                 if(scalar(@stack) == 0)
                 {
                     confess("Nodes closed prematurely; extra attribute value $value at line $iline of file $file->{label}");
@@ -275,6 +289,15 @@ sub parse_sentence_graph
             $econcept .= '['.$name.']';
         }
         $node->{econcept} = $econcept;
+    }
+    # Make sure that the nodes of this sentence are also accessible globally
+    # in the current file (document).
+    foreach my $variable (sort(keys(%nodes)))
+    {
+        # Variables must be unique document-wide but we do not verify here that
+        # it is indeed the case. The files should be tested by the validator
+        # script first.
+        $file->{nodes}{$variable} = $nodes{$variable};
     }
 }
 
