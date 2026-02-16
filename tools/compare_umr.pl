@@ -1364,11 +1364,11 @@ sub compare_two_sentences
     my $sentence0 = shift;
     my $sentence1 = shift;
     compare_alignment_in_sentences($sentence0, $sentence1);
-    if($config{verbose})
-    {
-        print_symmetrization_report($sentence0, $sentence1);
-        print_symmetrization_report($sentence1, $sentence0);
-    }
+    ###!!! Despite the name of the following two functions, they are not only
+    ###!!! about printing. They also compute and store some new values for the
+    ###!!! summary. So we must visit them even in quiet mode.
+    print_symmetrization_report($sentence0, $sentence1);
+    print_symmetrization_report($sentence1, $sentence0);
     compare_node_correspondences($sentence0, $sentence1);
     compare_node_attributes($sentence0, $sentence1);
     compare_node_attributes($sentence1, $sentence0);
@@ -1495,7 +1495,7 @@ sub print_symmetrization_report
             $n_nodes_in_ambiguous_projections += $ncf1;
             my $node_text = node_as_string($label0, $n0);
             my $ocf1_text = list_of_node_variables_as_string($label1, $sentence1, @ocf1);
-            print("Ambiguous projection of $node_text to $ncf1 $ocf1_text\n");
+            print("Ambiguous projection of $node_text to $ncf1 $ocf1_text\n") if($config{verbose});
         }
     }
     if($n_nodes_with_ambiguous_projection > 0)
@@ -1505,10 +1505,11 @@ sub print_symmetrization_report
             my $n0 = $sentence0->{nodes}{$f0var};
             if(exists($n0->{winning_cf}{$label1}))
             {
-                print("  The winner is ", ambiguous_link_as_string($n0->{winning_cf}{$label1}), ".\n");
+                print("  The winner is ", ambiguous_link_as_string($n0->{winning_cf}{$label1}), ".\n") if($config{verbose});
             }
         }
-        print("\n");
+        print("\n") if($config{verbose});
+        ###!!! The following values should be updated even if we are not in verbose node and not printing per-sentence comparison.
         $file0->{stats}{cr}{$label1}{nodes_with_originally_ambiguous_projection} += $n_nodes_with_ambiguous_projection;
         $file0->{stats}{cr}{$label1}{nodes_in_originally_ambiguous_projections} += $n_nodes_in_ambiguous_projections;
     }
