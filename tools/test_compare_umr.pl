@@ -30,28 +30,23 @@ my $ldttest_path = "$root_path/umr-ufal/data/latin/LDT-manual-comparison";
 my $except = 'wiki,modal-strength,mode,quote,polite';
 
 # Inter-annotator agreement on Czech samples.
-sysrun("perl $script_path/compare_umr.pl DZ $czech_path/Estonsko-pilot/mf920922-133_estonsko-DZ.umr ML $czech_path/Estonsko-pilot/mf920922-133_estonsko-ML.umr > $czech_path/Estonsko-pilot/comparison-DZ-ML.txt");
-sysrun("perl $script_path/compare_umr.pl ML $pdttest_path/manual/ln94210_111-ML-all.umr HH $pdttest_path/manual/ln94210_111-HH-s1-s5.umr > $pdttest_path/evaluation/comparison-ln94210_111.txt");
-sysrun("perl $script_path/compare_umr.pl ML $pdttest_path/manual/ln95046_093-ML-s1-s6.umr HH $pdttest_path/manual/ln95046_093-HH-all.umr > $pdttest_path/evaluation/comparison-ln95046_093.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose DZ $czech_path/Estonsko-pilot/mf920922-133_estonsko-DZ.umr ML $czech_path/Estonsko-pilot/mf920922-133_estonsko-ML.umr > $czech_path/Estonsko-pilot/comparison-DZ-ML.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose ML $pdttest_path/manual/ln94210_111-ML-all.umr HH $pdttest_path/manual/ln94210_111-HH-s1-s5.umr > $pdttest_path/evaluation/comparison-ln94210_111.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose ML $pdttest_path/manual/ln95046_093-ML-s1-s6.umr HH $pdttest_path/manual/ln95046_093-HH-all.umr > $pdttest_path/evaluation/comparison-ln95046_093.txt");
 # Evaluation of Honza's conversion from PDT-C to UMR.
-sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/manual/ln94210_111-ML-all.umr CONV $pdttest_path/converted/ln94210_111-conv.umr > $pdttest_path/evaluation/evaluation-ln94210_111.txt");
-sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/manual/ln95046_093-HH-all.umr CONV $pdttest_path/converted/ln95046_093-conv.umr > $pdttest_path/evaluation/evaluation-ln95046_093.txt");
-sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/manual/pdtsc_093_3.02-ML-s1-s25.umr CONV $pdttest_path/converted/pdtsc_093_3.02-conv.umr > $pdttest_path/evaluation/evaluation-pdtsc_093_3.02.txt");
-sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/manual/pdtsc_146_2.05-HH-s1-s25.umr CONV $pdttest_path/converted/pdtsc_146_2.05-conv.umr > $pdttest_path/evaluation/evaluation-pdtsc_146_2.05.txt");
-sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/manual/wsj0013.cz-ML-all.umr CONV $pdttest_path/converted/wsj0013.cz-conv.umr > $pdttest_path/evaluation/evaluation-wsj0013.cz.txt");
-sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/manual/wsj0072.cz-HH-s1-s10.umr CONV $pdttest_path/converted/wsj0072.cz-conv.umr > $pdttest_path/evaluation/evaluation-wsj0072.cz.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose GOLD $pdttest_path/manual/ln94210_111-ML-all.umr CONV $pdttest_path/converted/ln94210_111-conv.umr > $pdttest_path/evaluation/evaluation-ln94210_111.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose GOLD $pdttest_path/manual/ln95046_093-HH-all.umr CONV $pdttest_path/converted/ln95046_093-conv.umr > $pdttest_path/evaluation/evaluation-ln95046_093.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose GOLD $pdttest_path/manual/pdtsc_093_3.02-ML-s1-s25.umr CONV $pdttest_path/converted/pdtsc_093_3.02-conv.umr > $pdttest_path/evaluation/evaluation-pdtsc_093_3.02.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose GOLD $pdttest_path/manual/pdtsc_146_2.05-HH-s1-s25.umr CONV $pdttest_path/converted/pdtsc_146_2.05-conv.umr > $pdttest_path/evaluation/evaluation-pdtsc_146_2.05.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose GOLD $pdttest_path/manual/wsj0013.cz-ML-all.umr CONV $pdttest_path/converted/wsj0013.cz-conv.umr > $pdttest_path/evaluation/evaluation-wsj0013.cz.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose GOLD $pdttest_path/manual/wsj0072.cz-HH-s1-s10.umr CONV $pdttest_path/converted/wsj0072.cz-conv.umr > $pdttest_path/evaluation/evaluation-wsj0072.cz.txt");
 # Evaluation of various merged files. As these are not the primary files, they are kept in the evaluation folder, only for evaluation purposes.
 #sysrun("python $smatch_path/smatch.py -v -f $pdttest_path/evaluation/dtest-conv.amr $pdttest_path/evaluation/dtest-gold.amr");
-sysrun("perl $script_path/compare_umr.pl --except $except GOLD $pdttest_path/evaluation/dtest-gold.umr CONV $pdttest_path/evaluation/dtest-conv.umr > $pdttest_path/evaluation/evaluation-dtest.txt");
-sysrun("perl $script_path/compare_umr.pl --except $except GOLD $pdttest_path/evaluation/pdt-gold.umr CONV $pdttest_path/evaluation/pdt-conv.umr > $pdttest_path/evaluation/evaluation-pdt.txt");
-sysrun("perl $script_path/compare_umr.pl --except $except GOLD $pdttest_path/evaluation/pdtsc-gold.umr CONV $pdttest_path/evaluation/pdtsc-conv.umr > $pdttest_path/evaluation/evaluation-pdtsc.txt");
-sysrun("perl $script_path/compare_umr.pl --except $except GOLD $pdttest_path/evaluation/pcedt-gold.umr CONV $pdttest_path/evaluation/pcedt-conv.umr > $pdttest_path/evaluation/evaluation-pcedt.txt");
-sysrun("perl $script_path/compare_umr.pl --except $except GOLD $ldttest_path/FIXED_TOKENS_latin_umr-0001.txt CONV $ldttest_path/latin_conv_50_dmr.umr > $ldttest_path/evaluation-ldt.txt");
-# Inter-annotator agreement.
-###!!! This does not work because the files have different numbers of sentences.
-#cat("$pdttest_path/manual/ln94210_111-ML-all.umr", "$pdttest_path/manual/ln95046_093-ML-s1-s6.umr", "$pdttest_path/manual/pdtsc_093_3.02-ML-s1-s25.umr", "$pdttest_path/manual/pdtsc_146_2.05-ML-s1-s5.umr" => "$pdttest_path/evaluation/pdtc-ML.umr");
-#cat("$pdttest_path/manual/ln94210_111-HH-s1-s5.umr", "$pdttest_path/manual/ln95046_093-HH-all.umr", "$pdttest_path/manual/pdtsc_093_3.02-HH-s1-s5.umr", "$pdttest_path/manual/pdtsc_146_2.05-HH-s1-s25.umr" => "$pdttest_path/evaluation/pdtc-HH.umr");
-#sysrun("perl $script_path/compare_umr.pl --except $except ML $pdttest_path/evaluation/pdtc-ML.umr HH $pdttest_path/evaluation/pdtc-HH.umr > $pdttest_path/evaluation/comparison-ML-HH.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose --except $except GOLD $pdttest_path/evaluation/dtest-gold.umr CONV $pdttest_path/evaluation/dtest-conv.umr > $pdttest_path/evaluation/evaluation-dtest.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose --except $except GOLD $pdttest_path/evaluation/pdt-gold.umr CONV $pdttest_path/evaluation/pdt-conv.umr > $pdttest_path/evaluation/evaluation-pdt.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose --except $except GOLD $pdttest_path/evaluation/pdtsc-gold.umr CONV $pdttest_path/evaluation/pdtsc-conv.umr > $pdttest_path/evaluation/evaluation-pdtsc.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose --except $except GOLD $pdttest_path/evaluation/pcedt-gold.umr CONV $pdttest_path/evaluation/pcedt-conv.umr > $pdttest_path/evaluation/evaluation-pcedt.txt");
+sysrun("perl $script_path/compare_umr.pl --verbose --except $except GOLD $ldttest_path/FIXED_TOKENS_latin_umr-0001.txt CONV $ldttest_path/latin_conv_50_dmr.umr > $ldttest_path/evaluation-ldt.txt");
 
 
 

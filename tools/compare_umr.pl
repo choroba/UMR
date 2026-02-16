@@ -12,6 +12,7 @@ use Carp;
 use Getopt::Long;
 
 ###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off. Note that most document-level relations can be inverted, too, but in a different manner.
+###!!! TODO: Add a --help option (print usage() and exit).
 ###!!! TODO: Move the script to a separate repository (umrtools?)
 ###!!! TODO: Add node mapping criteria so that comparing a file to itself cannot end with any node mapped wrongly (now it can happen when there are multiple unaligned nodes with the same concept and no difference in children or attributes; we only avoid it by also comparing the variables, but those should not matter at all).
 
@@ -21,6 +22,7 @@ sub usage
     print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2] [--no-document-level] [--quiet]\n");
     print STDERR ("    The labels are used to refer to the files in the output.\n");
     print STDERR ("    They can be e.g. initials of the annotators, or 'GOLD' and 'SYSTEM'.\n");
+    print STDERR ("    --verbose ... print detailed node comparison for each sentence. Without this flag, only the final summary will be printed.\n");
     print STDERR ("    --quiet ... supress all partial metrics and explanatory text. Print only the final juːmæʧ F₁ score.\n");
     print STDERR ("Example (system evaluation):\n");
     print STDERR ("    perl tools/compare_umr.pl GOLD english-test.umr SYSTEM english-test-predicted.umr\n");
@@ -31,12 +33,14 @@ sub usage
 my $only_relations;
 my $except_relations;
 my $except_document_level = 0;
+my $verbose = 0;
 my $quiet = 0;
 GetOptions
 (
     'only=s'            => \$only_relations,
     'except=s'          => \$except_relations,
     'no-document-level' => \$except_document_level,
+    'verbose'           => \$verbose,
     'quiet'             => \$quiet
 );
 my %config =
@@ -44,6 +48,7 @@ my %config =
     'document_level'   => !$except_document_level,
     'only_relations'   => {},
     'except_relations' => {},
+    'verbose'          => $verbose,
     'quiet'            => $quiet
 );
 if(defined($only_relations))
@@ -77,6 +82,12 @@ elsif($n_only)
 elsif($n_except)
 {
     $config{use_except} = 1;
+}
+# It does not make sense to use both --verbose and --quiet. If it happens,
+# --quiet wins.
+if($config{verbose} && $config{quiet})
+{
+    $config{verbose} = 0;
 }
 
 
@@ -713,7 +724,7 @@ sub compare_files
     # Loop over sentence numbers, look at the same-numbered sentence in each file.
     for(my $i = 0; $i < $n_sentences; $i++)
     {
-        unless($config{quiet})
+        if($config{verbose})
         {
             print("-------------------------------------------------------------------------------\n");
             printf("Comparing sentence %d:\n", $i+1);
@@ -741,16 +752,8 @@ sub compare_files
             }
             push(@sentences, $sentence);
         }
-        print("$sentence_text\n") unless($config{quiet});
+        print("$sentence_text\n") if($config{verbose});
         compare_sentences(@sentences);
-    }
-    unless($config{quiet})
-    {
-        print("-------------------------------------------------------------------------------\n");
-        print("SUMMARY:\n");
-        print("Number of tokens: $files[0]{stats}{n_tokens}\n");
-        print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
-        print("File-to-file node mapping:\n");
     }
     # Compare node alignments for each pair of files. Although both files may
     # come from annotators, imagine that the first file is the gold standard
@@ -836,6 +839,14 @@ sub compare_files
     }
     # Now print the summary, observing output configuration.
     my $rounding = 2; # 2 decimal places ###!!! We may want to make this configurable from the command line. Smatch has the option --significant 2.
+    unless($config{quiet})
+    {
+        print("-------------------------------------------------------------------------------\n");
+        print("SUMMARY:\n");
+        print("Number of tokens: $files[0]{stats}{n_tokens}\n");
+        print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
+        print("File-to-file node mapping:\n");
+    }
     foreach my $metric (@summary)
     {
         unless($config{quiet})
@@ -939,7 +950,7 @@ sub compare_sentences
             last;
         }
     }
-    unless($config{quiet})
+    if($config{verbose})
     {
         print("\n");
         print_table(@table);
@@ -950,7 +961,7 @@ sub compare_sentences
     # Get the mapping between tokens of the sentence and nodes in each file.
     map_node_alignments(@sentences);
     compute_crossfile_node_references(@sentences);
-    unless($config{quiet})
+    if($config{verbose})
     {
         print("Node-token alignments:\n");
         # Print the unaligned nodes.
@@ -1353,7 +1364,7 @@ sub compare_two_sentences
     my $sentence0 = shift;
     my $sentence1 = shift;
     compare_alignment_in_sentences($sentence0, $sentence1);
-    unless($config{quiet})
+    if($config{verbose})
     {
         print_symmetrization_report($sentence0, $sentence1);
         print_symmetrization_report($sentence1, $sentence0);
@@ -1379,7 +1390,7 @@ sub compare_alignment_in_sentences
     my $file1 = $sentence1->{file};
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
-    print("Comparing aligned tokens in $label0 and $label1.\n") unless($config{quiet});
+    print("Comparing aligned tokens in $label0 and $label1.\n") if($config{verbose});
     # Hash token ranges from both sides.
     my @nodes0 = sort(keys(%{$sentence0->{nodes}}));
     my @nodes1 = sort(keys(%{$sentence1->{nodes}}));
@@ -1442,7 +1453,7 @@ sub compare_alignment_in_sentences
             push(@table, ["$label1 alignment $alignment", "not found in $label0"]);
         }
     }
-    unless($config{quiet})
+    if($config{verbose})
     {
         print_table(@table);
         print("\n");
@@ -1592,7 +1603,7 @@ sub compare_node_correspondences
             $n_total_1++;
         }
     }
-    unless($config{quiet})
+    if($config{verbose})
     {
         print_table(@table_symmetric, @table_from_0, @table_from_1);
         print("\n");
@@ -1623,7 +1634,7 @@ sub compare_node_attributes
     my $file1 = $sentence1->{file};
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
-    print("Comparing attributes of $label0 nodes with their $label1 counterparts.\n") unless($config{quiet});
+    print("Comparing attributes of $label0 nodes with their $label1 counterparts.\n") if($config{verbose});
     my $n_total_0;
     my $n_total_1;
     my $n_correct;
@@ -1690,7 +1701,7 @@ sub compare_node_attributes
             }
         }
     }
-    print_table(@table) unless($config{quiet});
+    print_table(@table) if($config{verbose});
     # Compare document-level relations from this sentence.
     if($config{document_level})
     {
@@ -1699,7 +1710,7 @@ sub compare_node_attributes
         $n_total_1 += $result->{total1};
         $n_correct += $result->{correct};
     }
-    unless($config{quiet})
+    if($config{verbose})
     {
         print("\n");
         printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
@@ -1911,7 +1922,7 @@ sub compare_document_level_relations
             $n_total_1++;
         }
     }
-    print_table(@table) unless($config{quiet});
+    print_table(@table) if($config{verbose});
     return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct};
 }
 
