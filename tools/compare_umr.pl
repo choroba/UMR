@@ -19,11 +19,12 @@ use Getopt::Long;
 sub usage
 {
     # perl tools\compare_umr.pl GOLD data\czech\PDT-C-dtest\manual\ln94210_111-ML-all.umr CONV data\czech\PDT-C-dtest\converted\ln94210_111-conv.umr
-    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2] [--no-document-level] [--quiet]\n");
+    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2] [--no-document-level] [--verbose|--quiet] [--tsv]\n");
     print STDERR ("    The labels are used to refer to the files in the output.\n");
     print STDERR ("    They can be e.g. initials of the annotators, or 'GOLD' and 'SYSTEM'.\n");
     print STDERR ("    --verbose ... print detailed node comparison for each sentence. Without this flag, only the final summary will be printed.\n");
     print STDERR ("    --quiet ... supress all partial metrics and explanatory text. Print only the final juːmæʧ F₁ score.\n");
+    print STDERR ("    --tsv ... tab-separated values. Omits explanatory prose and produces output that is easier to process automatically.\n");
     print STDERR ("Example (system evaluation):\n");
     print STDERR ("    perl tools/compare_umr.pl GOLD english-test.umr SYSTEM english-test-predicted.umr\n");
     print STDERR ("Example (two annotators; Windows path fomat):\n");
@@ -35,13 +36,15 @@ my $except_relations;
 my $except_document_level = 0;
 my $verbose = 0;
 my $quiet = 0;
+my $tsv = 0;
 GetOptions
 (
     'only=s'            => \$only_relations,
     'except=s'          => \$except_relations,
     'no-document-level' => \$except_document_level,
     'verbose'           => \$verbose,
-    'quiet'             => \$quiet
+    'quiet'             => \$quiet,
+    'tsv'               => \$tsv
 );
 my %config =
 (
@@ -49,7 +52,8 @@ my %config =
     'only_relations'   => {},
     'except_relations' => {},
     'verbose'          => $verbose,
-    'quiet'            => $quiet
+    'quiet'            => $quiet,
+    'tsv'              => $tsv
 );
 if(defined($only_relations))
 {
@@ -89,6 +93,12 @@ if($config{verbose} && $config{quiet})
 {
     $config{verbose} = 0;
 }
+# In our current implementation, the TSV output does not work well in verbose
+# mode. Make sure to switch off --verbose if --tsv is on.
+if($config{verbose} && $config{tsv})
+{
+    $config{verbose} = 0;
+}
 
 
 
@@ -121,10 +131,14 @@ while(1)
     $file{sentences} = read_umr_file($path, \%file);
     my $n = scalar(@{$file{sentences}});
     my $n_failed = 0;
-    unless($config{quiet})
+    if($config{verbose})
     {
         print("Found $n sentences in $label:\n");
         print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
+    }
+    elsif($config{tsv} && !$config{quiet})
+    {
+        print(join("\t", ('number of sentences', $label, '', $n)), "\n");
     }
     my $i = 0;
     foreach my $sentence (@{$file{sentences}})
@@ -167,7 +181,7 @@ foreach my $file (@files)
     }
     @{$file{sentences}} = @filtered_sentences;
 }
-print("\n") unless($config{quiet});
+print("\n") if($config{verbose});
 compare_files(@files);
 
 
@@ -805,10 +819,10 @@ sub compare_files
                 'metric' => 'ambiguous node projections',
                 'label0' => $labeli,
                 'label1' => $labelj,
-                'nsrc0'  => $files[$i]{stats}{cr}{$labelj}{nodes_with_originally_ambiguous_projection},
-                'nsrc1'  => $files[$j]{stats}{cr}{$labeli}{nodes_with_originally_ambiguous_projection},
-                'ntgt0'  => $files[$i]{stats}{cr}{$labelj}{nodes_in_originally_ambiguous_projections},
-                'ntgt1'  => $files[$j]{stats}{cr}{$labeli}{nodes_in_originally_ambiguous_projections}
+                'nsrc0'  => $files[$i]{stats}{cr}{$labelj}{nodes_with_originally_ambiguous_projection} // 0,
+                'nsrc1'  => $files[$j]{stats}{cr}{$labeli}{nodes_with_originally_ambiguous_projection} // 0,
+                'ntgt0'  => $files[$i]{stats}{cr}{$labelj}{nodes_in_originally_ambiguous_projections} // 0,
+                'ntgt1'  => $files[$j]{stats}{cr}{$labeli}{nodes_in_originally_ambiguous_projections} // 0
             );
             push(@summary, \%ambproj);
             # Summarize comparison of concepts and relations (mapped nodes only).
@@ -841,11 +855,22 @@ sub compare_files
     my $rounding = 2; # 2 decimal places ###!!! We may want to make this configurable from the command line. Smatch has the option --significant 2.
     unless($config{quiet})
     {
-        print("-------------------------------------------------------------------------------\n");
-        print("SUMMARY:\n");
-        print("Number of tokens: $files[0]{stats}{n_tokens}\n");
-        print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
-        print("File-to-file node mapping:\n");
+        if($config{tsv})
+        {
+            print(join("\t", 'number of tokens', '', '', $files[0]{stats}{n_tokens}), "\n");
+            foreach my $file (@files)
+            {
+                print(join("\t", 'number of nodes', $file->{label}, '', $file->{stats}{n_nodes}), "\n");
+            }
+        }
+        else
+        {
+            print("-------------------------------------------------------------------------------\n");
+            print("SUMMARY:\n");
+            print("Number of tokens: $files[0]{stats}{n_tokens}\n");
+            print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
+            print("File-to-file node mapping:\n");
+        }
     }
     foreach my $metric (@summary)
     {
@@ -853,43 +878,85 @@ sub compare_files
         {
             if($metric->{metric} eq 'aligned token sets')
             {
-                print("Aligned token set comparison:\n");
-                printf("Out of %d aligned token sets in %s, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
-                printf("Out of %d aligned token sets in %s, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
-                printf(" => F₁($metric->{label0},$metric->{label1}) = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+                if($config{tsv})
+                {
+                    print(join("\t", ($metric->{metric}, $metric->{label0}, $metric->{label1}, $metric->{correct}, $metric->{total0}, $metric->{total1}, $metric->{p}, $metric->{r}, $metric->{f}, "correct total0 total1 p r f")), "\n");
+                }
+                else
+                {
+                    print("Aligned token set comparison:\n");
+                    printf("Out of %d aligned token sets in %s, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
+                    printf("Out of %d aligned token sets in %s, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
+                    printf(" => F₁($metric->{label0},$metric->{label1}) = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+                }
             }
             elsif($metric->{metric} eq 'node projections')
             {
                 # Precision: nodes mapped from j to i / total j nodes (how much of what we found we should have found).
                 # Recall: nodes mapped from i to j / total i nodes (how much of what we should have found we found).
-                printf("Out of %d total %s nodes, %d mapped to %s => recall    = %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{mapped0}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
-                printf("Out of %d total %s nodes, %d mapped to %s => precision = %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{mapped1}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
-                printf(" => F₁($metric->{label0},$metric->{label1}) = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+                if($config{tsv})
+                {
+                    print(join("\t", ($metric->{metric}, $metric->{label0}, $metric->{label1}, $metric->{mapped0}, $metric->{mapped1}, $metric->{total0}, $metric->{total1}, $metric->{p}, $metric->{r}, $metric->{f}, "mapped0 mapped1 total0 total1 p r f")), "\n");
+                }
+                else
+                {
+                    printf("Out of %d total %s nodes, %d mapped to %s => recall    = %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{mapped0}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
+                    printf("Out of %d total %s nodes, %d mapped to %s => precision = %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{mapped1}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
+                    printf(" => F₁($metric->{label0},$metric->{label1}) = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+                }
             }
             elsif($metric->{metric} eq 'ambiguous node projections')
             {
-                printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $metric->{nsrc0}, $metric->{label0}, $metric->{ntgt0}, $metric->{label1});
-                printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $metric->{nsrc1}, $metric->{label1}, $metric->{ntgt1}, $metric->{label0});
+                if($config{tsv})
+                {
+                    print(join("\t", ($metric->{metric}, $metric->{label0}, $metric->{label1}, $metric->{nsrc0}, $metric->{nsrc1}, $metric->{ntgt0}, $metric->{ntgt1}, "nsrc0 nsrc1 ntgt0 ntgt1")), "\n");
+                }
+                else
+                {
+                    printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $metric->{nsrc0}, $metric->{label0}, $metric->{ntgt0}, $metric->{label1});
+                    printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $metric->{nsrc1}, $metric->{label1}, $metric->{ntgt1}, $metric->{label0});
+                }
             }
             elsif($metric->{metric} eq 'triples in mapped nodes')
             {
-                print("Concept and relation comparison (only mapped nodes; unmapped are ignored):\n");
-                printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
-                printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
-                printf(" => F₁ = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+                if($config{tsv})
+                {
+                    print(join("\t", ($metric->{metric}, $metric->{label0}, $metric->{label1}, $metric->{correct}, $metric->{total0}, $metric->{total1}, $metric->{p}, $metric->{r}, $metric->{f}, "correct total0 total1 p r f")), "\n");
+                }
+                else
+                {
+                    print("Concept and relation comparison (only mapped nodes; unmapped are ignored):\n");
+                    printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
+                    printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
+                    printf(" => F₁ = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding));
+                }
             }
             elsif($metric->{metric} eq 'juːmæʧ')
             {
-                print("Concept and relation comparison (for unmapped nodes all counted as incorrect):\n");
-                printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
-                printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
-                printf(" => juːmæʧ ($metric->{label0}, $metric->{label1}) = F₁ = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding)); # místo "t͡ʃ" lze případně použít "ʧ"
+                if($config{tsv})
+                {
+                    print(join("\t", ($metric->{metric}, $metric->{label0}, $metric->{label1}, $metric->{correct}, $metric->{total0}, $metric->{total1}, $metric->{p}, $metric->{r}, $metric->{f}, "correct total0 total1 p r f")), "\n");
+                }
+                else
+                {
+                    print("Concept and relation comparison (for unmapped nodes all counted as incorrect):\n");
+                    printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $metric->{total0}, $metric->{label0}, $metric->{correct}, $metric->{label1}, round_to_places($metric->{r}*100, $rounding));
+                    printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $metric->{total1}, $metric->{label1}, $metric->{correct}, $metric->{label0}, round_to_places($metric->{p}*100, $rounding));
+                    printf(" => juːmæʧ ($metric->{label0}, $metric->{label1}) = F₁ = %.${rounding}f%%.\n", round_to_places($metric->{f}*100, $rounding)); # místo "t͡ʃ" lze případně použít "ʧ"
+                }
             }
         }
         # Quiet mode: Only the main metric.
         elsif($metric->{metric} eq 'juːmæʧ')
         {
-            printf("juːmæʧ F₁ ($metric->{label0}, $metric->{label1}) = %f\n", $metric->{f});
+            if($config{tsv})
+            {
+                print(join("\t", ($metric->{metric}, $metric->{label0}, $metric->{label1}, $metric->{correct}, $metric->{total0}, $metric->{total1}, $metric->{p}, $metric->{r}, $metric->{f}, "correct total0 total1 p r f")), "\n");
+            }
+            else
+            {
+                printf("juːmæʧ F₁ ($metric->{label0}, $metric->{label1}) = %f\n", $metric->{f});
+            }
         }
     }
 }
