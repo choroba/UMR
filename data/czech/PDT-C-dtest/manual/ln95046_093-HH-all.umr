@@ -262,10 +262,15 @@ Words: Komise se shodla na tom ,  že dokončí šetření ,  která ještě pro
                             :modal-strength full-negative
                             :polarity -
                             :ARG0 s5k1
-                            :ARG1 (s5z1 / zpráva
-                                :mod (s5e5 / extremismus
-                                    :refer-number singular)
-                                :refer-number singular)
+                            :ARG1 (s5t1 / thing
+                            	:refer-number singular
+                            	:result-of (s5z1 / zpravit-001
+                            		:aspect performance
+                                	:modal-strength full-affirmative
+                                	:ARG2 (s5e5 / extremismus
+                                    		:refer-number singular)
+                                    	:ARG0 (s5p5 / person)
+                                    	:ARG1 (s5p6 / person)))
                             :ARG2 (s5v1 / vysvětlit-001
                                 :aspect performance
                                 :modal-strength full-affirmative
@@ -278,13 +283,17 @@ Words: Komise se shodla na tom ,  že dokončí šetření ,  která ještě pro
                                         :ARG1-of (s5h1 / have-org-role-91
                                 		:aspect state
                                     		:modal-strength full-affirmative
-                                    		:ARG3 (s5r1 / ředitel
-                                        		:refer-number singular)
-                                    		:ARG2  (s5o1 / organization
-                                            		:wiki "Q854461"
-                                                    :name (s5n2 / name
-                                                		:op1 "BIS")
-                                            		:refer-number singular)))))))
+                                    		:ARG3 (s5p4 / person
+                                    			:refer-number singular
+                                    			:ARG0-of (s5r1 / řídit
+                                    				:aspect activity
+                                    				:modal-strength full-affirmative
+                                    				:ARG1 (s5o1 / organization
+                                            				:wiki "Q854461"
+                                                    			:name (s5n2 / name
+                                                				:op1 "BIS")
+                                            				:refer-number singular)))
+                                    		:ARG2  s5o1))))))
 
 # alignment:
 s5s1: 2-3
@@ -294,13 +303,17 @@ s5s2: 9-9,11-11
 s5p1: 13-14
 s5j1: 12-12
 s5p2: 16-18
-s5z1: 19-19
+s5t1: 19-19
+s5z1: 0-0
+s5p5: 0-0
+s5p6: 0-0
 s5e5: 20-21
 s5v1: 22-23
 s5p3: 26-27
 s5h1: 0-0
 s5n1: 0-0
-s5r1: 24-24
+s5p4: 24-24
+s5r1: 0-0
 s5o1: 25-25
 s5n2: 0-0
 
@@ -391,8 +404,12 @@ Words: Před komisi budou pozváni lidé ,  jejichž slyšení navrhl předseda 
                                 :name (s7n3 / name
                         			:op1 "ODA")
         				        :refer-number singular)
-        			    :ARG3 (s7p2 / předseda
-        				  :refer-number singular))))))
+        			    :ARG3 (s7p6 / person
+        			    	:refer-number singular
+        			    	:ARG0-of (s7p2 / předsedat-001
+        			    		:aspect activity
+        			    		:modal-strength full-affirmative
+        			    		:ARG1 s7p4)))))))
 
 # alignment:
 s7p1: 3-4
@@ -406,7 +423,8 @@ s7n2: 0-0
 s7h1: 0-0
 s7p4: 11-11
 s7n3: 0-0
-s7p2: 10-10
+s7p6: 10-10
+s7p2: 0-0
 
 # document level annotation:
 (s7s0 / sentence
@@ -440,7 +458,10 @@ Words: Pozván bude i  bývalý pracovník BIS Michal Čelechovský ,  který o 
                             :name (s8n2 / name
                         		:op1 "BIS")
                         	:refer-number singular)
-        		:ARG3 (s8p2 / pracovník
+        		:ARG3 (s8p6 / person
+        			:ARG0-of (s8p2 / pracovat-004
+        				:aspect activity
+        				:modal-strength full-affirmative)
         			:mod (s8b2 / bývalý)
         			:refer-number singular))
             :ARG0-of (s8p3 / požádat-001
@@ -459,7 +480,8 @@ s8n1: 0-0
 s8h1: 0-0
 s8o1: 6-6
 s8n2: 0-0
-s8p2: 5-5
+s8p6: 5-5
+s8p2: 0-0
 s8b2: 4-4
 s8p3: 14-14
 s8s1: 13-13
@@ -492,7 +514,11 @@ Words: Severa sice nepředpokládá revokaci již přijatých usnesení ,  ale p
             :ARG1 (s9r1 / revokovat-001
             	:aspect performance
             	:modal-strength full-affirmative
-                :ARG1 (s9u1 / usnesení
+                :ARG1 (s9t3 / thing
+                	:result-of (s9u1 / usnést-se-001
+                		:aspect performance
+                		:modal-strength full-affirmative
+                		:ARG1 (s9t4 / thing))
                 	:refer-number plural
                     	:ARG1-of (s9p6 / přijmout-005
                     		:aspect performance
@@ -505,14 +531,20 @@ Words: Severa sice nepředpokládá revokaci již přijatých usnesení ,  ale p
                 :mod (s9n1 / nový)
                 :mod (s9p3 / případný)
                 :refer-number plural)
-            :ARG0 (s9z1 / zpráva
+            :ARG0 (s9t1 / thing
+            	:result-of (s9z1 / zpravit-001
+                            	:aspect performance
+                                :modal-strength full-affirmative
+                                :ARG2 (s9t2 / thing)
+                                :ARG0 (s9k1 / komise
+                        		:refer-number singular)
+                                :ARG1 (s9s4 / sněmovna
+                        		:refer-number singular))
                 :ARG1-of (s9p4 / předložit-001
                     :aspect performance
                     :modal-strength neutral-affirmative
-                    :ARG0 (s9k1 / komise
-                        :refer-number singular)
-                    :ARG2 (s9s4 / sněmovna
-                        :refer-number singular)
+                    :ARG0 s9k1
+                    :ARG2 s9s4
                     :place (s9s5 / schůze
                         :temporal (s9d1 / date-entity
                             :month 3)
@@ -524,14 +556,18 @@ s9p1: 2-3
 s9p5: 1-1
 s9n2: 0-0
 s9r1: 4-4
-s9u1: 7-7
+s9t3: 7-7
+s9t4: 0-0
+s9u1: 0-0
 s9p6: 6-6
 s9j1: 5-5
 s9o1: 13-15
 s9s3: 12-12
 s9n1: 11-11
 s9p3: 10-10
-s9z1: 16-16,18-18
+s9t1: 16-16,18-18
+s9z1: 0-0
+s9t2: 0-0
 s9p4: 19-19,21-21
 s9k1: 20-20
 s9s4: 22-22

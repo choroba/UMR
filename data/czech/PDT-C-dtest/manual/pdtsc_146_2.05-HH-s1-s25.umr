@@ -141,7 +141,11 @@ Words: Z té fotky .
 	:ARG1 (s4h1 / have-source-91
 		:quote s4s1
 		:ARG1 (s4e1 / event)
-        	:ARG2 (s4f1 / fotka
+        	:ARG2 (s4t2 / thing
+        		:ARG1-of (s4f1 / vyfotit-001
+        			:aspect performance
+        			:modal-strength full-affirmative
+        			:ARG0 (s4p3 / person))
             		:mod (s4t1 / ten)
             		:refer-number singular)
         	:modal-strength full-affirmative
@@ -149,7 +153,9 @@ Words: Z té fotky .
 
 # alignment:
 s4h1: 0-0
-s4f1: 1-1,3-3
+s4t2: 1-1,3-3
+s4f1: 0-0
+s4p3: 0-0
 s4t1: 2-2
 s4e1: 0-0
 s4s1: 0-0
@@ -648,7 +654,7 @@ s14n2: 6-6
 
 # document level annotation:
 (s14s0 / sentence
-    :coref ((s4f1 :same-entity s14t1)
+    :coref ((s4t2 :same-entity s14t1)
     	    (s13p1 :same-entity s14p1)
             (s13p2 :same-entity s14p2)))
 
