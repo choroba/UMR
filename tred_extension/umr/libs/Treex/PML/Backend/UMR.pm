@@ -166,6 +166,15 @@ sub read {
             $mode = "";
         } elsif (! /^(?:#|Index: [\s0-9]+$|$)/ && 'words' ne $mode) {
             die "Unexpected in $mode: $_"
+        } elsif (/^Index: [\s0-9]+$/) {
+            my @indices = split ' ';
+            shift @indices;
+            my @out_of_order;
+            for my $i (0 .. $#indices) {
+                push @out_of_order, $indices[$i] if $indices[$i] != $i + 1;
+            }
+            warn "Indices out of order at line $.: @out_of_order\n"
+                if @out_of_order;
         }
         #warn "$mode: $_" if length $mode || length;
     }
