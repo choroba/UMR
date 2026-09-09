@@ -9,7 +9,8 @@ node: <?
           }
 ?><? UMR::label_with_name_expanded($this) . do {
           my @links = grep { my $id = $_->{'target.rf'};
-                             ! grep $_->{id} eq $id, $root->descendants
+                             $id =~ /[0-9]/
+                                 && ! grep $_->{id} eq $id, $root->descendants
                       } ListV($this->{links});
           my $nh = UMR::GetNodeHash();
           @links
