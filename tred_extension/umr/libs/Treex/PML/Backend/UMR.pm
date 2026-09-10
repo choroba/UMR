@@ -32,6 +32,7 @@ sub test {
 sub read {
     my ($fh, $doc) = @_;
     $doc->changeMetaData('schema', $SCHEMA);
+    my %id;
     my @trees;
 
     my $root;
@@ -72,6 +73,12 @@ sub read {
                 $root = new_root([], ++$sentence_index)
                     unless $root;  # Empty sentence.
                 parse_sentence($root, \$buffer);
+                for my $node ($root->descendants) {
+                    if (exists $id{ $node->{id} }) {
+                        warn "Duplicate id: $node->{id}";
+                    }
+                    undef $id{ $node->{id} };
+                }
                 die "Sentence $sentence_index: Leftover $buffer"
                     if length $buffer;
                 #use Data::Dumper; warn Dumper PARSED => $root;
