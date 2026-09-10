@@ -38,6 +38,7 @@ sub read {
     my $buffer = "";
     my $mode = "";
     my $sentence_index = 0;
+    my $word_count;
     while (<$fh>) {
         s/[\n\r]*//;
         s/#\s*TODO.*//;
@@ -49,6 +50,16 @@ sub read {
                         | \# \s+ :: \s+ snt[0-9]+ \s+ (.+) )/x
         ) {
             my @words = split ' ', $1;
+            if ($word_count != @words) {
+                my $msg = join "", "Word count on line $.: got ",
+                                   scalar @words,
+                                   ", expected $word_count";
+                if ($word_count < @words) {
+                    warn $msg, '!';
+                } else {
+                    print STDERR $msg, "\n";
+                }
+            }
             $root = new_root(\@words, ++$sentence_index);
             $doc->append_tree($root);
             $mode = 'words';
@@ -175,6 +186,7 @@ sub read {
             }
             warn "Indices out of order at line $.: @out_of_order\n"
                 if @out_of_order;
+            $word_count = @indices;
         }
         #warn "$mode: $_" if length $mode || length;
     }
