@@ -182,9 +182,17 @@ sub read {
             die "Unexpected '$_' after document end" if "" ne $_;
 
             $mode = "";
-        } elsif (! /^(?:#|Index: [\s0-9]+$|$)/ && 'words' ne $mode) {
-            die "Unexpected in $mode: $_"
-        } elsif (/^Index: [\s0-9]+$/) {
+        } elsif ("" eq $mode && m{^\((\w+)\s+/\s+umr-empty\)$}) {
+            $mode = 'sentence';
+            $root = new_root([], ++$sentence_index);
+            my $s = $_;
+            parse_sentence($root, \$s);
+            $doc->append_tree($root);
+
+        } elsif (! /^(?:#|Index:\s[\s0-9]+$|$)/ && 'words' ne $mode) {
+            die "Unexpected in '$mode': $_"
+
+        } elsif ("" eq $mode && /^Index:\s[\s0-9]+$/) {
             my @indices = split ' ';
             shift @indices;
             my @out_of_order;
