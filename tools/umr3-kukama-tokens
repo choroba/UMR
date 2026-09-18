@@ -1,0 +1,54 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+
+use open IO => ':encoding(UTF-8)', ':std';
+
+local $^I = '~';
+
+local $/ = "\n" . '#' x 80;
+
+while (<>) {
+    my ($w_line) = /^(Words:.*)/m or die "No words in $ARGV $.";
+    $w_line =~ /^Words:\s*(.*)/m;
+    my @words = split ' ', $1;
+
+    my %old2new = (0 => 0);
+    my $shift = 0;
+    for (my $i = 1; $i <= @words; ++$i) {
+        $old2new{$i} //= $i;
+        if ($words[ $i - 1 ] =~ /(?<=.)[,.]/) {
+            for my $following ($i + 1 .. @words) {
+                $old2new{$following} = 1 + ($old2new{$following} // $following);
+            }
+        }
+    }
+    for my $i (1 .. @words) {
+        die "Missing $i: $words[ $i - 1 ]" if ! exists $old2new{$i};
+    }
+    for my $o (keys %old2new) {
+        die "No value for $o" unless length $old2new{$o};
+    }
+
+    # Fix alignment.
+    s/^s\w+:\s*\K(\d+)-(\d+)$/$old2new{$1}-$old2new{$2}/mg;
+
+    $w_line =~ s/(?<=\S)([,.])/ $1/g;
+    s/^Words: .*/$w_line/m;
+
+    @words = split ' ', $w_line;
+    while (/^s\w+:\s*\K(\d+)-(\d+)$/mg) {
+        for my $i ($1, $2) {
+            die "Reference to punct $ARGV $." if $words[$i] =~ /[,.]/;
+        }
+    }
+
+    shift @words;
+    my @lengths = map length, @words;
+    my $i = 1;
+    my $i_line = join ' ', map sprintf("%-${_}d", $i++), @lengths;
+    $i_line =~ s/ *$//;
+    s/^Index:\K.*/ $i_line/m;
+
+    print;
+}
